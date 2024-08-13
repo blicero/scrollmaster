@@ -8,4 +8,7 @@ require (
 	github.com/odeke-em/go-uuid v0.0.0-20151221120446-b211d769a9aa
 )
 
-require github.com/blicero/krylib v0.2.1 // indirect
+require (
+	github.com/blicero/krylib v0.2.1 // indirect
+	github.com/mattn/go-sqlite3 v1.14.22 // indirect
+)
