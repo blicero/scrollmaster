@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 20:28:09 krylon>
+// Time-stamp: <2024-08-13 20:50:24 krylon>
 
 package common
 
@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/blicero/guang/logdomain"
+	"github.com/blicero/scrollmaster/logdomain"
 	"github.com/hashicorp/logutils"
 	"github.com/odeke-em/go-uuid"
 )
