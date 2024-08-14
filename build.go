@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 01. 02. 2021 by Benjamin Walkenhorst
 // (c) 2021 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 22:08:44 krylon>
+// Time-stamp: <2024-08-14 22:57:40 krylon>
 
 //go:build ignore
 // +build ignore
@@ -22,6 +22,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"runtime"
+	"slices"
 	"strconv"
 	"strings"
 	"sync"
@@ -36,6 +37,7 @@ const (
 	appName     = "scrollmaster"
 	logFile     = "./dbg.build.log"
 	lintCommand = "mygolint"
+	nilaway     = "nilaway"
 )
 
 var logLevels = []logutils.LogLevel{
@@ -54,6 +56,7 @@ var orderedSteps = []string{
 	"generate",
 	"vet",
 	"lint",
+	"nilaway",
 	"test",
 	"build",
 }
@@ -64,7 +67,9 @@ var candidates = map[string][]string{
 		"logdomain",
 		"database/query",
 	},
-	"test": {},
+	"test": {
+		"database",
+	},
 	"vet": {
 		"common",
 		"logdomain",
@@ -74,6 +79,14 @@ var candidates = map[string][]string{
 		"model",
 	},
 	"lint": {
+		"common",
+		"logdomain",
+		"database/query",
+		"database",
+		"logreader",
+		"model",
+	},
+	"nilaway": {
 		"common",
 		"logdomain",
 		"database/query",
@@ -158,7 +171,10 @@ This flag is not case-sensitive.`, strings.Join(orderedSteps, ", ")))
 	}
 
 	if stepsRaw == "all" {
+		// We only invoke nilaway if it has been asked for explicitly.
 		stepList = orderedSteps[:]
+		idx := slices.Index(stepList, "nilaway")
+		stepList = slices.Delete(stepList, idx, idx)
 	} else if stepList = strings.Split(stepsRaw, ","); stepList == nil {
 		dbg.Printf("[ERROR] Invalid operations list: %s\n",
 			stepsRaw)
@@ -386,6 +402,8 @@ func worker(n int, op string, pkgq <-chan string, errq chan<- error, wg *sync.Wa
 			} else {
 				cmd = exec.Command("go", op, "-v", "-timeout", "30m", pkg)
 			}
+		} else if op == "nilaway" {
+			cmd = exec.Command(nilaway, pkg)
 		} else {
 			cmd = exec.Command("go", op, "-v", pkg)
 		}
