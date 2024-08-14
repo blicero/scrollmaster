@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 21:29:03 krylon>
+// Time-stamp: <2024-08-14 19:14:00 krylon>
 
 package database
 
@@ -11,7 +11,7 @@ var qInit = []string{
 CREATE TABLE host (
 	id		INTEGER PRIMARY KEY,
         name            TEXT UNIQUE NOT NULL,
-        last_seen       INTEGER NOT NULL DEFAULT 0,
+        last_seen       INTEGER NOT NULL DEFAULT 0
 ) STRICT
 `,
 	"CREATE UNIQUE INDEX host_name_idx ON host (name)",
