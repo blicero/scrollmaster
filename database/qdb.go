@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 21:47:49 krylon>
+// Time-stamp: <2024-08-14 19:30:03 krylon>
 
 package database
 
@@ -27,7 +27,8 @@ SELECT
     message
 FROM record
 WHERE host_id = ?
-ORDER BY stamp
+ORDER BY stamp DESC
+LIMIT ?
 `,
 	query.RecordGetByPeriod: `
 SELECT

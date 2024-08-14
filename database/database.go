@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-14 19:13:28 krylon>
+// Time-stamp: <2024-08-14 20:16:45 krylon>
 
 package database
 
@@ -13,6 +13,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"slices"
 	"sync"
 	"time"
 
@@ -864,3 +865,196 @@ EXEC_QUERY:
 	h.LastSeen = timestamp
 	return nil
 } // func (db *Database) HostUpdateLastSeen(h *model.Host, timestamp time.Time) error
+
+// RecordAdd adds a new Record to the Database.
+func (db *Database) RecordAdd(r *model.Record) error {
+	const qid query.ID = query.RecordAdd
+	var (
+		err    error
+		msg    string
+		stmt   *sql.Stmt
+		tx     *sql.Tx
+		status bool
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid.String(),
+			err.Error())
+		return err
+	} else if db.tx != nil {
+		tx = db.tx
+	} else {
+		db.log.Println("[INFO] Start ad-hoc transaction for adding Record.")
+	BEGIN_AD_HOC:
+		if tx, err = db.db.Begin(); err != nil {
+			if worthARetry(err) {
+				waitForRetry()
+				goto BEGIN_AD_HOC
+			} else {
+				msg = fmt.Sprintf("Error starting transaction: %s\n",
+					err.Error())
+				db.log.Printf("[ERROR] %s\n", msg)
+				return errors.New(msg)
+			}
+
+		} else {
+			defer func() {
+				var err2 error
+				if status {
+					if err2 = tx.Commit(); err2 != nil {
+						db.log.Printf("[ERROR] Failed to commit ad-hoc transaction: %s\n",
+							err2.Error())
+					}
+				} else if err2 = tx.Rollback(); err2 != nil {
+					db.log.Printf("[ERROR] Rollback of ad-hoc transaction failed: %s\n",
+						err2.Error())
+				}
+			}()
+		}
+	}
+
+	stmt = tx.Stmt(stmt)
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(r.HostID, r.Time.Unix(), r.Source, r.Message); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		} else {
+			err = fmt.Errorf("Cannot add Record to database: %s",
+				err.Error())
+			db.log.Printf("[ERROR] %s\n", err.Error())
+			return err
+		}
+	} else {
+		var id int64
+
+		defer rows.Close()
+
+		if !rows.Next() {
+			// CANTHAPPEN
+			db.log.Printf("[ERROR] Query %s did not return a value\n",
+				qid)
+			return fmt.Errorf("Query %s did not return a value", qid)
+		} else if err = rows.Scan(&id); err != nil {
+			msg = fmt.Sprintf("Failed to get ID for newly added Record: %s",
+				err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return errors.New(msg)
+		}
+
+		r.ID = id
+		status = true
+		return nil
+	}
+} // func (db *Database) RecordAdd(r *model.Record) error
+
+// RecordGetByHost fetches the <max> most recent records for a given Host.
+func (db *Database) RecordGetByHost(h *model.Host, max int64) ([]model.Record, error) {
+	const qid query.ID = query.RecordGetByHost
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(h.ID, max); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	var records = make([]model.Record, 0)
+
+	for rows.Next() {
+		var (
+			r         = model.Record{HostID: h.ID}
+			timestamp int64
+		)
+
+		if err = rows.Scan(&r.ID, &timestamp, &r.Source, &r.Message); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		r.Time = time.Unix(timestamp, 0)
+		records = append(records, r)
+	}
+
+	slices.Reverse(records)
+
+	return records, nil
+} // func (db *Database) RecordGetByHost(h *model.Host, max int64) ([]model.Record, error)
+
+// RecordGetByPeriod fetches all records for the given period, ordered by their timestamps.
+func (db *Database) RecordGetByPeriod(begin, end time.Time) ([]model.Record, error) {
+	const qid query.ID = query.RecordGetByPeriod
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(begin.Unix(), end.Unix()); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	var records = make([]model.Record, 0)
+
+	for rows.Next() {
+		var (
+			r         model.Record
+			timestamp int64
+		)
+
+		if err = rows.Scan(&r.ID, &timestamp, &r.Source, &r.Message); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		r.Time = time.Unix(timestamp, 0)
+		records = append(records, r)
+	}
+
+	return records, nil
+} // func (db *Database) RecordGetByPeriod(begin, end time.Time) ([]model.Record, error)

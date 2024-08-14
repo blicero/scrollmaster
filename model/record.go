@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 21:14:30 krylon>
+// Time-stamp: <2024-08-14 20:08:17 krylon>
 
 package model
 
@@ -40,3 +40,17 @@ func (r *Record) Checksum() string {
 
 	return result
 } // func (r *Record) Checksum() string
+
+type RecordSlice []Record
+
+func (r RecordSlice) Len() int {
+	return len(r)
+} // func (r RecordSlice) Len() int
+
+func (r RecordSlice) Less(i, j int) bool {
+	return r[i].Time.Before(r[j].Time)
+} // func (r RecordSlice) Less(i, j int) bool
+
+func (r RecordSlice) Swap(i, j int) {
+	r[i], r[j] = r[j], r[i]
+} // func (r RecordSlice) Swap(i, j int)
