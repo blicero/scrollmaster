@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-14 02:55:40 krylon>
+# Time-stamp: <2024-08-14 19:15:56 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,15 +12,15 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-14 Mi 02:55]
+   #+CAPTION: Clock summary at [2024-08-14 Mi 19:15]
    | Headline               | Time   |        |      |
    |------------------------+--------+--------+------|
-   | *Total time*           | *1:24* |        |      |
+   | *Total time*           | *2:02* |        |      |
    |------------------------+--------+--------+------|
-   | *Scrollmaster*         | *1:24* |        |      |
-   | \_  /Components [0/0]/ |        | /1:24/ |      |
+   | *Scrollmaster*         | *2:02* |        |      |
+   | \_  /Components [0/0]/ |        | /2:02/ |      |
    | \_    Model [0/0]      |        |        | 1:04 |
-   | \_    Database [0/0]   |        |        | 0:20 |
+   | \_    Database [0/0]   |        |        | 0:58 |
    #+END:
 ** Features [0/0]
    :PROPERTIES:
@@ -43,6 +43,8 @@
     :END:
 *** Database [0/0]
     :LOGBOOK:
+    CLOCK: [2024-08-14 Mi 18:40]--[2024-08-14 Mi 19:15] =>  0:35
+    CLOCK: [2024-08-14 Mi 18:26]--[2024-08-14 Mi 18:29] =>  0:03
     CLOCK: [2024-08-14 Mi 02:35]--[2024-08-14 Mi 02:55] =>  0:20
     :END:
 *** Server [0/0]
