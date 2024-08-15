@@ -9,9 +9,6 @@ build
 build_templates
 *.log
 *TAGS*
-pepper
 bak.*
 *.bak
-zettelkasten
-vm
-ticker
+scrollmaster
