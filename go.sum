@@ -4,6 +4,8 @@ github.com/blicero/krylib v0.0.0-20240614192333-8069b4168e7c h1:xHcMS5+vQ7x50kks
 github.com/blicero/krylib v0.0.0-20240614192333-8069b4168e7c/go.mod h1:gdk/cGEYmmPxCWUnKDJNE1FytWYGaNjDMdtWQFtpSjA=
 github.com/blicero/krylib v0.2.1 h1:m6BZF7J5p96AacvXm1Ut5XKLZXgwi5SCy0bk22umKqQ=
 github.com/blicero/krylib v0.2.1/go.mod h1:gdk/cGEYmmPxCWUnKDJNE1FytWYGaNjDMdtWQFtpSjA=
+github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf h1:iW4rZ826su+pqaw19uhpSCzhj44qo35pNgKFGqzDKkU=
+github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf/go.mod h1:F5haX7vjVVG0kc13fIWeqUViNPyEJxv/OmvnBo0Yme4=
 github.com/hashicorp/logutils v1.0.0 h1:dLEQVugN8vlakKOUE3ihGLTZJRB4j+M2cdTm/ORI65Y=
 github.com/hashicorp/logutils v1.0.0/go.mod h1:QIAnNjmIWmVIIkWDTG1z5v++HQmx9WQRO+LraFDTW64=
 github.com/mattn/go-sqlite3 v1.14.22 h1:2gZY6PC6kBnID23Tichd1K+Z0oS6nE/XwU+Vz/5o4kU=

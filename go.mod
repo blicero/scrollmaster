@@ -10,5 +10,6 @@ require (
 
 require (
 	github.com/blicero/krylib v0.2.1 // indirect
+	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
 	github.com/mattn/go-sqlite3 v1.14.22 // indirect
 )
