@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-15 19:57:47 krylon>
+# Time-stamp: <2024-08-15 22:39:05 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,15 +12,16 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-15 Do 19:57]
+   #+CAPTION: Clock summary at [2024-08-15 Do 22:39]
    | Headline               | Time   |        |      |
    |------------------------+--------+--------+------|
-   | *Total time*           | *5:31* |        |      |
+   | *Total time*           | *7:55* |        |      |
    |------------------------+--------+--------+------|
-   | *Scrollmaster*         | *5:31* |        |      |
-   | \_  /Components [0/0]/ |        | /5:31/ |      |
+   | *Scrollmaster*         | *7:55* |        |      |
+   | \_  /Components [0/0]/ |        | /7:55/ |      |
    | \_    Build script     |        |        | 1:15 |
    | \_    Model [0/0]      |        |        | 1:04 |
+   | \_    Logreader [0/0]  |        |        | 2:24 |
    | \_    Database [0/0]   |        |        | 3:12 |
    #+END:
 ** Features [0/0]
@@ -46,6 +47,11 @@
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
     :END:
+    :LOGBOOK:
+    CLOCK: [2024-08-15 Do 20:14]--[2024-08-15 Do 22:38] =>  2:24
+    :END:
+    For the purpose of this application, I'll consider Linux as equal to "uses
+    systemd-journald".
 *** Database [0/0]
     :LOGBOOK:
     CLOCK: [2024-08-15 Do 19:15]--[2024-08-15 Do 19:57] =>  0:42
