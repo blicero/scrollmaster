@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 20:41:04 krylon>
+// Time-stamp: <2024-08-15 19:53:18 krylon>
 
 // Package logdomain provides symbolic constants to identify the various
 // pieces of the application that need to do logging.
@@ -18,6 +18,7 @@ const (
 	Common ID = iota
 	Client
 	Database
+	DBPool
 )
 
 // AllDomains returns a slice of all the valid values for ID.
@@ -26,5 +27,6 @@ func AllDomains() []ID {
 		Common,
 		Client,
 		Database,
+		DBPool,
 	}
 } // func AllDomains() []ID
