@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-15 22:33:22 krylon>
+// Time-stamp: <2024-08-18 16:58:12 krylon>
 
 //go:build linux
 
@@ -19,6 +19,10 @@ import (
 	"github.com/coreos/go-systemd/sdjournal"
 )
 
+func init() {
+	DefaultOpener = CreateJournaldReader
+}
+
 // JournaldReader reads from systemd's journald log.
 type JournaldReader struct {
 	log     *log.Logger
@@ -27,7 +31,7 @@ type JournaldReader struct {
 }
 
 // CreateJournaldReader creates a JournaldReader. Duh.
-func CreateJournaldReader() (*JournaldReader, error) {
+func CreateJournaldReader(path string) (*JournaldReader, error) {
 	var (
 		err error
 		rdr = new(JournaldReader)
