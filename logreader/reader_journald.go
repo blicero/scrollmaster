@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-18 16:58:12 krylon>
+// Time-stamp: <2024-08-18 21:35:38 krylon>
 
 //go:build linux
 
@@ -31,7 +31,7 @@ type JournaldReader struct {
 }
 
 // CreateJournaldReader creates a JournaldReader. Duh.
-func CreateJournaldReader(path string) (*JournaldReader, error) {
+func CreateJournaldReader(path string) (LogReader, error) {
 	var (
 		err error
 		rdr = new(JournaldReader)
