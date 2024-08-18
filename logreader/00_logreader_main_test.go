@@ -2,9 +2,9 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 06. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-18 19:46:24 krylon>
+// Time-stamp: <2024-08-18 21:32:44 krylon>
 
-package database
+package logreader
 
 import (
 	"fmt"
