@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-18 20:12:07 krylon>
+# Time-stamp: <2024-08-19 19:55:00 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,17 +12,17 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-18 So 20:12]
+   #+CAPTION: Clock summary at [2024-08-19 Mo 19:54]
    | Headline               | Time   |        |      |      |
    |------------------------+--------+--------+------+------|
-   | *Total time*           | *8:23* |        |      |      |
+   | *Total time*           | *9:32* |        |      |      |
    |------------------------+--------+--------+------+------|
-   | *Scrollmaster*         | *8:23* |        |      |      |
-   | \_  /Components [0/0]/ |        | /8:23/ |      |      |
+   | *Scrollmaster*         | *9:32* |        |      |      |
+   | \_  /Components [1/1]/ |        | /9:32/ |      |      |
    | \_    Build script     |        |        | 1:15 |      |
    | \_    Model [0/0]      |        |        | 1:04 |      |
-   | \_    Logreader [0/1]  |        |        | 2:52 |      |
-   | \_      Journald       |        |        |      | 0:28 |
+   | \_    Logreader [1/1]  |        |        | 4:01 |      |
+   | \_      Journald       |        |        |      | 1:37 |
    | \_    Database [0/0]   |        |        | 3:12 |      |
    #+END:
 ** Features [0/0]
@@ -30,7 +30,7 @@
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
    :END:
-** Components [0/0]
+** Components [1/1]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
@@ -43,7 +43,7 @@
     :LOGBOOK:
     CLOCK: [2024-08-13 Di 21:05]--[2024-08-13 Di 22:09] =>  1:04
     :END:
-*** Logreader [0/1]
+*** Logreader [1/1]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
@@ -53,8 +53,10 @@
     :END:
     For the purpose of this application, I'll consider Linux as equal to "uses
     systemd-journald".
-**** TODO Journald
+**** DONE Journald
+     CLOSED: [2024-08-19 Mo 19:54]
      :LOGBOOK:
+     CLOCK: [2024-08-19 Mo 18:45]--[2024-08-19 Mo 19:54] =>  1:09
      CLOCK: [2024-08-18 So 19:44]--[2024-08-18 So 20:12] =>  0:28
      :END:
 *** Database [0/0]
