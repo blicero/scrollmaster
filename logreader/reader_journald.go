@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-18 21:35:38 krylon>
+// Time-stamp: <2024-08-19 19:53:49 krylon>
 
 //go:build linux
 
@@ -93,6 +93,7 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 
 	var (
 		err    error
+		step   uint64
 		bstamp uint64 = uint64(begin.Unix()) * 1_000_000
 	)
 
@@ -102,7 +103,7 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 		return
 	}
 
-	for _, err = r.journal.Next(); err == nil; _, err = r.journal.Next() {
+	for step, err = r.journal.Next(); err == nil && step > 0; step, err = r.journal.Next() {
 		var (
 			rec   model.Record
 			entry *sdjournal.JournalEntry
