@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 01. 02. 2021 by Benjamin Walkenhorst
 // (c) 2021 Benjamin Walkenhorst
-// Time-stamp: <2024-08-14 22:57:40 krylon>
+// Time-stamp: <2024-08-20 21:37:52 krylon>
 
 //go:build ignore
 // +build ignore
@@ -77,6 +77,7 @@ var candidates = map[string][]string{
 		"database",
 		"logreader",
 		"model",
+		"server",
 	},
 	"lint": {
 		"common",
@@ -85,6 +86,7 @@ var candidates = map[string][]string{
 		"database",
 		"logreader",
 		"model",
+		"server",
 	},
 	"nilaway": {
 		"common",
@@ -93,6 +95,7 @@ var candidates = map[string][]string{
 		"database",
 		"logreader",
 		"model",
+		"server",
 	},
 }
 
