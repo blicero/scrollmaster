@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-20 18:28:14 krylon>
+// Time-stamp: <2024-08-20 20:07:03 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -21,11 +21,11 @@ import (
 	"path/filepath"
 	"regexp"
 	"sync"
-	"sync/atomic"
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/database"
+	"github.com/blicero/scrollmaster/logdomain"
 	"github.com/gorilla/mux"
 )
 
@@ -43,7 +43,6 @@ type Server struct {
 	log       *log.Logger
 	pool      *database.Pool
 	lock      sync.RWMutex // nolint: unused,structcheck
-	active    atomic.Bool
 	router    *mux.Router
 	tmpl      *template.Template
 	web       http.Server
@@ -132,7 +131,7 @@ func Create(addr string) (*Server, error) {
 	// Web interface handlers
 	srv.router.HandleFunc("/favicon.ico", srv.handleFavIco)
 	srv.router.HandleFunc("/static/{file}", srv.handleStaticFile)
-	srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
+	// srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
 
 	// Agent handlers
 	// srv.router.HandleFunc("/ws/register", srv.handleClientRegister)
