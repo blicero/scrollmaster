@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-20 18:06:38 krylon>
+// Time-stamp: <2024-08-20 18:28:14 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -10,12 +10,21 @@ package server
 
 import (
 	"embed"
+	"errors"
+	"fmt"
 	"html/template"
+	"io"
+	"io/fs"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
+	"regexp"
 	"sync"
 	"sync/atomic"
+	"time"
 
+	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/database"
 	"github.com/gorilla/mux"
 )
@@ -40,3 +49,229 @@ type Server struct {
 	web       http.Server
 	mimeTypes map[string]string
 }
+
+// Create creates and returns a new Server.
+func Create(addr string) (*Server, error) {
+	var (
+		err error
+		msg string
+		srv = &Server{
+			addr: addr,
+			mimeTypes: map[string]string{
+				".css":  "text/css",
+				".map":  "application/json",
+				".js":   "text/javascript",
+				".png":  "image/png",
+				".jpg":  "image/jpeg",
+				".jpeg": "image/jpeg",
+				".webp": "image/webp",
+				".gif":  "image/gif",
+				".json": "application/json",
+				".html": "text/html",
+			},
+		}
+	)
+
+	if srv.log, err = common.GetLogger(logdomain.Server); err != nil {
+		fmt.Fprintf(
+			os.Stderr,
+			"Error creating Logger: %s\n",
+			err.Error())
+		return nil, err
+	} else if srv.pool, err = database.NewPool(poolSize); err != nil {
+		srv.log.Printf("[ERROR] Cannot allocate database connection pool: %s\n",
+			err.Error())
+		return nil, err
+	} else if srv.pool == nil {
+		srv.log.Printf("[CANTHAPPEN] Database pool is nil!\n")
+		return nil, errors.New("Database pool is nil")
+	}
+
+	const tmplFolder = "assets/templates"
+	var templates []fs.DirEntry
+	var tmplRe = regexp.MustCompile("[.]tmpl$")
+
+	if templates, err = assets.ReadDir(tmplFolder); err != nil {
+		srv.log.Printf("[ERROR] Cannot read embedded templates: %s\n",
+			err.Error())
+		return nil, err
+	}
+
+	srv.tmpl = template.New("").Funcs(funcmap)
+	for _, entry := range templates {
+		var (
+			content []byte
+			path    = filepath.Join(tmplFolder, entry.Name())
+		)
+
+		if !tmplRe.MatchString(entry.Name()) {
+			continue
+		} else if content, err = assets.ReadFile(path); err != nil {
+			msg = fmt.Sprintf("Cannot read embedded file %s: %s",
+				path,
+				err.Error())
+			srv.log.Printf("[CRITICAL] %s\n", msg)
+			return nil, errors.New(msg)
+		} else if srv.tmpl, err = srv.tmpl.Parse(string(content)); err != nil {
+			msg = fmt.Sprintf("Could not parse template %s: %s",
+				entry.Name(),
+				err.Error())
+			srv.log.Println("[CRITICAL] " + msg)
+			return nil, errors.New(msg)
+		} else if common.Debug {
+			srv.log.Printf("[TRACE] Template \"%s\" was parsed successfully.\n",
+				entry.Name())
+		}
+	}
+
+	srv.router = mux.NewRouter()
+	srv.web.Addr = addr
+	srv.web.ErrorLog = srv.log
+	srv.web.Handler = srv.router
+
+	// Web interface handlers
+	srv.router.HandleFunc("/favicon.ico", srv.handleFavIco)
+	srv.router.HandleFunc("/static/{file}", srv.handleStaticFile)
+	srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
+
+	// Agent handlers
+	// srv.router.HandleFunc("/ws/register", srv.handleClientRegister)
+	// srv.router.HandleFunc("/ws/report/load/{name:(?:\\w+$)}", srv.handleClientReportLoad)
+	// srv.router.HandleFunc("/ws/report", srv.handleClientReportData)
+
+	// AJAX Handlers
+	srv.router.HandleFunc("/ajax/beacon", srv.handleBeacon)
+
+	return srv, nil
+} // func Create(addr string) (*Server, error)
+
+func (srv *Server) handleFavIco(w http.ResponseWriter, request *http.Request) {
+	srv.log.Printf("[TRACE] Handle request for %s\n",
+		request.URL.EscapedPath())
+
+	const (
+		filename = "html/static/favicon.ico"
+		mimeType = "image/vnd.microsoft.icon"
+	)
+
+	w.Header().Set("Content-Type", mimeType)
+
+	if !common.Debug {
+		w.Header().Set("Cache-Control", "max-age=7200")
+	} else {
+		w.Header().Set("Cache-Control", "no-store, max-age=0")
+	}
+
+	var (
+		err error
+		fh  fs.File
+	)
+
+	if fh, err = assets.Open(filename); err != nil {
+		msg := fmt.Sprintf("ERROR - cannot find file %s", filename)
+		srv.sendErrorMessage(w, msg)
+	} else {
+		defer fh.Close()
+		w.WriteHeader(200)
+		io.Copy(w, fh) // nolint: errcheck
+	}
+} // func (srv *Server) handleFavIco(w http.ResponseWriter, request *http.Request)
+
+func (srv *Server) handleStaticFile(w http.ResponseWriter, request *http.Request) {
+	// srv.log.Printf("[TRACE] Handle request for %s\n",
+	// 	request.URL.EscapedPath())
+
+	// Since we controll what static files the server has available, we
+	// can easily map MIME type to slice. Soon.
+
+	vars := mux.Vars(request)
+	filename := vars["file"]
+	path := filepath.Join("html", "static", filename)
+
+	var mimeType string
+
+	srv.log.Printf("[TRACE] Delivering static file %s to client\n", filename)
+
+	var match []string
+
+	if match = common.SuffixPattern.FindStringSubmatch(filename); match == nil {
+		mimeType = "text/plain"
+	} else if mime, ok := srv.mimeTypes[match[1]]; ok {
+		mimeType = mime
+	} else {
+		srv.log.Printf("[ERROR] Did not find MIME type for %s\n", filename)
+	}
+
+	w.Header().Set("Content-Type", mimeType)
+
+	if common.Debug {
+		w.Header().Set("Cache-Control", "no-store, max-age=0")
+	} else {
+		w.Header().Set("Cache-Control", "max-age=7200")
+	}
+
+	var (
+		err error
+		fh  fs.File
+	)
+
+	if fh, err = assets.Open(path); err != nil {
+		msg := fmt.Sprintf("ERROR - cannot find file %s", path)
+		srv.sendErrorMessage(w, msg)
+	} else {
+		defer fh.Close()
+		w.WriteHeader(200)
+		io.Copy(w, fh) // nolint: errcheck
+	}
+} // func (srv *Server) handleStaticFile(w http.ResponseWriter, request *http.Request)
+
+func (srv *Server) sendErrorMessage(w http.ResponseWriter, msg string) {
+	html := `
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Internal Error</title>
+  </head>
+  <body>
+    <h1>Internal Error</h1>
+    <hr />
+    We are sorry to inform you an internal application error has occured:<br />
+    %s
+    <p>
+    Back to <a href="/index">Homepage</a>
+    <hr />
+    &copy; 2018 <a href="mailto:krylon@gmx.net">Benjamin Walkenhorst</a>
+  </body>
+</html>
+`
+
+	srv.log.Printf("[ERROR] %s\n", msg)
+
+	output := fmt.Sprintf(html, msg)
+	w.WriteHeader(500)
+	_, _ = w.Write([]byte(output)) // nolint: gosec
+} // func (srv *Server) sendErrorMessage(w http.ResponseWriter, msg string)
+
+////////////////////////////////////////////////////////////////////////////////
+//// Ajax handlers /////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+// const success = "Success"
+
+func (srv *Server) handleBeacon(w http.ResponseWriter, r *http.Request) {
+	// srv.log.Printf("[TRACE] Handle %s from %s\n",
+	// 	r.URL,
+	// 	r.RemoteAddr)
+	var timestamp = time.Now().Format(common.TimestampFormat)
+	const appName = common.AppName + " " + common.Version
+	var jstr = fmt.Sprintf(`{ "Status": true, "Message": "%s", "Timestamp": "%s", "Hostname": "%s" }`,
+		appName,
+		timestamp,
+		hostname())
+	var response = []byte(jstr)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "no-store, max-age=0")
+	w.WriteHeader(200)
+	w.Write(response) // nolint: errcheck,gosec
+} // func (srv *Web) handleBeacon(w http.ResponseWriter, r *http.Request)
