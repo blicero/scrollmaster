@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-13 20:50:24 krylon>
+// Time-stamp: <2024-08-21 18:51:44 krylon>
 
 package common
 
@@ -80,10 +80,11 @@ func init() {
 // XfrDbgPath is the path of the folder where data on DNS zone transfers
 // are stored.
 var (
-	BaseDir       = filepath.Join(os.Getenv("HOME"), fmt.Sprintf("%s.d", strings.ToLower(AppName)))
-	LogPath       = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
-	DbPath        = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
-	AgentConfPath = filepath.Join(BaseDir, "agent.json")
+	BaseDir          = filepath.Join(os.Getenv("HOME"), fmt.Sprintf("%s.d", strings.ToLower(AppName)))
+	LogPath          = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
+	DbPath           = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
+	AgentConfPath    = filepath.Join(BaseDir, "agent.json")
+	SessionStorePath = filepath.Join(BaseDir, "sessions.dat")
 )
 
 // SetBaseDir sets the BaseDir and related variables.
