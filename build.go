@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 01. 02. 2021 by Benjamin Walkenhorst
 // (c) 2021 Benjamin Walkenhorst
-// Time-stamp: <2024-08-20 21:37:52 krylon>
+// Time-stamp: <2024-08-21 20:16:18 krylon>
 
 //go:build ignore
 // +build ignore
@@ -63,14 +63,17 @@ var orderedSteps = []string{
 
 var candidates = map[string][]string{
 	"generate": {
+		"common/path",
 		"common",
 		"logdomain",
 		"database/query",
 	},
 	"test": {
 		"database",
+		"logreader",
 	},
 	"vet": {
+		"common/path",
 		"common",
 		"logdomain",
 		"database/query",
@@ -80,6 +83,7 @@ var candidates = map[string][]string{
 		"server",
 	},
 	"lint": {
+		"common/path",
 		"common",
 		"logdomain",
 		"database/query",
@@ -89,6 +93,7 @@ var candidates = map[string][]string{
 		"server",
 	},
 	"nilaway": {
+		"common/path",
 		"common",
 		"logdomain",
 		"database/query",
