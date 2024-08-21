@@ -1,6 +1,8 @@
 module github.com/blicero/scrollmaster
 
-go 1.22.4
+go 1.23
+
+toolchain go1.23.0
 
 require (
 	github.com/blicero/krylib v0.2.1
@@ -9,4 +11,9 @@ require (
 	github.com/hashicorp/logutils v1.0.0
 	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/odeke-em/go-uuid v0.0.0-20151221120446-b211d769a9aa
+)
+
+require (
+	github.com/gorilla/securecookie v1.1.2 // indirect
+	github.com/gorilla/sessions v1.4.0 // indirect
 )

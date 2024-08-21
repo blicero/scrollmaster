@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-20 20:07:03 krylon>
+// Time-stamp: <2024-08-21 16:07:21 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -27,11 +27,13 @@ import (
 	"github.com/blicero/scrollmaster/database"
 	"github.com/blicero/scrollmaster/logdomain"
 	"github.com/gorilla/mux"
+	"github.com/gorilla/sessions"
 )
 
 const (
-	poolSize = 4
-	bufSize  = 32768
+	poolSize   = 4
+	bufSize    = 32768
+	sessionKey = "Wer das liest, ist doof!"
 )
 
 //go:embed assets
@@ -47,6 +49,7 @@ type Server struct {
 	tmpl      *template.Template
 	web       http.Server
 	mimeTypes map[string]string
+	store     sessions.Store
 }
 
 // Create creates and returns a new Server.

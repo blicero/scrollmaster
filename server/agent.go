@@ -2,8 +2,13 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-20 22:30:12 krylon>
+// Time-stamp: <2024-08-20 23:55:22 krylon>
 
 package server
 
+import "net/http"
+
 // Methods for handling the Agents
+
+func (srv *Server) handleAgentInit(w http.ResponseWriter, request *http.Request) {
+} // func (srv *Server) handleAgentInit(w http.ResponseWriter, request *http.Request)
