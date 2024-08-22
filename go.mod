@@ -16,4 +16,5 @@ require (
 require (
 	github.com/gorilla/securecookie v1.1.2 // indirect
 	github.com/gorilla/sessions v1.4.0 // indirect
+	github.com/mborgerson/GoTruncateHtml v0.0.0-20150507032438-125d9154cd1e // indirect
 )

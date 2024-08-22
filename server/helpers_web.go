@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 04. 09. 2019 by Benjamin Walkenhorst
 // (c) 2019 Benjamin Walkenhorst
-// Time-stamp: <2024-06-10 18:43:07 krylon>
+// Time-stamp: <2024-08-22 18:02:11 krylon>
 //
 // Helper functions for use by the HTTP request handlers
 
@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/blicero/donkey/common"
+	"github.com/blicero/scrollmaster/common"
 )
 
 func errJSON(msg string) []byte { // nolint: unused,deadcode

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 12. 12. 2018 by Benjamin Walkenhorst
 // (c) 2018 Benjamin Walkenhorst
-// Time-stamp: <2024-06-09 17:46:43 krylon>
+// Time-stamp: <2024-08-22 18:00:56 krylon>
 
 package server
 
@@ -17,7 +17,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/blicero/donkey/common"
+	"github.com/blicero/scrollmaster/common"
 
 	"github.com/mborgerson/GoTruncateHtml/truncatehtml"
 )

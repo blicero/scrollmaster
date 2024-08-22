@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 06. 05. 2020 by Benjamin Walkenhorst
 // (c) 2020 Benjamin Walkenhorst
-// Time-stamp: <2024-06-10 18:43:07 krylon>
+// Time-stamp: <2024-08-22 18:02:50 krylon>
 //
 // This file contains data structures to be passed to HTML templates.
 
@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/blicero/donkey/common"
+	"github.com/blicero/scrollmaster/common"
 
 	"github.com/hashicorp/logutils"
 )
