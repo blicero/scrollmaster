@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-21 16:07:21 krylon>
+// Time-stamp: <2024-08-22 18:13:18 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -49,7 +49,7 @@ type Server struct {
 	tmpl      *template.Template
 	web       http.Server
 	mimeTypes map[string]string
-	store     sessions.Store
+	store     sessions.Store // nolint: unused,structcheck
 }
 
 // Create creates and returns a new Server.
