@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 06. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-15 19:57:03 krylon>
+// Time-stamp: <2024-08-22 18:01:58 krylon>
 
 package database
 
@@ -12,6 +12,7 @@ import (
 	"sync"
 
 	"github.com/blicero/scrollmaster/common"
+	"github.com/blicero/scrollmaster/common/path"
 	"github.com/blicero/scrollmaster/logdomain"
 )
 
@@ -51,7 +52,7 @@ func NewPool(cnt int) (*Pool, error) {
 	for i := 0; i < cnt; i++ {
 		var link = &dblink{next: pool.link}
 
-		if link.db, err = Open(common.DbPath); err != nil {
+		if link.db, err = Open(common.Path(path.Database)); err != nil {
 			pool.log.Printf("[ERROR] Cannot open database: %s\n",
 				err.Error())
 			return nil, err
@@ -119,7 +120,7 @@ func (pool *Pool) GetNoWait() (*Database, error) {
 		pool.link = link.next
 		pool.cnt--
 		return link.db, nil
-	} else if db, err = Open(common.DbPath); err != nil {
+	} else if db, err = Open(common.Path(path.Database)); err != nil {
 		pool.log.Printf("[ERROR] Error opening new database connection: %s",
 			err.Error())
 		return nil, err

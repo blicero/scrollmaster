@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 14. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-14 19:12:21 krylon>
+// Time-stamp: <2024-08-22 18:02:26 krylon>
 
 package database
 
@@ -11,6 +11,7 @@ import (
 	"testing"
 
 	"github.com/blicero/scrollmaster/common"
+	"github.com/blicero/scrollmaster/common/path"
 )
 
 var tdb *Database
@@ -18,7 +19,7 @@ var tdb *Database
 func TestCreateDatabase(t *testing.T) {
 	var err error
 
-	if tdb, err = Open(common.DbPath); err != nil {
+	if tdb, err = Open(common.Path(path.Database)); err != nil {
 		tdb = nil
 		t.Fatalf("Error opening database: %s", err.Error())
 	}

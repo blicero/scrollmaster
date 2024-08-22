@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-21 18:51:44 krylon>
+// Time-stamp: <2024-08-22 17:47:17 krylon>
 
 package common
 
@@ -18,6 +18,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/blicero/scrollmaster/common/path"
 	"github.com/blicero/scrollmaster/logdomain"
 	"github.com/hashicorp/logutils"
 	"github.com/odeke-em/go-uuid"
@@ -72,6 +73,31 @@ func init() {
 	}
 } // func init()
 
+func Path(p path.Path) string {
+	switch p {
+	case path.Base:
+		return BaseDir
+	case path.Log:
+		return filepath.Join(
+			BaseDir,
+			fmt.Sprintf("%s.log", strings.ToLower(AppName)))
+	case path.Database:
+		return filepath.Join(
+			BaseDir,
+			fmt.Sprintf("%s.db", strings.ToLower(AppName)))
+	case path.AgentConfig:
+		return filepath.Join(
+			BaseDir,
+			"agent.json")
+	case path.SessionStore:
+		return filepath.Join(
+			BaseDir,
+			"sessions.dat")
+	default:
+		panic(fmt.Sprintf("Invalid Path value: %s", p))
+	}
+} // func Path(p path.Path) string
+
 // BaseDir is the folder where all application-specific files (database,
 // log files, etc) are stored.
 // LogPath is the file to the log path.
@@ -80,11 +106,11 @@ func init() {
 // XfrDbgPath is the path of the folder where data on DNS zone transfers
 // are stored.
 var (
-	BaseDir          = filepath.Join(os.Getenv("HOME"), fmt.Sprintf("%s.d", strings.ToLower(AppName)))
-	LogPath          = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
-	DbPath           = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
-	AgentConfPath    = filepath.Join(BaseDir, "agent.json")
-	SessionStorePath = filepath.Join(BaseDir, "sessions.dat")
+	BaseDir = filepath.Join(os.Getenv("HOME"), fmt.Sprintf("%s.d", strings.ToLower(AppName)))
+	// LogPath          = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
+	// DbPath           = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
+	// AgentConfPath    = filepath.Join(BaseDir, "agent.json")
+	// SessionStorePath = filepath.Join(BaseDir, "sessions.dat")
 )
 
 // SetBaseDir sets the BaseDir and related variables.
@@ -92,9 +118,9 @@ func SetBaseDir(path string) error {
 	fmt.Printf("Setting BASE_DIR to %s\n", path)
 
 	BaseDir = path
-	LogPath = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
-	DbPath = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
-	AgentConfPath = filepath.Join(BaseDir, "agent.json")
+	// LogPath = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
+	// DbPath = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
+	// AgentConfPath = filepath.Join(BaseDir, "agent.json")
 
 	if err := InitApp(); err != nil {
 		fmt.Printf("Error initializing application environment: %s\n", err.Error())
@@ -118,7 +144,10 @@ func GetLogger(dom logdomain.ID) (*log.Logger, error) {
 		dom)
 
 	var logfile *os.File
-	logfile, err = os.OpenFile(LogPath, os.O_RDWR|os.O_APPEND|os.O_CREATE, 0644)
+	logfile, err = os.OpenFile(
+		Path(path.Log),
+		os.O_RDWR|os.O_APPEND|os.O_CREATE,
+		0644)
 	if err != nil {
 		msg := fmt.Sprintf("Error opening log file: %s\n", err.Error())
 		fmt.Println(msg)
