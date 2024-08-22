@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-21 20:57:20 krylon>
+# Time-stamp: <2024-08-22 21:29:54 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,15 +12,15 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-21 Mi 20:57]
+   #+CAPTION: Clock summary at [2024-08-22 Do 21:29]
    | Headline               | Time    |         |      |      |
    |------------------------+---------+---------+------+------|
-   | *Total time*           | *15:34* |         |      |      |
+   | *Total time*           | *16:08* |         |      |      |
    |------------------------+---------+---------+------+------|
-   | *Scrollmaster*         | *15:34* |         |      |      |
-   | \_  /Components [1/2]/ |         | /15:34/ |      |      |
-   | \_    Common [0/1]     |         |         | 3:12 |      |
-   | \_      Paths          |         |         |      | 3:12 |
+   | *Scrollmaster*         | *16:08* |         |      |      |
+   | \_  /Components [1/2]/ |         | /16:08/ |      |      |
+   | \_    Common [0/1]     |         |         | 3:46 |      |
+   | \_      Paths          |         |         |      | 3:46 |
    | \_    Build script     |         |         | 1:15 |      |
    | \_    Model [0/0]      |         |         | 1:04 |      |
    | \_    Logreader [1/1]  |         |         | 4:01 |      |
@@ -41,6 +41,7 @@
 *** Common [0/1]
 **** TODO Paths
      :LOGBOOK:
+     CLOCK: [2024-08-22 Do 17:46]--[2024-08-22 Do 18:20] =>  0:34
      CLOCK: [2024-08-21 Mi 17:45]--[2024-08-21 Mi 20:57] =>  3:12
      :END:
      I should make the handling of paths more ... sane and less tedious,
