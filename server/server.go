@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-22 18:13:18 krylon>
+// Time-stamp: <2024-08-24 10:41:42 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -20,10 +20,12 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"slices"
 	"sync"
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
+	"github.com/blicero/scrollmaster/common/path"
 	"github.com/blicero/scrollmaster/database"
 	"github.com/blicero/scrollmaster/logdomain"
 	"github.com/gorilla/mux"
@@ -55,6 +57,13 @@ type Server struct {
 // Create creates and returns a new Server.
 func Create(addr string) (*Server, error) {
 	var (
+		key1 = []byte(sessionKey)
+		key2 = []byte(sessionKey)
+	)
+
+	slices.Reverse(key2)
+
+	var (
 		err error
 		msg string
 		srv = &Server{
@@ -71,6 +80,11 @@ func Create(addr string) (*Server, error) {
 				".json": "application/json",
 				".html": "text/html",
 			},
+			store: sessions.NewFilesystemStore(
+				common.Path(path.SessionStore),
+				key1,
+				key2,
+			),
 		}
 	)
 
