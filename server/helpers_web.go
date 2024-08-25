@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 04. 09. 2019 by Benjamin Walkenhorst
 // (c) 2019 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 18:54:21 krylon>
+// Time-stamp: <2024-08-25 22:32:55 krylon>
 //
 // Helper functions for use by the HTTP request handlers
 
@@ -13,9 +13,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"slices"
+	"strings"
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
+	"github.com/gorilla/sessions"
 )
 
 func errJSON(msg string) []byte { // nolint: unused,deadcode
@@ -94,3 +97,24 @@ func (srv *Server) baseData(title string, r *http.Request) tmplDataBase { // nol
 		URL:   r.URL.String(),
 	}
 } // func (srv *Server) baseData(title string, r *http.Request) tmplDataBase
+
+func dumpSession(s *sessions.Session) string {
+	var (
+		result string
+		items      = make([]string, len(s.Values))
+		idx    int = 0
+	)
+
+	for k, v := range s.Values {
+		items[idx] = fmt.Sprintf("\t%s => %#v\n",
+			k,
+			v)
+		idx++
+	}
+
+	slices.Sort(items)
+
+	result = strings.Join(items, "")
+
+	return result
+} // func dumpSession(s *sessions.Session) string

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 18:55:42 krylon>
+// Time-stamp: <2024-08-25 22:45:17 krylon>
 
 package server
 
@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/database"
 	"github.com/blicero/scrollmaster/model"
 	"github.com/gorilla/sessions"
@@ -92,6 +93,12 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		sess = nil
 		goto SEND_RESPONSE
+	} else if common.Debug {
+		msg = dumpSession(sess)
+		srv.log.Printf("[DEBUG] Existing session for Host %s (%d):\n%s\n",
+			host.Name,
+			host.ID,
+			msg)
 	}
 
 	if newHost {
