@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 22:45:17 krylon>
+// Time-stamp: <2024-08-25 23:16:09 krylon>
 
 package server
 
@@ -37,7 +37,7 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 		msg, key     string
 		res          model.Response
 		sess         *sessions.Session
-		newHost      bool
+		newHost, ok  bool
 	)
 
 	if _, err = io.Copy(&buf, r.Body); err != nil {
@@ -116,7 +116,23 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 			key)
 
 		sess.Values["HostKey"] = key
+	} else {
+		if key, ok = sess.Values["HostKey"].(string); ok {
+			srv.log.Printf("[DEBUG] HostKey for %s (%d) == %s\n",
+				host.Name,
+				host.ID,
+				key)
+		} else {
+			srv.log.Printf("[DEBUG] No HostKey for %s (%d) in Session\n",
+				host.Name,
+				host.ID)
+			res.Message = "No HostKey"
+			goto SEND_RESPONSE
+		}
 	}
+
+	res.Status = true
+	res.Message = "Welcome aboard, buddy"
 
 SEND_RESPONSE:
 	if sess != nil {
