@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-24 10:41:42 krylon>
+// Time-stamp: <2024-08-25 18:57:52 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -33,9 +33,12 @@ import (
 )
 
 const (
-	poolSize   = 4
-	bufSize    = 32768
-	sessionKey = "Wer das liest, ist doof!"
+	poolSize      = 4
+	bufSize       = 32768
+	keyLength     = 4096
+	sessionKey    = "Wer das liest, ist doof!"
+	sessionName   = "TeamOrca"
+	sessionMaxAge = 3600 * 24 * 7 // 1 week
 )
 
 //go:embed assets
@@ -87,6 +90,8 @@ func Create(addr string) (*Server, error) {
 			),
 		}
 	)
+
+	srv.store.(*sessions.FilesystemStore).MaxAge(sessionMaxAge)
 
 	if srv.log, err = common.GetLogger(logdomain.Server); err != nil {
 		fmt.Fprintf(
@@ -151,9 +156,7 @@ func Create(addr string) (*Server, error) {
 	// srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
 
 	// Agent handlers
-	// srv.router.HandleFunc("/ws/register", srv.handleClientRegister)
-	// srv.router.HandleFunc("/ws/report/load/{name:(?:\\w+$)}", srv.handleClientReportLoad)
-	// srv.router.HandleFunc("/ws/report", srv.handleClientReportData)
+	srv.router.HandleFunc("/ws/init", srv.handleAgentInit)
 
 	// AJAX Handlers
 	srv.router.HandleFunc("/ajax/beacon", srv.handleBeacon)

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 00:51:55 krylon>
+// Time-stamp: <2024-08-25 18:55:42 krylon>
 
 package server
 
@@ -16,6 +16,7 @@ import (
 
 	"github.com/blicero/scrollmaster/database"
 	"github.com/blicero/scrollmaster/model"
+	"github.com/gorilla/sessions"
 )
 
 // Methods for handling the Agents
@@ -32,8 +33,10 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 		buf          bytes.Buffer
 		body         []byte
 		host, dbhost *model.Host
-		msg          string
+		msg, key     string
 		res          model.Response
+		sess         *sessions.Session
+		newHost      bool
 	)
 
 	if _, err = io.Copy(&buf, r.Body); err != nil {
@@ -65,23 +68,62 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 			srv.log.Printf("[ERROR] %s\n", res.Message)
 			goto SEND_RESPONSE
 		}
+		newHost = true
 	} else {
 		if dbhost, err = db.HostGetByID(host.ID); err != nil {
 			res.Message = fmt.Sprintf("Error looking up Host %d in database: %s",
 				host.ID,
 				err.Error())
-		} else if dbhost.Name == host.Name {
-
+		} else if dbhost.Name != host.Name {
+			res.Message = fmt.Sprintf(
+				"Wrong name: Host #%d exists in database as %s, you said %s",
+				host.ID,
+				dbhost.Name,
+				host.Name)
+			goto SEND_RESPONSE
 		}
 	}
 
+	if sess, err = srv.store.Get(r, sessionName); err != nil {
+		res.Message = fmt.Sprintf(
+			"Error getting/creating session %s: %s",
+			sessionName,
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		sess = nil
+		goto SEND_RESPONSE
+	}
+
+	if newHost {
+		// Generate key
+		if key, err = generateHostKey(); err != nil {
+			res.Message = fmt.Sprintf("Failed to generate Host Key: %s",
+				err.Error())
+			srv.log.Printf("[ERROR] %s\n", res.Message)
+			goto SEND_RESPONSE
+		}
+
+		srv.log.Printf("[INFO] Generated Hostkey for %s (%d): %s\n",
+			host.Name,
+			host.ID,
+			key)
+
+		sess.Values["HostKey"] = key
+	}
+
 SEND_RESPONSE:
+	if sess != nil {
+		if err = sess.Save(r, w); err != nil {
+			srv.log.Printf("[ERROR] Failed to set session cookie: %s\n",
+				err.Error())
+		}
+	}
 	res.Timestamp = time.Now()
 	var rbuf []byte
 	if rbuf, err = json.Marshal(&res); err != nil {
 		srv.log.Printf("[ERROR] Error serializing response: %s\n",
 			err.Error())
-		return
+		rbuf = errJSON(err.Error())
 	}
 
 	w.Header().Set("Content-Type", "application/json")
