@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-22 21:29:54 krylon>
+# Time-stamp: <2024-08-25 19:05:58 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,13 +12,13 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-22 Do 21:29]
+   #+CAPTION: Clock summary at [2024-08-25 So 19:05]
    | Headline               | Time    |         |      |      |
    |------------------------+---------+---------+------+------|
-   | *Total time*           | *16:08* |         |      |      |
+   | *Total time*           | *17:11* |         |      |      |
    |------------------------+---------+---------+------+------|
-   | *Scrollmaster*         | *16:08* |         |      |      |
-   | \_  /Components [1/2]/ |         | /16:08/ |      |      |
+   | *Scrollmaster*         | *17:11* |         |      |      |
+   | \_  /Components [1/2]/ |         | /17:11/ |      |      |
    | \_    Common [0/1]     |         |         | 3:46 |      |
    | \_      Paths          |         |         |      | 3:46 |
    | \_    Build script     |         |         | 1:15 |      |
@@ -26,7 +26,7 @@
    | \_    Logreader [1/1]  |         |         | 4:01 |      |
    | \_      Journald       |         |         |      | 1:37 |
    | \_    Database [0/0]   |         |         | 3:12 |      |
-   | \_    Server [0/0]     |         |         | 2:50 |      |
+   | \_    Server [0/0]     |         |         | 3:53 |      |
    #+END:
 ** Features [0/0]
    :PROPERTIES:
@@ -84,6 +84,7 @@
     :VISIBILITY: children
     :END:
     :LOGBOOK:
+    CLOCK: [2024-08-25 So 18:02]--[2024-08-25 So 19:05] =>  1:03
     CLOCK: [2024-08-20 Di 18:01]--[2024-08-20 Di 20:51] =>  2:50
     :END:
     So, how do I want client and server to talk to each other? HTTP or
