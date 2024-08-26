@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 06. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-26 09:15:39 krylon>
+// Time-stamp: <2024-08-26 09:58:32 krylon>
 
 package server
 
@@ -21,6 +21,7 @@ const testPort = common.Port + 2
 
 var (
 	srv    *Server
+	addr   string
 	client http.Client // nolint: unused
 )
 
@@ -50,9 +51,9 @@ func TestMain(m *testing.M) {
 		// database inside it) around, so we can manually inspect it
 		// if needed.
 		// If all tests pass, OTOH, we can safely remove the directory.
-		fmt.Printf("Removing BaseDir %s\n",
+		fmt.Printf("NOT Removing BaseDir %s\n",
 			baseDir)
-		_ = os.RemoveAll(baseDir)
+		// _ = os.RemoveAll(baseDir)
 	} else {
 		fmt.Printf(">>> TEST DIRECTORY: %s\n", baseDir)
 	}
