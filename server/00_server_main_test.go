@@ -2,12 +2,14 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 06. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 23:32:04 krylon>
+// Time-stamp: <2024-08-26 09:15:39 krylon>
 
 package server
 
 import (
 	"fmt"
+	"net/http"
+	"net/http/cookiejar"
 	"os"
 	"testing"
 	"time"
@@ -15,14 +17,30 @@ import (
 	"github.com/blicero/scrollmaster/common"
 )
 
+const testPort = common.Port + 2
+
+var (
+	srv    *Server
+	client http.Client // nolint: unused
+)
+
 func TestMain(m *testing.M) {
 	var (
 		err     error
 		result  int
+		opts    *cookiejar.Options
 		baseDir = time.Now().Format("/tmp/scrollmaster_server_test_20060102_150405")
 	)
 
-	if err = common.SetBaseDir(baseDir); err != nil {
+	opts = &cookiejar.Options{}
+
+	if client.Jar, err = cookiejar.New(opts); err != nil {
+		fmt.Fprintf(
+			os.Stderr,
+			"Failed to create Cookiejar for Client: %s\n",
+			err.Error())
+		os.Exit(128)
+	} else if err = common.SetBaseDir(baseDir); err != nil {
 		fmt.Printf("Cannot set base directory to %s: %s\n",
 			baseDir,
 			err.Error())

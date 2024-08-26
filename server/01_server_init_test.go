@@ -2,20 +2,14 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 23:37:05 krylon>
+// Time-stamp: <2024-08-26 09:15:42 krylon>
 
 package server
 
 import (
 	"fmt"
 	"testing"
-
-	"github.com/blicero/scrollmaster/common"
 )
-
-const testPort = common.Port + 2
-
-var srv *Server
 
 func TestServerCreate(t *testing.T) {
 	var (
