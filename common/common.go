@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-22 17:47:17 krylon>
+// Time-stamp: <2024-08-26 09:53:33 krylon>
 
 package common
 
@@ -74,6 +74,7 @@ func init() {
 	}
 } // func init()
 
+// Path looks up the given path.Path and returns the full path of the file or directory.
 func Path(p path.Path) string {
 	switch p {
 	case path.Base:
@@ -115,16 +116,21 @@ var (
 )
 
 // SetBaseDir sets the BaseDir and related variables.
-func SetBaseDir(path string) error {
-	fmt.Printf("Setting BASE_DIR to %s\n", path)
+func SetBaseDir(base string) error {
+	fmt.Printf("Setting BASE_DIR to %s\n", base)
 
-	BaseDir = path
+	BaseDir = base
 	// LogPath = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
 	// DbPath = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
 	// AgentConfPath = filepath.Join(BaseDir, "agent.json")
 
 	if err := InitApp(); err != nil {
 		fmt.Printf("Error initializing application environment: %s\n", err.Error())
+		return err
+	} else if err = os.Mkdir(Path(path.SessionStore), 0700); err != nil && !os.IsExist(err) {
+		fmt.Printf("Error creating session store %s: %s",
+			Path(path.SessionStore),
+			err.Error())
 		return err
 	}
 
