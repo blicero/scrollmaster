@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 18:57:52 krylon>
+// Time-stamp: <2024-08-26 09:43:54 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -46,7 +46,7 @@ var assets embed.FS
 
 // Server wraps the state required for the web interface
 type Server struct {
-	addr      string
+	Addr      string
 	log       *log.Logger
 	pool      *database.Pool
 	lock      sync.RWMutex // nolint: unused,structcheck
@@ -70,7 +70,7 @@ func Create(addr string) (*Server, error) {
 		err error
 		msg string
 		srv = &Server{
-			addr: addr,
+			Addr: addr,
 			mimeTypes: map[string]string{
 				".css":  "text/css",
 				".map":  "application/json",
@@ -163,6 +163,11 @@ func Create(addr string) (*Server, error) {
 
 	return srv, nil
 } // func Create(addr string) (*Server, error)
+
+// ListenAndServe runs the server's  ListenAndServe method
+func (srv *Server) ListenAndServe() {
+	srv.web.ListenAndServe() // nolint: errcheck
+} // func (srv *Server) ListenAndServe()
 
 func (srv *Server) handleFavIco(w http.ResponseWriter, request *http.Request) {
 	srv.log.Printf("[TRACE] Handle request for %s\n",
