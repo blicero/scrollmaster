@@ -61,6 +61,7 @@ var LogLevels = []logutils.LogLevel{
 // PackageLevels defines minimum log levels per package.
 var PackageLevels = make(map[logdomain.ID]logutils.LogLevel, len(LogLevels))
 
+// MinLogLevel is the minimum log level
 const MinLogLevel = "TRACE"
 
 // SuffixPattern is a regular expression that matches the suffix of a file name.
