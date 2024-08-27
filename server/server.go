@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-26 09:43:54 krylon>
+// Time-stamp: <2024-08-27 14:30:14 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -166,6 +166,8 @@ func Create(addr string) (*Server, error) {
 
 // ListenAndServe runs the server's  ListenAndServe method
 func (srv *Server) ListenAndServe() {
+	srv.log.Printf("[DEBUG] Server start listening on %s.\n", srv.Addr)
+	defer srv.log.Println("[DEBUG] Server has quit.")
 	srv.web.ListenAndServe() // nolint: errcheck
 } // func (srv *Server) ListenAndServe()
 
