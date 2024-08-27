@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-26 09:48:07 krylon>
+// Time-stamp: <2024-08-27 15:01:50 krylon>
 
 package server
 
@@ -13,6 +13,7 @@ import (
 	"io"
 	"net/http"
 	"testing"
+	"time"
 
 	"github.com/blicero/scrollmaster/model"
 )
@@ -40,7 +41,7 @@ func TestServerHandleAgentInit(t *testing.T) {
 		uri   = fmt.Sprintf("http://%s%s",
 			addr,
 			path)
-		host = model.Host{
+		host01 = model.Host{
 			Name: "schwarzgeraet.local",
 		}
 		data []byte
@@ -51,7 +52,7 @@ func TestServerHandleAgentInit(t *testing.T) {
 
 	if srv == nil {
 		t.SkipNow()
-	} else if data, err = json.Marshal(&host); err != nil {
+	} else if data, err = json.Marshal(&host01); err != nil {
 		t.Fatalf("Error serializing Host: %s", err.Error())
 	}
 
@@ -73,5 +74,47 @@ func TestServerHandleAgentInit(t *testing.T) {
 		t.Fatalf("Error decoding server reply: %s\n\n%s\n",
 			err.Error(),
 			buf.String())
+	} else if !reply.Status {
+		t.Fatalf("Failed to initialize Agent session for Host %s: %s",
+			host01.Name,
+			reply.Message)
 	}
+
+	// Next we try registering an unknown Server:
+	var host02 = model.Host{
+		Name: "zappelwurst.local",
+		ID:   42,
+	}
+
+	if data, err = json.Marshal(&host02); err != nil {
+		t.Fatalf("Error serializing Host: %s", err.Error())
+	}
+
+	buf.Reset()
+	//io.Copy(buf,
+	buf.Write(data)
+
+	if res, err = client.Post(uri, "application/json", buf); err != nil {
+		t.Fatalf("Error POSTing to %s: %s",
+			uri,
+			err.Error())
+	} else if res.StatusCode != 200 {
+		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
+	} else if _, err = io.Copy(buf, res.Body); err != nil {
+		t.Fatalf("Error reading response body: %s", err.Error())
+	} else if err = json.Unmarshal(buf.Bytes(), &reply); err != nil {
+		t.Fatalf("Error decoding server reply: %s\n\n%s\n",
+			err.Error(),
+			buf.String())
+	} else if reply.Status {
+		t.Fatalf("Registering Host %s should have failed: %s",
+			host02.Name,
+			reply.Message)
+	} else {
+		t.Logf("Registering Host %s has failed as expected: %s",
+			host02.Name,
+			reply.Message)
+	}
+
+	time.Sleep(time.Second)
 } // func TestServerHandleAgentInit(t *testing.T)
