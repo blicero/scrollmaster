@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-25 23:43:03 krylon>
+# Time-stamp: <2024-08-27 15:04:19 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,13 +12,13 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-25 So 23:43]
+   #+CAPTION: Clock summary at [2024-08-27 Di 15:04]
    | Headline               | Time    |         |      |      |
    |------------------------+---------+---------+------+------|
-   | *Total time*           | *19:13* |         |      |      |
+   | *Total time*           | *19:40* |         |      |      |
    |------------------------+---------+---------+------+------|
-   | *Scrollmaster*         | *19:13* |         |      |      |
-   | \_  /Components [1/3]/ |         | /19:13/ |      |      |
+   | *Scrollmaster*         | *19:40* |         |      |      |
+   | \_  /Components [1/3]/ |         | /19:40/ |      |      |
    | \_    Common [0/1]     |         |         | 3:46 |      |
    | \_      Paths          |         |         |      | 3:46 |
    | \_    Build script     |         |         | 1:15 |      |
@@ -26,8 +26,8 @@
    | \_    Logreader [1/1]  |         |         | 4:01 |      |
    | \_      Journald       |         |         |      | 1:37 |
    | \_    Database [0/0]   |         |         | 3:12 |      |
-   | \_    Server [0/1]     |         |         | 5:55 |      |
-   | \_      Testing        |         |         |      | 0:17 |
+   | \_    Server [0/1]     |         |         | 6:22 |      |
+   | \_      Testing        |         |         |      | 0:44 |
    #+END:
 ** Features [0/0]
    :PROPERTIES:
@@ -98,6 +98,7 @@
     GUI. But using HTTP allows me to do both.
 **** TODO Testing
      :LOGBOOK:
+     CLOCK: [2024-08-27 Di 14:37]--[2024-08-27 Di 15:04] =>  0:27
      CLOCK: [2024-08-25 So 23:25]--[2024-08-25 So 23:42] =>  0:17
      :END:
      I have very little experience developing web applications, especially
