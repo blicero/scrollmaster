@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-27 15:01:50 krylon>
+// Time-stamp: <2024-08-27 15:21:48 krylon>
 
 package server
 
@@ -12,6 +12,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strconv"
 	"testing"
 	"time"
 
@@ -30,6 +31,7 @@ func TestServerCreate(t *testing.T) {
 	}
 
 	go srv.ListenAndServe()
+	time.Sleep(time.Second)
 } // func TestServerCreate(t *testing.T)
 
 func TestServerHandleAgentInit(t *testing.T) {
@@ -44,8 +46,11 @@ func TestServerHandleAgentInit(t *testing.T) {
 		host01 = model.Host{
 			Name: "schwarzgeraet.local",
 		}
-		data []byte
-		buf  *bytes.Buffer
+		data   []byte
+		buf    *bytes.Buffer
+		idstr  string
+		ok     bool
+		hostID int64
 	)
 
 	t.Logf("POST %s", uri)
@@ -78,6 +83,17 @@ func TestServerHandleAgentInit(t *testing.T) {
 		t.Fatalf("Failed to initialize Agent session for Host %s: %s",
 			host01.Name,
 			reply.Message)
+	} else if idstr, ok = reply.Payload["ID"]; !ok {
+		t.Errorf("Expected Host ID in Payload (%#v)",
+			reply.Payload)
+	} else if hostID, err = strconv.ParseInt(idstr, 10, 64); err != nil {
+		t.Errorf("Could not parse ID (%q): %s",
+			idstr,
+			err.Error())
+	} else if hostID < 1 {
+		t.Errorf("Server replied invalid hostID: %d", hostID)
+	} else {
+		host01.ID = hostID
 	}
 
 	// Next we try registering an unknown Server:
@@ -115,6 +131,4 @@ func TestServerHandleAgentInit(t *testing.T) {
 			host02.Name,
 			reply.Message)
 	}
-
-	time.Sleep(time.Second)
 } // func TestServerHandleAgentInit(t *testing.T)

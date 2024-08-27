@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-27 15:00:07 krylon>
+// Time-stamp: <2024-08-27 15:11:17 krylon>
 
 package server
 
@@ -12,6 +12,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
@@ -58,6 +59,7 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 		goto SEND_RESPONSE
 	}
 
+	res.Payload = make(map[string]string)
 	buf.Reset()
 	db = srv.pool.Get()
 	defer srv.pool.Put(db)
@@ -70,6 +72,7 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 			goto SEND_RESPONSE
 		}
 		newHost = true
+		res.Payload["ID"] = strconv.FormatInt(host.ID, 10)
 	} else {
 		if dbhost, err = db.HostGetByID(host.ID); err != nil {
 			res.Message = fmt.Sprintf("Error looking up Host %d in database: %s",
