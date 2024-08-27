@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 23:16:09 krylon>
+// Time-stamp: <2024-08-27 15:00:07 krylon>
 
 package server
 
@@ -75,6 +75,14 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 			res.Message = fmt.Sprintf("Error looking up Host %d in database: %s",
 				host.ID,
 				err.Error())
+			srv.log.Printf("[ERROR] %s\n", res.Message)
+			goto SEND_RESPONSE
+		} else if dbhost == nil {
+			res.Message = fmt.Sprintf("Invalid ID for Host %s: %d was not found in database",
+				host.Name,
+				host.ID)
+			srv.log.Printf("[ERROR] %s\n", res.Message)
+			goto SEND_RESPONSE
 		} else if dbhost.Name != host.Name {
 			res.Message = fmt.Sprintf(
 				"Wrong name: Host #%d exists in database as %s, you said %s",
