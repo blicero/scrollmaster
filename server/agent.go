@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-27 15:11:17 krylon>
+// Time-stamp: <2024-08-27 20:56:27 krylon>
 
 package server
 
@@ -65,6 +65,8 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 	defer srv.pool.Put(db)
 
 	if host.ID == 0 {
+		srv.log.Printf("[INFO] Register Host %s in the database\n",
+			host.Name)
 		if err = db.HostAdd(host); err != nil {
 			res.Message = fmt.Sprintf("Adding Host to database failed: %s",
 				err.Error())
@@ -93,6 +95,9 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 				dbhost.Name,
 				host.Name)
 			goto SEND_RESPONSE
+		} else {
+			*host = *dbhost
+			_ = db.HostUpdateLastSeen(host, time.Now())
 		}
 	}
 
