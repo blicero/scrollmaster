@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 06. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-26 09:58:32 krylon>
+// Time-stamp: <2024-08-26 22:41:54 krylon>
 
 package server
 
@@ -22,7 +22,7 @@ const testPort = common.Port + 2
 var (
 	srv    *Server
 	addr   string
-	client http.Client // nolint: unused
+	client http.Client
 )
 
 func TestMain(m *testing.M) {
