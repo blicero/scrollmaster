@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-27 20:56:27 krylon>
+// Time-stamp: <2024-08-28 22:29:01 krylon>
 
 package server
 
@@ -30,15 +30,16 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 		r.RemoteAddr)
 
 	var (
-		err          error
-		db           *database.Database
-		buf          bytes.Buffer
-		body         []byte
-		host, dbhost *model.Host
-		msg, key     string
-		res          model.Response
-		sess         *sessions.Session
-		newHost, ok  bool
+		err              error
+		db               *database.Database
+		buf              bytes.Buffer
+		body             []byte
+		host, dbhost     *model.Host
+		msg, key, status string
+		statusRaw        any
+		res              model.Response
+		sess             *sessions.Session
+		newHost, ok      bool
 	)
 
 	if _, err = io.Copy(&buf, r.Body); err != nil {
@@ -117,6 +118,14 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 			msg)
 	}
 
+	if statusRaw, ok = sess.Values["status"]; !ok {
+	} else if status, ok = statusRaw.(string); ok && status == "ok" {
+		res.Message = "Welcome back"
+		res.Status = true
+		res.Payload["status"] = "ok"
+		goto SEND_RESPONSE
+	}
+
 	if newHost {
 		// Generate key
 		if key, err = generateHostKey(); err != nil {
@@ -146,6 +155,8 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 			goto SEND_RESPONSE
 		}
 	}
+
+	sess.Values["status"] = "ok"
 
 	res.Status = true
 	res.Message = "Welcome aboard, buddy"
