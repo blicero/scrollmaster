@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-27 15:04:19 krylon>
+# Time-stamp: <2024-08-29 18:34:14 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,22 +12,23 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-27 Di 15:04]
-   | Headline               | Time    |         |      |      |
-   |------------------------+---------+---------+------+------|
-   | *Total time*           | *19:40* |         |      |      |
-   |------------------------+---------+---------+------+------|
-   | *Scrollmaster*         | *19:40* |         |      |      |
-   | \_  /Components [1/3]/ |         | /19:40/ |      |      |
-   | \_    Common [0/1]     |         |         | 3:46 |      |
-   | \_      Paths          |         |         |      | 3:46 |
-   | \_    Build script     |         |         | 1:15 |      |
-   | \_    Model [0/0]      |         |         | 1:04 |      |
-   | \_    Logreader [1/1]  |         |         | 4:01 |      |
-   | \_      Journald       |         |         |      | 1:37 |
-   | \_    Database [0/0]   |         |         | 3:12 |      |
-   | \_    Server [0/1]     |         |         | 6:22 |      |
-   | \_      Testing        |         |         |      | 0:44 |
+   #+CAPTION: Clock summary at [2024-08-28 Mi 22:32]
+   | Headline                | Time    |         |      |      |
+   |-------------------------+---------+---------+------+------|
+   | *Total time*            | *20:06* |         |      |      |
+   |-------------------------+---------+---------+------+------|
+   | *Scrollmaster*          | *20:06* |         |      |      |
+   | \_  /Components [1/3]/  |         | /20:06/ |      |      |
+   | \_    Common [0/1]      |         |         | 3:46 |      |
+   | \_      Paths           |         |         |      | 3:46 |
+   | \_    Build script      |         |         | 1:15 |      |
+   | \_    Model [0/0]       |         |         | 1:04 |      |
+   | \_    Logreader [1/1]   |         |         | 4:01 |      |
+   | \_      Journald        |         |         |      | 1:37 |
+   | \_    Database [0/0]    |         |         | 3:12 |      |
+   | \_    Server [0/2]      |         |         | 6:48 |      |
+   | \_      Handling Agents |         |         |      | 0:26 |
+   | \_      Testing         |         |         |      | 0:44 |
    #+END:
 ** Features [0/0]
    :PROPERTIES:
@@ -79,7 +80,7 @@
     CLOCK: [2024-08-14 Mi 18:26]--[2024-08-14 Mi 18:29] =>  0:03
     CLOCK: [2024-08-14 Mi 02:35]--[2024-08-14 Mi 02:55] =>  0:20
     :END:
-*** Server [0/1]
+*** Server [0/2]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
@@ -96,6 +97,11 @@
     my hands.
     I am not entirely sure, yet, if I want to use a web interface or a
     GUI. But using HTTP allows me to do both.
+**** TODO Handling Agents
+     :LOGBOOK:
+     CLOCK: [2024-08-28 Mi 22:27]--[2024-08-28 Mi 22:32] =>  0:05
+     CLOCK: [2024-08-28 Mi 21:24]--[2024-08-28 Mi 21:45] =>  0:21
+     :END:
 **** TODO Testing
      :LOGBOOK:
      CLOCK: [2024-08-27 Di 14:37]--[2024-08-27 Di 15:04] =>  0:27
