@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-30 18:33:23 krylon>
+// Time-stamp: <2024-08-30 22:51:03 krylon>
 
 package server
 
@@ -236,4 +236,28 @@ func TestServerHandleSubmitRecords(t *testing.T) {
 	} else if !reply.Status {
 		t.Fatalf("Failed to deliver log records: %s", reply.Message)
 	}
+
+	// Now, if we show up without registering first, we get rejected, don't we?
+	var altClient http.Client
+
+	for i := 0; i < recordCnt; i++ {
+		records[i].Time = records[i].Time.Add(time.Hour * -24)
+	}
+
+	if jdata, err = json.Marshal(records); err != nil {
+		t.Fatalf("Failed to serialize data: %s", err.Error())
+	}
+
+	buf = bytes.NewBuffer(jdata)
+
+	t.Logf("POST %s", uri)
+	if res, err = altClient.Post(uri, "application/json", buf); err != nil {
+		t.Fatalf("Error POSTing to %s: %s",
+			uri,
+			err.Error())
+	} else if res.StatusCode != 403 {
+		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
+	}
+
+	buf.Reset()
 } // func TestServerHandleSubmitRecords(t *testing.T)

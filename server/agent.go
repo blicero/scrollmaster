@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-30 18:41:13 krylon>
+// Time-stamp: <2024-08-30 22:54:15 krylon>
 
 package server
 
@@ -194,6 +194,7 @@ func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
 
 	var (
 		err          error
+		hstatus      int = 200
 		db           *database.Database
 		buf          bytes.Buffer
 		body         []byte
@@ -214,6 +215,7 @@ func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
 			err.Error())
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		sess = nil
+		hstatus = 403
 		goto SEND_RESPONSE
 	} else if common.Debug {
 		msg = dumpSession(sess)
@@ -223,6 +225,7 @@ func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
 	if raw, ok = sess.Values["status"]; !ok {
 		res.Message = "No session status"
 		srv.log.Printf("[ERROR] %s\n", res.Message)
+		hstatus = 403
 		goto SEND_RESPONSE
 	} else if status, ok = raw.(string); !ok {
 		res.Message = fmt.Sprintf("Cannot decode session status: %#v", raw)
@@ -336,7 +339,7 @@ SEND_RESPONSE:
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Cache-Control", "no-store, max-age=0")
-	w.WriteHeader(200)
+	w.WriteHeader(hstatus)
 	if _, err = w.Write(rbuf); err != nil {
 		msg = fmt.Sprintf("Failed to send result: %s",
 			err.Error())
