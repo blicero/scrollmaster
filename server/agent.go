@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-30 22:54:15 krylon>
+// Time-stamp: <2024-08-31 00:18:29 krylon>
 
 package server
 
@@ -186,6 +186,103 @@ SEND_RESPONSE:
 		srv.log.Println("[ERROR] " + msg)
 	}
 } // func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request)
+
+func (srv *Server) handleGetMostRecent(w http.ResponseWriter, r *http.Request) {
+	srv.log.Printf("[TRACE] Handle request for %s from %s\n",
+		r.URL.EscapedPath(),
+		r.RemoteAddr)
+
+	var (
+		err         error
+		hstatus     int = 200
+		db          *database.Database
+		hostID      int64
+		msg, status string
+		raw         any
+		res         model.Response
+		sess        *sessions.Session
+		ok          bool
+		timestamp   time.Time
+	)
+
+	if sess, err = srv.store.Get(r, sessionName); err != nil {
+		res.Message = fmt.Sprintf(
+			"Error getting/creating session %s: %s",
+			sessionName,
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		sess = nil
+		hstatus = 403
+		goto SEND_RESPONSE
+	} else if common.Debug {
+		msg = dumpSession(sess)
+		srv.log.Printf("[DEBUG] Existing session %s\n", msg)
+	}
+
+	if raw, ok = sess.Values["status"]; !ok {
+		res.Message = "No session status"
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		hstatus = 403
+		goto SEND_RESPONSE
+	} else if status, ok = raw.(string); !ok {
+		res.Message = fmt.Sprintf("Cannot decode session status: %#v", raw)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if status != "ok" {
+		res.Message = fmt.Sprintf("Invalid session status %q", status)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if raw, ok = sess.Values["host"]; !ok {
+		res.Message = "No host ID in session"
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if hostID, ok = raw.(int64); !ok {
+		res.Message = fmt.Sprintf("Invalid type for Host ID in session: %T (%#v)",
+			raw,
+			raw)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	}
+
+	db = srv.pool.Get()
+	defer srv.pool.Put(db)
+
+	if timestamp, err = db.RecordGetMostRecent(hostID); err != nil {
+		res.Message = fmt.Sprintf("Error looking up records for Host %d: %s",
+			hostID,
+			err.Error())
+	}
+
+	res.Message = "Success"
+	res.Status = true
+	res.Payload = map[string]string{
+		"Timestamp": timestamp.Format(common.TimestampFormatSubSecond),
+	}
+
+SEND_RESPONSE:
+	if sess != nil {
+		if err = sess.Save(r, w); err != nil {
+			srv.log.Printf("[ERROR] Failed to set session cookie: %s\n",
+				err.Error())
+		}
+	}
+	res.Timestamp = time.Now()
+	var rbuf []byte
+	if rbuf, err = json.Marshal(&res); err != nil {
+		srv.log.Printf("[ERROR] Error serializing response: %s\n",
+			err.Error())
+		rbuf = errJSON(err.Error())
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "no-store, max-age=0")
+	w.WriteHeader(hstatus)
+	if _, err = w.Write(rbuf); err != nil {
+		msg = fmt.Sprintf("Failed to send result: %s",
+			err.Error())
+		srv.log.Println("[ERROR] " + msg)
+	}
+} // func (srv *Server) handleGetMostRecent(w http.ResponseWriter, r *http.Request)
 
 func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
 	srv.log.Printf("[TRACE] Handle request for %s from %s\n",
