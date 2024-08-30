@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 06. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-26 22:41:54 krylon>
+// Time-stamp: <2024-08-30 20:02:43 krylon>
 
 package server
 
@@ -53,7 +53,7 @@ func TestMain(m *testing.M) {
 		// If all tests pass, OTOH, we can safely remove the directory.
 		fmt.Printf("NOT Removing BaseDir %s\n",
 			baseDir)
-		// _ = os.RemoveAll(baseDir)
+		_ = os.RemoveAll(baseDir)
 	} else {
 		fmt.Printf(">>> TEST DIRECTORY: %s\n", baseDir)
 	}
