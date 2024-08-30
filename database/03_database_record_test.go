@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-15 19:51:26 krylon>
+// Time-stamp: <2024-08-30 23:46:47 krylon>
 
 package database
 
@@ -11,6 +11,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/model"
 )
 
@@ -54,3 +55,26 @@ func TestRecordAdd(t *testing.T) {
 		}
 	}
 } // func TestRecordAdd(t *testing.T)
+
+func TestRecordGetMostRecent(t *testing.T) {
+	if tdb == nil {
+		t.SkipNow()
+	}
+
+	var (
+		err   error
+		stamp time.Time
+	)
+
+	for id, host := range hosts {
+		if stamp, err = tdb.RecordGetMostRecent(id); err != nil {
+			t.Errorf("Failed to get most recent record timestamp for Host %s: %s",
+				host.Name,
+				err.Error())
+		} else {
+			t.Logf("Timestamp for most recent record for Host %s is %s",
+				host.Name,
+				stamp.Format(common.TimestampFormatSubSecond))
+		}
+	}
+} // func TestRecordGetMostRecent(t *testing.T)

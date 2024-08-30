@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-14 19:30:03 krylon>
+// Time-stamp: <2024-08-30 23:24:15 krylon>
 
 package database
 
@@ -40,5 +40,10 @@ SELECT
 FROM record
 WHERE stamp BETWEEN ? AND ?
 ORDER BY stamp
+`,
+	query.RecordGetMostRecent: `
+SELECT MAX(stamp)
+FROM record
+WHERE host_id = ?
 `,
 }

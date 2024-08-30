@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-14 20:16:45 krylon>
+// Time-stamp: <2024-08-30 23:47:44 krylon>
 
 package database
 
@@ -1058,3 +1058,55 @@ EXEC_QUERY:
 
 	return records, nil
 } // func (db *Database) RecordGetByPeriod(begin, end time.Time) ([]model.Record, error)
+
+// RecordGetMostRecent returns the timestamp of the youngest record for a given host.
+func (db *Database) RecordGetMostRecent(hostID int64) (time.Time, error) {
+	const qid query.ID = query.RecordGetMostRecent
+	var (
+		err   error
+		msg   string
+		stmt  *sql.Stmt
+		stamp time.Time
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return stamp, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(hostID); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return stamp, err
+	}
+
+	defer rows.Close() // nolint: errcheck
+
+	if !rows.Next() {
+		msg = fmt.Sprintf("No records for Host %d", hostID)
+		db.log.Printf("[INFO] %s\n", msg)
+		return stamp, errors.New(msg)
+	}
+
+	var seconds int64
+
+	if err = rows.Scan(&seconds); err != nil {
+		msg = fmt.Sprintf("Failed to extract timestamp (INTEGER) from database: %s",
+			err.Error())
+		db.log.Printf("[ERROR] %s\n", msg)
+		return stamp, errors.New(msg)
+	}
+
+	stamp = time.Unix(seconds, 0)
+	return stamp, nil
+} // func (db *Database) RecordGetMostRecent(hostID int64) (time.Time, error)
