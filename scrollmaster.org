@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-08-29 18:34:14 krylon>
+# Time-stamp: <2024-08-30 18:42:51 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,13 +12,13 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-08-28 Mi 22:32]
+   #+CAPTION: Clock summary at [2024-08-30 Fr 18:42]
    | Headline                | Time    |         |      |      |
    |-------------------------+---------+---------+------+------|
-   | *Total time*            | *20:06* |         |      |      |
+   | *Total time*            | *21:34* |         |      |      |
    |-------------------------+---------+---------+------+------|
-   | *Scrollmaster*          | *20:06* |         |      |      |
-   | \_  /Components [1/3]/  |         | /20:06/ |      |      |
+   | *Scrollmaster*          | *21:34* |         |      |      |
+   | \_  /Components [1/3]/  |         | /21:34/ |      |      |
    | \_    Common [0/1]      |         |         | 3:46 |      |
    | \_      Paths           |         |         |      | 3:46 |
    | \_    Build script      |         |         | 1:15 |      |
@@ -26,8 +26,8 @@
    | \_    Logreader [1/1]   |         |         | 4:01 |      |
    | \_      Journald        |         |         |      | 1:37 |
    | \_    Database [0/0]    |         |         | 3:12 |      |
-   | \_    Server [0/2]      |         |         | 6:48 |      |
-   | \_      Handling Agents |         |         |      | 0:26 |
+   | \_    Server [0/2]      |         |         | 8:16 |      |
+   | \_      Handling Agents |         |         |      | 1:54 |
    | \_      Testing         |         |         |      | 0:44 |
    #+END:
 ** Features [0/0]
@@ -99,6 +99,7 @@
     GUI. But using HTTP allows me to do both.
 **** TODO Handling Agents
      :LOGBOOK:
+     CLOCK: [2024-08-30 Fr 17:14]--[2024-08-30 Fr 18:42] =>  1:28
      CLOCK: [2024-08-28 Mi 22:27]--[2024-08-28 Mi 22:32] =>  0:05
      CLOCK: [2024-08-28 Mi 21:24]--[2024-08-28 Mi 21:45] =>  0:21
      :END:
