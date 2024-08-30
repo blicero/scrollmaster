@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-27 20:11:06 krylon>
+// Time-stamp: <2024-08-30 18:33:23 krylon>
 
 package server
 
@@ -176,3 +176,64 @@ func TestServerHandleAgentInit(t *testing.T) {
 		testHost = host01
 	}
 } // func TestServerHandleAgentInit(t *testing.T)
+
+func TestServerHandleSubmitRecords(t *testing.T) {
+	if srv == nil {
+		t.SkipNow()
+	}
+
+	const (
+		path      = "/ws/submit_records"
+		recordCnt = 200
+	)
+
+	var (
+		err       error
+		res       *http.Response
+		reply     model.Response
+		records   [recordCnt]model.Record
+		basestamp = time.Now().Add(time.Hour * -24)
+		timeStep  = time.Second * 3
+		jdata     []byte
+		buf       *bytes.Buffer
+		uri       = fmt.Sprintf("http://%s%s",
+			addr,
+			path)
+	)
+
+	for i := 0; i < recordCnt; i++ {
+		records[i] = model.Record{
+			HostID:  testHost.ID,
+			Time:    basestamp.Add(timeStep * time.Duration(i)),
+			Source:  "QA",
+			Message: fmt.Sprintf("Something happened - %04d", i),
+		}
+	}
+
+	if jdata, err = json.Marshal(records); err != nil {
+		t.Fatalf("Failed to serialize data: %s", err.Error())
+	}
+
+	buf = bytes.NewBuffer(jdata)
+
+	t.Logf("POST %s", uri)
+	if res, err = client.Post(uri, "application/json", buf); err != nil {
+		t.Fatalf("Error POSTing to %s: %s",
+			uri,
+			err.Error())
+	} else if res.StatusCode != 200 {
+		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
+	}
+
+	buf.Reset()
+
+	if _, err = io.Copy(buf, res.Body); err != nil {
+		t.Fatalf("Error reading response body: %s", err.Error())
+	} else if err = json.Unmarshal(buf.Bytes(), &reply); err != nil {
+		t.Fatalf("Error decoding server reply: %s\n\n%s\n",
+			err.Error(),
+			buf.String())
+	} else if !reply.Status {
+		t.Fatalf("Failed to deliver log records: %s", reply.Message)
+	}
+} // func TestServerHandleSubmitRecords(t *testing.T)

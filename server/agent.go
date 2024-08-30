@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-28 22:29:01 krylon>
+// Time-stamp: <2024-08-30 18:41:13 krylon>
 
 package server
 
@@ -157,6 +157,7 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 	}
 
 	sess.Values["status"] = "ok"
+	sess.Values["host"] = host.ID
 
 	res.Status = true
 	res.Message = "Welcome aboard, buddy"
@@ -185,3 +186,160 @@ SEND_RESPONSE:
 		srv.log.Println("[ERROR] " + msg)
 	}
 } // func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request)
+
+func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
+	srv.log.Printf("[TRACE] Handle request for %s from %s\n",
+		r.URL.EscapedPath(),
+		r.RemoteAddr)
+
+	var (
+		err          error
+		db           *database.Database
+		buf          bytes.Buffer
+		body         []byte
+		hostID       int64
+		host         *model.Host
+		msg, status  string
+		data         model.RecordSlice
+		raw          any
+		res          model.Response
+		sess         *sessions.Session
+		ok, txStatus bool
+	)
+
+	if sess, err = srv.store.Get(r, sessionName); err != nil {
+		res.Message = fmt.Sprintf(
+			"Error getting/creating session %s: %s",
+			sessionName,
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		sess = nil
+		goto SEND_RESPONSE
+	} else if common.Debug {
+		msg = dumpSession(sess)
+		srv.log.Printf("[DEBUG] Existing session %s\n", msg)
+	}
+
+	if raw, ok = sess.Values["status"]; !ok {
+		res.Message = "No session status"
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if status, ok = raw.(string); !ok {
+		res.Message = fmt.Sprintf("Cannot decode session status: %#v", raw)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if status != "ok" {
+		res.Message = fmt.Sprintf("Invalid session status %q", status)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if raw, ok = sess.Values["host"]; !ok {
+		res.Message = "No host ID in session"
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if hostID, ok = raw.(int64); !ok {
+		res.Message = fmt.Sprintf("Invalid type for Host ID in session: %T (%#v)",
+			raw,
+			raw)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	}
+
+	db = srv.pool.Get()
+	defer srv.pool.Put(db)
+
+	if err = db.Begin(); err != nil {
+		res.Message = fmt.Sprintf("Error starting database transaction: %s\n",
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	}
+
+	defer func() {
+		var e error
+
+		if txStatus {
+			if e = db.Commit(); e != nil {
+				srv.log.Printf("[ERROR] Error committing transaction: %s\n", e.Error())
+			}
+		} else {
+			if e = db.Rollback(); e != nil {
+				srv.log.Printf("[ERROR] Error rolling back transaction: %s\n", e.Error())
+			}
+		}
+	}()
+
+	if host, err = db.HostGetByID(hostID); err != nil {
+		res.Message = fmt.Sprintf("Error looking up host %d in database", hostID)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if host == nil {
+		res.Message = fmt.Sprintf("Could not find host %d in database", hostID)
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		goto SEND_RESPONSE
+	} else if err = db.HostUpdateLastSeen(host, time.Now()); err != nil {
+		res.Message = fmt.Sprintf("[ERROR] Cannot update LastSeen timestamp on Host %s (%d): %s\n",
+			host.Name,
+			host.ID,
+			err.Error())
+	}
+
+	if _, err = io.Copy(&buf, r.Body); err != nil {
+		res.Message = fmt.Sprintf("Failed to read HTTP request body: %s",
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n",
+			res.Message)
+		goto SEND_RESPONSE
+	}
+
+	body = buf.Bytes()
+
+	if err = json.Unmarshal(body, &data); err != nil {
+		msg = fmt.Sprintf("Failed to decode payload: %s", err.Error())
+		srv.log.Printf("[ERROR] %s\n", msg)
+		res.Message = msg
+		goto SEND_RESPONSE
+	}
+
+	srv.log.Printf("[DEBUG] Agent on %s delivered %d log records\n",
+		host.Name,
+		len(data))
+
+	for idx, rec := range data {
+		if err = db.RecordAdd(&rec); err != nil {
+			res.Message = fmt.Sprintf("Failed to add Record #%d: %s",
+				idx,
+				err.Error())
+			srv.log.Printf("[ERROR] Failed to add log record for %s: %s\n",
+				host.Name,
+				err.Error())
+			goto SEND_RESPONSE
+		}
+	}
+
+	txStatus = true
+	res.Status = true
+
+SEND_RESPONSE:
+	if sess != nil {
+		if err = sess.Save(r, w); err != nil {
+			srv.log.Printf("[ERROR] Failed to set session cookie: %s\n",
+				err.Error())
+		}
+	}
+	res.Timestamp = time.Now()
+	var rbuf []byte
+	if rbuf, err = json.Marshal(&res); err != nil {
+		srv.log.Printf("[ERROR] Error serializing response: %s\n",
+			err.Error())
+		rbuf = errJSON(err.Error())
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "no-store, max-age=0")
+	w.WriteHeader(200)
+	if _, err = w.Write(rbuf); err != nil {
+		msg = fmt.Sprintf("Failed to send result: %s",
+			err.Error())
+		srv.log.Println("[ERROR] " + msg)
+	}
+} // func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request)

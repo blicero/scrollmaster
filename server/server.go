@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-27 14:30:14 krylon>
+// Time-stamp: <2024-08-30 18:10:41 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -157,6 +157,7 @@ func Create(addr string) (*Server, error) {
 
 	// Agent handlers
 	srv.router.HandleFunc("/ws/init", srv.handleAgentInit)
+	srv.router.HandleFunc("/ws/submit_records", srv.handleSubmitRecords)
 
 	// AJAX Handlers
 	srv.router.HandleFunc("/ajax/beacon", srv.handleBeacon)
