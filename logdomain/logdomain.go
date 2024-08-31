@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-20 18:32:08 krylon>
+// Time-stamp: <2024-08-31 14:34:18 krylon>
 
 // Package logdomain provides symbolic constants to identify the various
 // pieces of the application that need to do logging.
@@ -21,6 +21,7 @@ const (
 	DBPool
 	LogReader
 	Server
+	Agent
 )
 
 // AllDomains returns a slice of all the valid values for ID.
@@ -32,5 +33,6 @@ func AllDomains() []ID {
 		DBPool,
 		LogReader,
 		Server,
+		Agent,
 	}
 } // func AllDomains() []ID

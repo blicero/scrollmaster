@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-26 09:53:33 krylon>
+// Time-stamp: <2024-08-31 14:38:01 krylon>
 
 package common
 
@@ -95,6 +95,10 @@ func Path(p path.Path) string {
 		return filepath.Join(
 			BaseDir,
 			"sessions.dat")
+	case path.Cookiejar:
+		return filepath.Join(
+			BaseDir,
+			"cookiejar.dat")
 	default:
 		panic(fmt.Sprintf("Invalid Path value: %s", p))
 	}
