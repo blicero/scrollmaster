@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 16:54:59 krylon>
+// Time-stamp: <2024-08-31 17:44:24 krylon>
 
 package server
 
@@ -54,8 +54,7 @@ func TestServerHandleAgentInit(t *testing.T) {
 		host01 = model.Host{
 			Name: hostname,
 		}
-		data   []byte
-		buf    *bytes.Buffer
+		buf    = new(bytes.Buffer)
 		idstr  string
 		ok     bool
 		hostID int64
@@ -66,7 +65,6 @@ func TestServerHandleAgentInit(t *testing.T) {
 	}
 
 	t.Logf("GET %s", uri)
-	buf = bytes.NewBuffer(data)
 
 	if res, err = client.Get(uri); err != nil {
 		t.Fatalf("Error POSTing to %s: %s",
@@ -78,11 +76,7 @@ func TestServerHandleAgentInit(t *testing.T) {
 
 	if res.StatusCode != 200 {
 		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
-	}
-
-	buf.Reset()
-
-	if _, err = io.Copy(buf, res.Body); err != nil {
+	} else if _, err = io.Copy(buf, res.Body); err != nil {
 		t.Fatalf("Error reading response body: %s", err.Error())
 	} else if err = json.Unmarshal(buf.Bytes(), &reply); err != nil {
 		t.Fatalf("Error decoding server reply: %s\n\n%s\n",
