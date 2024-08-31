@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-30 22:51:03 krylon>
+// Time-stamp: <2024-08-31 14:31:36 krylon>
 
 package server
 
@@ -12,10 +12,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"strconv"
 	"testing"
 	"time"
 
+	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/model"
 )
 
@@ -68,7 +70,11 @@ func TestServerHandleAgentInit(t *testing.T) {
 		t.Fatalf("Error POSTing to %s: %s",
 			uri,
 			err.Error())
-	} else if res.StatusCode != 200 {
+	}
+
+	defer res.Body.Close() // nolint: errcheck
+
+	if res.StatusCode != 200 {
 		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
 	}
 
@@ -221,7 +227,11 @@ func TestServerHandleSubmitRecords(t *testing.T) {
 		t.Fatalf("Error POSTing to %s: %s",
 			uri,
 			err.Error())
-	} else if res.StatusCode != 200 {
+	}
+
+	defer res.Body.Close() // nolint: errcheck
+
+	if res.StatusCode != 200 {
 		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
 	}
 
@@ -261,3 +271,82 @@ func TestServerHandleSubmitRecords(t *testing.T) {
 
 	buf.Reset()
 } // func TestServerHandleSubmitRecords(t *testing.T)
+
+func TestServerHandleMostRecent(t *testing.T) {
+	if srv == nil {
+		t.SkipNow()
+	}
+
+	const (
+		path = "/ws/most_recent"
+	)
+
+	var (
+		err   error
+		res   *http.Response
+		reply model.Response
+		buf   bytes.Buffer
+		uri   = fmt.Sprintf("http://%s%s",
+			addr,
+			path)
+	)
+
+	t.Logf("GET %s", uri)
+
+	if res, err = client.Get(uri); err != nil {
+		t.Fatalf("Failed to GET %s: %s",
+			uri,
+			err.Error())
+	}
+
+	defer res.Body.Close() // nolint: errcheck
+
+	if res.StatusCode != 200 {
+		t.Fatalf("Unexpected HTTP Status %d", res.StatusCode)
+	} else if _, err = io.Copy(&buf, res.Body); err != nil {
+		t.Fatalf("Failed to read HTTP response body: %s",
+			err.Error())
+	} else if err = json.Unmarshal(buf.Bytes(), &reply); err != nil {
+		t.Fatalf("Failed to decode response body: %s\n\n%s\n\n",
+			err.Error(),
+			buf.String())
+	} else if !reply.Status {
+		t.Fatalf("Request Failed: %s",
+			reply.Message)
+	}
+
+	t.Logf("Response message: %s", reply.Message)
+
+	var (
+		stampStr string
+		stamp    time.Time
+		ok       bool
+	)
+
+	if stampStr, ok = reply.Payload["timestamp"]; !ok {
+		t.Fatalf("Reply payload does not contain timestamp: %#v", reply.Payload)
+	} else if stamp, err = time.Parse(common.TimestampFormatSubSecond, stampStr); err != nil {
+		t.Fatalf("Cannot parse timestamp from result payload: %s (%q)",
+			err.Error(),
+			stampStr)
+	}
+
+	t.Logf("Timestamp: %s", stamp.Format(common.TimestampFormatSubSecond))
+
+	if common.Debug {
+		var u *url.URL
+
+		if u, err = url.Parse(uri); err == nil {
+			for idx, c := range client.Jar.Cookies(u) {
+				t.Logf("Cookie %2d: %#v",
+					idx+1,
+					c)
+			}
+		} else {
+			// CANTHAPPEN
+			t.Logf("Strange - cannot parse URL %s: %s",
+				uri,
+				err.Error())
+		}
+	}
+} // func TestServerHandleMostRecent(t *testing.T)

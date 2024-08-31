@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 00:18:29 krylon>
+// Time-stamp: <2024-08-31 13:59:39 krylon>
 
 package server
 
@@ -256,7 +256,7 @@ func (srv *Server) handleGetMostRecent(w http.ResponseWriter, r *http.Request) {
 	res.Message = "Success"
 	res.Status = true
 	res.Payload = map[string]string{
-		"Timestamp": timestamp.Format(common.TimestampFormatSubSecond),
+		"timestamp": timestamp.Format(common.TimestampFormatSubSecond),
 	}
 
 SEND_RESPONSE:
