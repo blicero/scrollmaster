@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 31. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 15:44:13 krylon>
+// Time-stamp: <2024-08-31 16:58:35 krylon>
 
 // Package agent implements the gathering and transmission of log records the the Server.
 package agent
@@ -17,6 +17,7 @@ import (
 	"net/http/cookiejar"
 	"net/url"
 	"os"
+	"sync"
 
 	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/common/path"
@@ -29,6 +30,7 @@ import (
 type Agent struct {
 	addr   string
 	log    *log.Logger
+	lock   sync.RWMutex
 	client http.Client
 	reader logreader.LogReader
 }
@@ -69,6 +71,9 @@ func (ag *Agent) initCookieJar() (*cookiejar.Jar, error) {
 		cookies          []*http.Cookie
 		uri              *url.URL
 	)
+
+	ag.lock.Lock()
+	defer ag.lock.Unlock()
 
 	ustr = fmt.Sprintf("http://%s/ws/init",
 		ag.addr)
@@ -117,3 +122,62 @@ func (ag *Agent) initCookieJar() (*cookiejar.Jar, error) {
 END:
 	return jar, nil
 } // func (ag *Agent) initCookieJar() (*cookiejar.Jar, error)
+
+func (ag *Agent) saveCookieJar() error { // nolint: unused
+	var (
+		err     error
+		buf     []byte
+		fh      *os.File
+		cookies []*http.Cookie
+		ustr    string
+		uri     *url.URL
+		path    = common.Path(path.Cookiejar)
+	)
+
+	ag.lock.Lock()
+	defer ag.lock.Unlock()
+
+	ustr = fmt.Sprintf("http://%s/ws/init",
+		ag.addr)
+
+	if uri, err = url.Parse(ustr); err != nil {
+		ag.log.Printf("[CANTHAPPEN] Failed to parse URL %s: %s\n",
+			ustr,
+			err.Error())
+		return err
+	}
+
+	cookies = ag.client.Jar.Cookies(uri)
+
+	if buf, err = json.Marshal(cookies); err != nil {
+		ag.log.Printf("[ERROR] Failed serialize cookies: %s\n",
+			err.Error())
+		return err
+	} else if fh, err = os.Create(path); err != nil {
+		ag.log.Printf("[ERROR] Failed to open cookie store at %s: %s\n",
+			path,
+			err.Error())
+		return err
+	}
+
+	defer fh.Close() // nolint: errcheck
+
+	if _, err = fh.Write(buf); err != nil {
+		ag.log.Printf("[ERROR] Failed to write cookies to %s: %s\n",
+			path,
+			err.Error())
+	}
+
+	return nil
+} // func (ag *Agent) saveCookieJar() error
+
+// func (ag *Agent) register() error {
+// 	const uriPath = "/ws/init"
+// 	var (
+// 		err  error
+// 		host model.Host
+// 		buf  []byte
+// 	)
+
+// 	return nil
+// } // func (ag *Agent) register() error
