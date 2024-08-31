@@ -2,14 +2,13 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 04. 09. 2019 by Benjamin Walkenhorst
 // (c) 2019 Benjamin Walkenhorst
-// Time-stamp: <2024-08-25 22:32:55 krylon>
+// Time-stamp: <2024-08-31 16:44:54 krylon>
 //
 // Helper functions for use by the HTTP request handlers
 
 package server
 
 import (
-	"crypto/rand"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -69,26 +68,26 @@ func jsonEscape(i string) string { // nolint: unused
 // }
 // func getMimeType(path string) (string, error)
 
-func generateHostKey() (string, error) {
-	var (
-		err       error
-		data      [keyLength]byte
-		hex       string
-		bytesRead int
-	)
+// func generateHostKey() (string, error) {
+// 	var (
+// 		err       error
+// 		data      [keyLength]byte
+// 		hex       string
+// 		bytesRead int
+// 	)
 
-	if bytesRead, err = rand.Reader.Read(data[:]); err != nil {
-		return "", err
-	} else if bytesRead != keyLength {
-		return "", fmt.Errorf("RNG returned insufficient data (%d/%d bytes)",
-			bytesRead,
-			keyLength)
-	} else if hex, err = common.GetChecksum(data[:]); err != nil {
-		return "", err
-	}
+// 	if bytesRead, err = rand.Reader.Read(data[:]); err != nil {
+// 		return "", err
+// 	} else if bytesRead != keyLength {
+// 		return "", fmt.Errorf("RNG returned insufficient data (%d/%d bytes)",
+// 			bytesRead,
+// 			keyLength)
+// 	} else if hex, err = common.GetChecksum(data[:]); err != nil {
+// 		return "", err
+// 	}
 
-	return hex, nil
-} // func generateHostKey() (string, error)
+// 	return hex, nil
+// } // func generateHostKey() (string, error)
 
 func (srv *Server) baseData(title string, r *http.Request) tmplDataBase { // nolint: unused
 	return tmplDataBase{
