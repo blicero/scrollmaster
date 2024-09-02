@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-18 21:36:33 krylon>
+// Time-stamp: <2024-09-02 18:53:19 krylon>
 
 // Package logreader implements the reading/parsing of log files or journald's log.
 package logreader
@@ -19,6 +19,7 @@ type LogReader interface {
 	Init() error
 	Close() error
 	ReadFrom(begin time.Time, queue chan<- model.Record)
+	IsError() (bool, error)
 }
 
 // ReaderOpener is a function to open a LogReader.

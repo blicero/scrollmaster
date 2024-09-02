@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-19 19:53:49 krylon>
+// Time-stamp: <2024-09-02 18:55:34 krylon>
 
 //go:build linux
 
@@ -28,6 +28,7 @@ type JournaldReader struct {
 	log     *log.Logger
 	queue   chan<- model.Record
 	journal *sdjournal.Journal
+	err     error
 }
 
 // CreateJournaldReader creates a JournaldReader. Duh.
@@ -50,11 +51,13 @@ func (r *JournaldReader) Init() error {
 
 	if r.journal, err = sdjournal.NewJournal(); err != nil {
 		r.log.Printf("[ERROR] Cannot open Journal: %s", err.Error())
+		r.err = err
 		return err
 	} else if r.journal == nil {
 		var msg = "sdjournal.NewJournal did not return an error, but no Journal, either"
 		r.log.Printf("[ERROR] %s", msg)
-		return errors.New(msg)
+		r.err = errors.New(msg)
+		return r.err
 	}
 
 	r.log.Println("[INFO] Journal was opened successfully.")
@@ -71,12 +74,18 @@ func (r *JournaldReader) Close() error {
 		return nil
 	} else if err = r.journal.Close(); err != nil {
 		r.log.Printf("[ERROR] Failed to close Journal: %s\n", err.Error())
+		r.err = err
 		return err
 	}
 
 	r.journal = nil
 	return nil
 } // func (r *JournaldReader) Close() error
+
+// IsError returns the Reader's error state
+func (r *JournaldReader) IsError() (bool, error) {
+	return (r.err != nil), r.err
+} // func (r *JournaldReader) IsError() (bool, error)
 
 // ReadFrom reads Journal entries beginning a the given time stamp.
 // Records are fed to the channel passed as the second argument.
@@ -100,6 +109,7 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 	if err = r.journal.SeekRealtimeUsec(bstamp); err != nil {
 		r.log.Printf("[ERROR] Failed to seek log to specified time: %s\n",
 			err.Error())
+		r.err = err
 		return
 	}
 
@@ -112,6 +122,7 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 		if entry, err = r.journal.GetEntry(); err != nil {
 			r.log.Printf("[ERROR] Failed to read from Journal: %s\n",
 				err.Error())
+			r.err = err
 			continue
 		} else if entry.RealtimeTimestamp < bstamp {
 			continue
