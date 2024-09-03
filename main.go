@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 15:15:00 krylon>
+// Time-stamp: <2024-09-03 18:31:15 krylon>
 
 package main
 
@@ -12,6 +12,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/blicero/scrollmaster/agent"
 	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/server"
 )
@@ -27,17 +28,18 @@ func main() {
 	const defaultAddr = "::1"
 
 	var (
-		err  error
-		addr string
-		mode string
-		port int
+		err      error
+		addr     string
+		mode     string
+		basePath string
+		port     int
 	)
 
 	flag.StringVar(
 		&addr,
 		"address",
 		defaultAddr,
-		"The IP address to either listen on or connect to.")
+		"The IP address to either listen on or connect to")
 	flag.StringVar(
 		&mode,
 		"mode",
@@ -48,8 +50,25 @@ func main() {
 		"port",
 		common.Port,
 		"The TCP port to listen on or connect to")
+	flag.StringVar(
+		&basePath,
+		"basedir",
+		common.BaseDir,
+		"The base directory to store application-specific files",
+	)
 
 	flag.Parse()
+
+	if basePath != common.BaseDir {
+		if err = common.SetBaseDir(basePath); err != nil {
+			fmt.Fprintf(
+				os.Stderr,
+				"Error setting base directory to %s: %s\n",
+				basePath,
+				err.Error())
+			os.Exit(1)
+		}
+	}
 
 	if err = common.InitApp(); err != nil {
 		fmt.Fprintf(
@@ -61,9 +80,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	addr = fmt.Sprintf("[%s]:%d",
-		addr,
-		port)
+	// addr = fmt.Sprintf("[%s]:%d",
+	// 	addr,
+	// 	port)
 
 	switch strings.ToLower(mode) {
 	case "server":
@@ -104,5 +123,23 @@ func runServer(addr string, port int) {
 }
 
 func runAgent(addr string, port int) {
-	fmt.Println("IMPLEMENT ME!")
-}
+	var (
+		err     error
+		ag      *agent.Agent
+		srvAddr string
+	)
+
+	srvAddr = fmt.Sprintf("[%s]:%d",
+		addr,
+		port)
+
+	if ag, err = agent.Create(srvAddr, ""); err != nil {
+		fmt.Fprintf(
+			os.Stderr,
+			"Error creating Agent: %s\n",
+			err.Error())
+		os.Exit(2)
+	}
+
+	ag.Run()
+} // func runAgent(addr string, port int)
