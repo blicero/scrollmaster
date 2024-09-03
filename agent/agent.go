@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 31. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 18:54:34 krylon>
+// Time-stamp: <2024-09-03 20:00:16 krylon>
 
 // Package agent implements the gathering and transmission of log records the the Server.
 package agent
@@ -34,6 +34,7 @@ import (
 const (
 	checkInterval = time.Second * 10
 	maxErr        = 5
+	maxRecordCnt  = 10000
 )
 
 // Agent is the component that gathers Logrecords on a Host and transmits
@@ -116,7 +117,7 @@ func (ag *Agent) Run() error {
 			records = make([]model.Record, 0, 64)
 		)
 
-		go ag.reader.ReadFrom(startStamp, queue)
+		go ag.reader.ReadFrom(startStamp, maxRecordCnt, queue)
 
 		for rec := range queue {
 			records = append(records, rec)

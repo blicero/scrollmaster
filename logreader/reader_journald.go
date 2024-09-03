@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 19:21:48 krylon>
+// Time-stamp: <2024-09-03 19:44:46 krylon>
 
 //go:build linux
 
@@ -90,7 +90,7 @@ func (r *JournaldReader) IsError() (bool, error) {
 // ReadFrom reads Journal entries beginning a the given time stamp.
 // Records are fed to the channel passed as the second argument.
 // Upon returning, the method will close the channel.
-func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
+func (r *JournaldReader) ReadFrom(begin time.Time, max int, queue chan<- model.Record) {
 	if r.journal == nil {
 		r.log.Println("[CRITICAL] ReadFrom was called on unopened Journal")
 		panic("ReadFrom was called on unopened Journal")
@@ -107,7 +107,7 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 		err    error
 		step   uint64
 		bstamp uint64 = uint64(begin.Unix()) * 1_000_000
-		cnt    int64
+		cnt    int
 	)
 
 	if err = r.journal.SeekRealtimeUsec(bstamp); err != nil {
@@ -140,6 +140,9 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 
 		queue <- rec
 		cnt++
+		if max > 0 && cnt >= max {
+			break
+		}
 	}
 
 	r.log.Printf("[DEBUG] Processed %d log records.\n",

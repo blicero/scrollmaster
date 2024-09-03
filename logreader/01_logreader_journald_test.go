@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 18. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-19 19:46:28 krylon>
+// Time-stamp: <2024-09-03 19:45:00 krylon>
 
 package logreader
 
@@ -48,7 +48,7 @@ func TestReaderRead(t *testing.T) {
 	begin = time.Now().Add(time.Hour * -2)
 	// ticker = time.NewTicker(time.Second * 30)
 
-	go rdr.ReadFrom(begin, queue)
+	go rdr.ReadFrom(begin, 0, queue)
 
 	for record := range queue {
 		cnt++
