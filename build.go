@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 01. 02. 2021 by Benjamin Walkenhorst
 // (c) 2021 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 16:57:41 krylon>
+// Time-stamp: <2024-09-02 23:06:40 krylon>
 
 //go:build ignore
 // +build ignore
@@ -186,7 +186,7 @@ This flag is not case-sensitive.`, strings.Join(orderedSteps, ", ")))
 		// We only invoke nilaway if it has been asked for explicitly.
 		stepList = orderedSteps[:]
 		idx := slices.Index(stepList, "nilaway")
-		stepList = slices.Delete(stepList, idx, idx)
+		stepList = slices.Delete(stepList, idx, idx+1)
 	} else if stepList = strings.Split(stepsRaw, ","); stepList == nil {
 		dbg.Printf("[ERROR] Invalid operations list: %s\n",
 			stepsRaw)
