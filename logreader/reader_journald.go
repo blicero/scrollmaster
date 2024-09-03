@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-02 18:55:34 krylon>
+// Time-stamp: <2024-09-03 19:21:48 krylon>
 
 //go:build linux
 
@@ -96,6 +96,9 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 		panic("ReadFrom was called on unopened Journal")
 	}
 
+	r.log.Printf("[DEBUG] Start reading log records at %s\n",
+		begin.Format(common.TimestampFormat))
+
 	r.queue = queue
 
 	defer close(queue)
@@ -104,6 +107,7 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 		err    error
 		step   uint64
 		bstamp uint64 = uint64(begin.Unix()) * 1_000_000
+		cnt    int64
 	)
 
 	if err = r.journal.SeekRealtimeUsec(bstamp); err != nil {
@@ -129,12 +133,15 @@ func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record) {
 		}
 
 		rec = model.Record{
-			Time:    time.Unix(int64(entry.RealtimeTimestamp), 0),
+			Time:    time.Unix(int64(entry.RealtimeTimestamp)/1_000_000, 0),
 			Source:  entry.Fields["_COMM"],
 			Message: entry.Fields["MESSAGE"],
 		}
 
 		queue <- rec
-
+		cnt++
 	}
+
+	r.log.Printf("[DEBUG] Processed %d log records.\n",
+		cnt)
 } // func (r *JournaldReader) ReadFrom(begin time.Time, queue chan<- model.Record)
