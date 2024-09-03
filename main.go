@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 18:31:15 krylon>
+// Time-stamp: <2024-09-03 19:59:39 krylon>
 
 package main
 
@@ -80,16 +80,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	// addr = fmt.Sprintf("[%s]:%d",
-	// 	addr,
-	// 	port)
-
 	switch strings.ToLower(mode) {
 	case "server":
 		// Be servile
 		runServer(addr, port)
 	case "agent":
-		// Display some agency
+		// Show some agency
 		runAgent(addr, port)
 	default:
 		fmt.Fprintf(
