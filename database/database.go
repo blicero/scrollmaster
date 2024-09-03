@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-30 23:47:44 krylon>
+// Time-stamp: <2024-09-03 19:14:54 krylon>
 
 package database
 
@@ -108,7 +108,7 @@ func Open(path string) (*Database, error) {
 		db.log.Printf("[DEBUG] Open database %s\n", path)
 	}
 
-	var connstring = fmt.Sprintf("%s?_locking=NORMAL&_journal=WAL&_fk=1&recursive_triggers=0",
+	var connstring = fmt.Sprintf("%s?_locking=NORMAL&_journal=WAL&_fk=true&recursive_triggers=true",
 		path)
 
 	if dbExists, err = krylib.Fexists(path); err != nil {
@@ -928,27 +928,28 @@ EXEC_QUERY:
 			db.log.Printf("[ERROR] %s\n", err.Error())
 			return err
 		}
-	} else {
-		var id int64
-
-		defer rows.Close()
-
-		if !rows.Next() {
-			// CANTHAPPEN
-			db.log.Printf("[ERROR] Query %s did not return a value\n",
-				qid)
-			return fmt.Errorf("Query %s did not return a value", qid)
-		} else if err = rows.Scan(&id); err != nil {
-			msg = fmt.Sprintf("Failed to get ID for newly added Record: %s",
-				err.Error())
-			db.log.Printf("[ERROR] %s\n", msg)
-			return errors.New(msg)
-		}
-
-		r.ID = id
-		status = true
-		return nil
 	}
+
+	var id int64
+
+	defer rows.Close()
+
+	if !rows.Next() {
+		// CANTHAPPEN
+		db.log.Printf("[CANTHAPPEN] Query %s did not return a value\n\n%#v\n\n",
+			qid,
+			r)
+		return fmt.Errorf("Query %s did not return a value", qid)
+	} else if err = rows.Scan(&id); err != nil {
+		msg = fmt.Sprintf("Failed to get ID for newly added Record: %s",
+			err.Error())
+		db.log.Printf("[ERROR] %s\n", msg)
+		return errors.New(msg)
+	}
+
+	r.ID = id
+	status = true
+	return nil
 } // func (db *Database) RecordAdd(r *model.Record) error
 
 // RecordGetByHost fetches the <max> most recent records for a given Host.

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-14 19:14:00 krylon>
+// Time-stamp: <2024-09-03 19:16:12 krylon>
 
 package database
 
@@ -25,7 +25,8 @@ CREATE TABLE record (
         message         TEXT NOT NULL,
         FOREIGN KEY (host_id) REFERENCES host (id)
             ON UPDATE RESTRICT
-            ON DELETE CASCADE
+            ON DELETE CASCADE,
+        CHECK (host_id > 0)
 ) STRICT
 `,
 	"CREATE INDEX record_host_idx ON record (host_id)",
