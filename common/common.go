@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 18:48:37 krylon>
+// Time-stamp: <2024-09-03 20:42:58 krylon>
 
 package common
 
@@ -35,7 +35,7 @@ import (
 // their status.
 const (
 	Debug                    = true
-	Version                  = "0.0.1"
+	Version                  = "0.1.0"
 	AppName                  = "Scrollmaster"
 	TimestampFormat          = "2006-01-02 15:04:05"
 	TimestampFormatMinute    = "2006-01-02 15:04"
