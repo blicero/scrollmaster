@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 14:38:01 krylon>
+// Time-stamp: <2024-09-03 18:48:37 krylon>
 
 package common
 
@@ -112,7 +112,7 @@ func Path(p path.Path) string {
 // XfrDbgPath is the path of the folder where data on DNS zone transfers
 // are stored.
 var (
-	BaseDir = filepath.Join(os.Getenv("HOME"), fmt.Sprintf("%s.d", strings.ToLower(AppName)))
+	BaseDir = filepath.Join(os.Getenv("HOME"), fmt.Sprintf(".%s.d", strings.ToLower(AppName)))
 	// LogPath          = filepath.Join(BaseDir, fmt.Sprintf("%s.log", strings.ToLower(AppName)))
 	// DbPath           = filepath.Join(BaseDir, fmt.Sprintf("%s.db", strings.ToLower(AppName)))
 	// AgentConfPath    = filepath.Join(BaseDir, "agent.json")
@@ -130,11 +130,6 @@ func SetBaseDir(base string) error {
 
 	if err := InitApp(); err != nil {
 		fmt.Printf("Error initializing application environment: %s\n", err.Error())
-		return err
-	} else if err = os.Mkdir(Path(path.SessionStore), 0700); err != nil && !os.IsExist(err) {
-		fmt.Printf("Error creating session store %s: %s",
-			Path(path.SessionStore),
-			err.Error())
 		return err
 	}
 
@@ -180,6 +175,11 @@ func InitApp() error {
 			msg := fmt.Sprintf("Error creating BASE_DIR %s: %s", BaseDir, err.Error())
 			return errors.New(msg)
 		}
+	} else if err = os.Mkdir(Path(path.SessionStore), 0700); err != nil && !os.IsExist(err) {
+		fmt.Printf("Error creating session store %s: %s",
+			Path(path.SessionStore),
+			err.Error())
+		return err
 	}
 
 	return nil
