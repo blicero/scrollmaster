@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 19:11:11 krylon>
+// Time-stamp: <2024-09-04 08:42:44 krylon>
 
 package server
 
@@ -366,7 +366,19 @@ func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
 
 	for idx, rec := range data {
 		rec.HostID = host.ID
-		if err = db.RecordAdd(&rec); err != nil {
+		var exist bool
+
+		if exist, err = db.RecordCheckExist(rec.Checksum()); err != nil {
+			srv.log.Printf("[ERROR] Failed to check if record with checksum %q exists: %s\n",
+				rec.Checksum(),
+				err.Error())
+		} else if exist {
+			// srv.log.Printf("[DEBUG] Skipping duplicate log record from %s / %s / %s\n",
+			// 	host.Name,
+			// 	rec.Source,
+			// 	rec.Time.Format(common.TimestampFormat))
+			continue
+		} else if err = db.RecordAdd(&rec); err != nil {
 			res.Message = fmt.Sprintf("Failed to add Record #%d: %s",
 				idx,
 				err.Error())

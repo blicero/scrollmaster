@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 18:50:26 krylon>
+// Time-stamp: <2024-09-03 21:16:00 krylon>
 
 package database
 
@@ -15,8 +15,8 @@ var qdb = map[query.ID]string{
 	query.HostGetAll:         "SELECT id, name, last_seen FROM host",
 	query.HostUpdateLastSeen: "UPDATE host SET last_seen = ? WHERE id = ?",
 	query.RecordAdd: `
-INSERT INTO record (host_id, stamp, source, message)
-            VALUES (      ?,     ?,      ?,       ?)
+INSERT INTO record (host_id, stamp, source, message, checksum)
+            VALUES (      ?,     ?,      ?,       ?,        ?)
 RETURNING id
 `,
 	query.RecordGetByHost: `
@@ -46,4 +46,5 @@ SELECT COALESCE(MAX(stamp), 0)
 FROM record
 WHERE host_id = ?
 `,
+	query.RecordCheckExist: "SELECT COUNT(id) FROM record WHERE checksum = ?",
 }

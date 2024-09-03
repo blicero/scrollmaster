@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 19:14:54 krylon>
+// Time-stamp: <2024-09-03 21:21:23 krylon>
 
 package database
 
@@ -918,7 +918,7 @@ func (db *Database) RecordAdd(r *model.Record) error {
 	var rows *sql.Rows
 
 EXEC_QUERY:
-	if rows, err = stmt.Query(r.HostID, r.Time.Unix(), r.Source, r.Message); err != nil {
+	if rows, err = stmt.Query(r.HostID, r.Time.Unix(), r.Source, r.Message, r.Checksum()); err != nil {
 		if worthARetry(err) {
 			waitForRetry()
 			goto EXEC_QUERY
@@ -1111,3 +1111,56 @@ EXEC_QUERY:
 	stamp = time.Unix(seconds, 0)
 	return stamp, nil
 } // func (db *Database) RecordGetMostRecent(hostID int64) (time.Time, error)
+
+// RecordCheckExist returns true if a record with the given checksum exists in the database
+func (db *Database) RecordCheckExist(cksum string) (bool, error) {
+	const qid query.ID = query.RecordCheckExist
+	var (
+		err   error
+		msg   string
+		stmt  *sql.Stmt
+		exist bool
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return exist, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(cksum); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return exist, err
+	}
+
+	defer rows.Close() // nolint: errcheck
+
+	if !rows.Next() {
+		// CANTHAPPEN
+		msg = fmt.Sprintf("No records for Checksum %s", cksum)
+		db.log.Printf("[CANTHAPPEN] %s\n", msg)
+		return false, errors.New(msg)
+	}
+
+	var cnt int64
+
+	if err = rows.Scan(&cnt); err != nil {
+		msg = fmt.Sprintf("Failed to extract timestamp (INTEGER) from database: %s",
+			err.Error())
+		db.log.Printf("[ERROR] %s\n", msg)
+		return exist, errors.New(msg)
+	}
+
+	exist = cnt > 0
+	return exist, nil
+} // func (db *Database) RecordCheckExist(cksum string) (bool, error)

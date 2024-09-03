@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 19:16:12 krylon>
+// Time-stamp: <2024-09-03 21:16:25 krylon>
 
 package database
 
@@ -23,6 +23,7 @@ CREATE TABLE record (
         stamp           INTEGER NOT NULL DEFAULT 0,
         source          TEXT NOT NULL,
         message         TEXT NOT NULL,
+        checksum        TEXT UNIQUE NOT NULL,
         FOREIGN KEY (host_id) REFERENCES host (id)
             ON UPDATE RESTRICT
             ON DELETE CASCADE,
@@ -32,4 +33,5 @@ CREATE TABLE record (
 	"CREATE INDEX record_host_idx ON record (host_id)",
 	"CREATE INDEX record_stamp_idx ON record (stamp)",
 	"CREATE INDEX record_source_idx ON record (source)",
+	"CREATE UNIQUE INDEX record_ck_idx ON record (checksum)",
 }
