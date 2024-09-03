@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 31. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-02 19:56:37 krylon>
+// Time-stamp: <2024-09-03 18:54:34 krylon>
 
 // Package agent implements the gathering and transmission of log records the the Server.
 package agent
@@ -91,6 +91,8 @@ func (ag *Agent) Run() error {
 	ag.active.Store(true)
 	defer ag.active.Store(false)
 
+	defer ag.saveCookieJar() // nolint: errcheck
+
 	if err = ag.reader.Init(); err != nil {
 		ag.log.Printf("[ERROR] Failed to initialize LogReader: %s\n",
 			err.Error())
@@ -120,6 +122,10 @@ func (ag *Agent) Run() error {
 			records = append(records, rec)
 		}
 
+		if len(records) == 0 {
+			goto WAIT
+		}
+
 		startStamp = records[len(records)-1].Time
 
 		if err = ag.submitRecords(records); err != nil {
@@ -134,6 +140,7 @@ func (ag *Agent) Run() error {
 			}
 		}
 
+	WAIT:
 		var delay = checkInterval + time.Second*time.Duration(errCnt*errCnt)
 		time.Sleep(delay)
 	}
@@ -156,7 +163,7 @@ func (ag *Agent) initCookieJar() (*cookiejar.Jar, error) {
 	ag.lock.Lock()
 	defer ag.lock.Unlock()
 
-	ustr = fmt.Sprintf("http://%s/ws/init",
+	ustr = fmt.Sprintf("http://%s/",
 		ag.addr)
 
 	if uri, err = url.Parse(ustr); err != nil {
@@ -177,6 +184,8 @@ func (ag *Agent) initCookieJar() (*cookiejar.Jar, error) {
 
 	if fh, err = os.Open(cookiepath); err != nil {
 		if os.IsNotExist(err) {
+			ag.log.Printf("[INFO] Cookiejar at %s was not found, moving on.\n",
+				cookiepath)
 			goto END
 		}
 		ag.log.Printf("[ERROR] Cannot open stored cookies at %s: %s\n",
@@ -269,6 +278,8 @@ func (ag *Agent) register() error {
 		ag.addr,
 		uriBase,
 		ag.hostname)
+
+	ag.log.Printf("[DEBUG] GET %s\n", ustr)
 
 	if res, err = ag.client.Get(ustr); err != nil {
 		ag.log.Printf("[ERROR] HTTP Protocol level error GETting %s: %s\n",
