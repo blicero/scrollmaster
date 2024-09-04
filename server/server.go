@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 16:44:41 krylon>
+// Time-stamp: <2024-09-04 13:31:29 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -156,7 +156,7 @@ func Create(addr string) (*Server, error) {
 	// srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
 
 	// Agent handlers
-	srv.router.HandleFunc("/ws/init/{hostname:(?:\\w+$)}", srv.handleAgentInit)
+	srv.router.HandleFunc("/ws/init/{hostname:(?:[^/]+$)}", srv.handleAgentInit)
 	srv.router.HandleFunc("/ws/submit_records", srv.handleSubmitRecords)
 	srv.router.HandleFunc("/ws/most_recent", srv.handleGetMostRecent)
 

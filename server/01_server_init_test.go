@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 25. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-31 17:44:24 krylon>
+// Time-stamp: <2024-09-04 13:36:33 krylon>
 
 package server
 
@@ -98,6 +98,49 @@ func TestServerHandleAgentInit(t *testing.T) {
 	} else {
 		host01.ID = hostID
 		testHost = host01
+	}
+
+	// We should check also for a host with a FQDN, i.e. containing dots.
+	var (
+		altClient http.Client
+		host03    = model.Host{Name: "wintermute.tessier-ashpool.com"}
+	)
+
+	buf.Reset()
+	uri = fmt.Sprintf("http://%s%s/%s",
+		addr,
+		path,
+		host03.Name)
+
+	if res, err = altClient.Get(uri); err != nil {
+		t.Fatalf("Error POSTing to %s: %s",
+			uri,
+			err.Error())
+	}
+
+	defer res.Body.Close() // nolint: errcheck
+
+	if res.StatusCode != 200 {
+		t.Fatalf("Unexpected HTTP status %03d", res.StatusCode)
+	} else if _, err = io.Copy(buf, res.Body); err != nil {
+		t.Fatalf("Error reading response body: %s", err.Error())
+	} else if err = json.Unmarshal(buf.Bytes(), &reply); err != nil {
+		t.Fatalf("Error decoding server reply: %s\n\n%s\n",
+			err.Error(),
+			buf.String())
+	} else if !reply.Status {
+		t.Fatalf("Failed to initialize Agent session for Host %s: %s",
+			host01.Name,
+			reply.Message)
+	} else if idstr, ok = reply.Payload["ID"]; !ok {
+		t.Errorf("Expected Host ID in Payload (%#v)",
+			reply.Payload)
+	} else if hostID, err = strconv.ParseInt(idstr, 10, 64); err != nil {
+		t.Errorf("Could not parse ID (%q): %s",
+			idstr,
+			err.Error())
+	} else if hostID < 1 {
+		t.Errorf("Server replied invalid hostID: %d", hostID)
 	}
 } // func TestServerHandleAgentInit(t *testing.T)
 
