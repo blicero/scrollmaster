@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-04 13:43:41 krylon>
+// Time-stamp: <2024-09-04 14:06:33 krylon>
 
 package common
 
@@ -219,4 +219,25 @@ func GetChecksum(data []byte) (string, error) {
 	var checkSumText = fmt.Sprintf("%x", checkSumBinary)
 
 	return checkSumText, nil
-} // func getChecksum(data []byte) (string, error)
+} // func GetChecksum(data []byte) (string, error)
+
+// Fibonacci computes the nth Fibonacci number
+func Fibonacci(n int64) int64 {
+	var (
+		a int64 = 1
+		b int64 = 1
+		i int64
+	)
+
+	if n <= 2 {
+		return 1
+	}
+
+	for i = 1; i < n; i++ {
+		var tmp = a
+		a = b
+		b = a + tmp
+	}
+
+	return a
+} // func Fibonacci(n int64) int64
