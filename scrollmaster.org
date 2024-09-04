@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-03 20:41:50 krylon>
+# Time-stamp: <2024-09-04 13:17:23 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,13 +12,13 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-03 Di 20:40]
+   #+CAPTION: Clock summary at [2024-09-04 Mi 13:16]
    | Headline                | Time      |           |      |      |      |
    |-------------------------+-----------+-----------+------+------+------|
    | *Total time*            | *1d 4:49* |           |      |      |      |
    |-------------------------+-----------+-----------+------+------+------|
    | *Scrollmaster*          | *1d 4:49* |           |      |      |      |
-   | \_  /Components [5/5]/  |           | /1d 4:49/ |      |      |      |
+   | \_  /Components [6/6]/  |           | /1d 4:49/ |      |      |      |
    | \_    Main [0/0]        |           |           | 0:59 |      |      |
    | \_    Common [1/1]      |           |           | 3:46 |      |      |
    | \_      Paths           |           |           |      | 3:46 |      |
@@ -31,7 +31,7 @@
    | \_      Handling Agents |           |           |      | 2:59 |      |
    | \_        Cleanup login |           |           |      |      | 0:34 |
    | \_      Testing         |           |           |      | 1:12 |      |
-   | \_    Agent [0/1]       |           |           | 4:15 |      |      |
+   | \_    Agent [2/2]       |           |           | 4:15 |      |      |
    | \_      Throttle Agent  |           |           |      | 0:58 |      |
    #+END:
 ** Features [0/0]
@@ -39,7 +39,7 @@
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
    :END:
-** Components [6/6]
+** Components [7/7]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
@@ -135,7 +135,7 @@
      So I am going to use testing as an opportunity to learn a little about this,
      and hopefully will end up with a Server that is well-tested and handles
      those things reasonably well.
-*** Agent [1/2]
+*** Agent [2/2]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
@@ -145,7 +145,8 @@
     CLOCK: [2024-08-31 Sa 15:50]--[2024-08-31 Sa 16:26] =>  0:36
     CLOCK: [2024-08-31 Sa 14:45]--[2024-08-31 Sa 15:46] =>  1:01
     :END:
-**** TODO Uniqueness
+**** DONE Uniqueness
+     CLOSED: [2024-09-04 Mi 13:15]
      I want to avoid sending and receiving the same log record multiple times.
 **** DONE Throttle Agent
      CLOSED: [2024-09-03 Di 20:40]
