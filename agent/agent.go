@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 31. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 20:00:16 krylon>
+// Time-stamp: <2024-09-04 14:55:56 krylon>
 
 // Package agent implements the gathering and transmission of log records the the Server.
 package agent
@@ -35,6 +35,7 @@ const (
 	checkInterval = time.Second * 10
 	maxErr        = 5
 	maxRecordCnt  = 10000
+	maxDelay      = time.Second * 1800
 )
 
 // Agent is the component that gathers Logrecords on a Host and transmits
@@ -85,8 +86,9 @@ func (ag *Agent) IsActive() bool {
 
 func (ag *Agent) Run() error {
 	var (
-		err        error
-		startStamp time.Time
+		err              error
+		startStamp       time.Time
+		lightCnt, errCnt int64
 	)
 
 	ag.active.Store(true)
@@ -107,10 +109,6 @@ func (ag *Agent) Run() error {
 			err.Error())
 	}
 
-	var errCnt int
-	// var ticker = time.NewTicker(checkInterval)
-	// defer ticker.Stop()
-
 	for ag.active.Load() {
 		var (
 			queue   = make(chan model.Record)
@@ -124,7 +122,12 @@ func (ag *Agent) Run() error {
 		}
 
 		if len(records) == 0 {
+			lightCnt++
 			goto WAIT
+		} else if len(records) < maxRecordCnt {
+			lightCnt++
+		} else {
+			lightCnt = 0
 		}
 
 		startStamp = records[len(records)-1].Time
@@ -139,10 +142,15 @@ func (ag *Agent) Run() error {
 					errCnt)
 				return err
 			}
+		} else {
+			errCnt = 0
 		}
 
 	WAIT:
-		var delay = checkInterval + time.Second*time.Duration(errCnt*errCnt)
+		var delay = checkInterval + time.Second*time.Duration(errCnt*errCnt) +
+			time.Second*time.Duration(common.Fibonacci(lightCnt))
+		ag.log.Printf("[TRACE] Waiting for %s\n",
+			delay)
 		time.Sleep(delay)
 	}
 
