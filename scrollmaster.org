@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-04 13:44:42 krylon>
+# Time-stamp: <2024-09-04 15:00:38 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,13 +12,13 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-04 Mi 13:44]
+   #+CAPTION: Clock summary at [2024-09-04 Mi 15:00]
    | Headline                           | Time      |           |       |      |      |
    |------------------------------------+-----------+-----------+-------+------+------|
-   | *Total time*                       | *1d 5:06* |           |       |      |      |
+   | *Total time*                       | *1d 6:16* |           |       |      |      |
    |------------------------------------+-----------+-----------+-------+------+------|
-   | *Scrollmaster*                     | *1d 5:06* |           |       |      |      |
-   | \_  /Components [7/7]/             |           | /1d 5:06/ |       |      |      |
+   | *Scrollmaster*                     | *1d 6:16* |           |       |      |      |
+   | \_  /Components [10/10]/           |           | /1d 6:16/ |       |      |      |
    | \_    Main [0/0]                   |           |           |  0:59 |      |      |
    | \_    Common [1/1]                 |           |           |  3:46 |      |      |
    | \_      Paths                      |           |           |       | 3:46 |      |
@@ -32,7 +32,8 @@
    | \_        Handle Agents with FQDNs |           |           |       |      | 0:14 |
    | \_        Cleanup login            |           |           |       |      | 0:34 |
    | \_      Testing                    |           |           |       | 1:12 |      |
-   | \_    Agent [3/3]                  |           |           |  4:18 |      |      |
+   | \_    Agent [4/4]                  |           |           |  5:28 |      |      |
+   | \_      Don't be clingy            |           |           |       | 1:10 |      |
    | \_      Proper short form hostname |           |           |       | 0:03 |      |
    | \_      Throttle Agent             |           |           |       | 0:58 |      |
    #+END:
@@ -41,7 +42,7 @@
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
    :END:
-** Components [7/7]
+** Components [10/10]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
@@ -142,7 +143,7 @@
      So I am going to use testing as an opportunity to learn a little about this,
      and hopefully will end up with a Server that is well-tested and handles
      those things reasonably well.
-*** Agent [3/3]
+*** Agent [4/4]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
@@ -152,6 +153,16 @@
     CLOCK: [2024-08-31 Sa 15:50]--[2024-08-31 Sa 16:26] =>  0:36
     CLOCK: [2024-08-31 Sa 14:45]--[2024-08-31 Sa 15:46] =>  1:01
     :END:
+**** DONE Don't be clingy
+     CLOSED: [2024-09-04 Mi 14:59]
+     :LOGBOOK:
+     CLOCK: [2024-09-04 Mi 13:49]--[2024-09-04 Mi 14:59] =>  1:10
+     :END:
+     The Agent should not be more busy than it has to. When the most recent
+     batch of records was smaller than the maximum permitted amount, maybe
+     wait a little longer for the next run?
+     Also, if the Server is not reachable, wait progressively longer for
+     subsequent attempts?
 **** CANCELLED Proper short form hostname
      CLOSED: [2024-09-04 Mi 13:29]
      :LOGBOOK:
