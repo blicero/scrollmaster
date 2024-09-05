@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-08-30 23:46:47 krylon>
+// Time-stamp: <2024-09-05 20:56:07 krylon>
 
 package database
 
@@ -78,3 +78,22 @@ func TestRecordGetMostRecent(t *testing.T) {
 		}
 	}
 } // func TestRecordGetMostRecent(t *testing.T)
+
+func TestRecordGetRecent(t *testing.T) {
+	if tdb == nil {
+		t.SkipNow()
+	}
+
+	var (
+		err     error
+		records []model.Record
+	)
+
+	if records, err = tdb.RecordGetRecent(2); err != nil {
+		t.Errorf("Failed to get 2 recent records: %s",
+			err.Error())
+	} else if len(records) != 2 {
+		t.Errorf("Unexpected number of records: %d (expected 2)",
+			len(records))
+	}
+} // func TestRecordGetRecent(t *testing.T)

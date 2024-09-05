@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 21:21:23 krylon>
+// Time-stamp: <2024-09-05 20:58:00 krylon>
 
 package database
 
@@ -1164,3 +1164,57 @@ EXEC_QUERY:
 	exist = cnt > 0
 	return exist, nil
 } // func (db *Database) RecordCheckExist(cksum string) (bool, error)
+
+// RecordGetRecent fetches the <max> most recent Records from the database.
+// A negative number returns ALL records, which should probably be avoided.
+func (db *Database) RecordGetRecent(max int64) ([]model.Record, error) {
+	const qid query.ID = query.RecordGetRecent
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(max); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	var records = make([]model.Record, 0)
+
+	for rows.Next() {
+		var (
+			r         model.Record
+			timestamp int64
+		)
+
+		if err = rows.Scan(&r.ID, &r.HostID, &timestamp, &r.Source, &r.Message); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		r.Time = time.Unix(timestamp, 0)
+		records = append(records, r)
+	}
+
+	return records, nil
+} // func (db *Database) RecordGetRecent(max int64) ([]model.Record, error)

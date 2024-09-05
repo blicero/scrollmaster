@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 21:16:00 krylon>
+// Time-stamp: <2024-09-05 20:51:18 krylon>
 
 package database
 
@@ -47,4 +47,15 @@ FROM record
 WHERE host_id = ?
 `,
 	query.RecordCheckExist: "SELECT COUNT(id) FROM record WHERE checksum = ?",
+	query.RecordGetRecent: `
+SELECT
+    id,
+    host_id,
+    stamp,
+    source,
+    message
+FROM record
+ORDER BY stamp DESC
+LIMIT ?
+`,
 }
