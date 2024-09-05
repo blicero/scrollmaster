@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-05 21:58:25 krylon>
+# Time-stamp: <2024-09-05 23:50:40 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,13 +12,13 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-05 Do 21:57]
+   #+CAPTION: Clock summary at [2024-09-05 Do 23:50]
    | Headline                           | Time      |           |       |      |      |
    |------------------------------------+-----------+-----------+-------+------+------|
-   | *Total time*                       | *1d 8:06* |           |       |      |      |
+   | *Total time*                       | *1d 9:51* |           |       |      |      |
    |------------------------------------+-----------+-----------+-------+------+------|
-   | *Scrollmaster*                     | *1d 8:06* |           |       |      |      |
-   | \_  /Components [10/10]/           |           | /1d 8:06/ |       |      |      |
+   | *Scrollmaster*                     | *1d 9:51* |           |       |      |      |
+   | \_  /Components [10/10]/           |           | /1d 9:51/ |       |      |      |
    | \_    Main [0/0]                   |           |           |  0:59 |      |      |
    | \_    Common [1/1]                 |           |           |  3:46 |      |      |
    | \_      Paths                      |           |           |       | 3:46 |      |
@@ -36,7 +36,7 @@
    | \_      Don't be clingy            |           |           |       | 1:10 |      |
    | \_      Proper short form hostname |           |           |       | 0:03 |      |
    | \_      Throttle Agent             |           |           |       | 0:58 |      |
-   | \_    Frontend [0/0]               |           |           |  1:50 |      |      |
+   | \_    Frontend [0/0]               |           |           |  3:35 |      |      |
    #+END:
 ** Features [0/0]
    :PROPERTIES:
@@ -190,6 +190,7 @@
      considering that the server has to deal with several Agents concurrently.
 *** Frontend [0/0]
     :LOGBOOK:
+    CLOCK: [2024-09-05 Do 22:05]--[2024-09-05 Do 23:50] =>  1:45
     CLOCK: [2024-09-05 Do 20:07]--[2024-09-05 Do 21:57] =>  1:50
     :END:
     Okay, I declare the rest of the app sufficiently working that I can move
