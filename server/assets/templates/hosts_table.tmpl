@@ -1,13 +1,12 @@
 {{ define "hosts_table" }}
 {{/* Created on 10. 06. 2024 */}}
-{{/* Time-stamp: <2024-06-10 19:20:01 krylon> */}}
+{{/* Time-stamp: <2024-09-05 21:40:59 krylon> */}}
 <table class="table table-striped table-bordered caption-top">
   <caption>Hosts</caption>
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Address</th>
       <th>Last contact</th>
     </tr>
   </thead>
@@ -16,8 +15,7 @@
     {{ range .Hosts }}
     <tr>
       <td>{{ .ID }}</td>
-      <td>{{ .Name }}</td>
-      <td>{{ .Addr }}</td>
+      <td>{{ .NameShort }}</td>
       <td>{{ (fmt_time .LastSeen) }}</td>
     </tr>
     {{ else }}
