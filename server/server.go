@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-04 13:31:29 krylon>
+// Time-stamp: <2024-09-05 21:29:35 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -33,12 +33,13 @@ import (
 )
 
 const (
-	poolSize      = 4
-	bufSize       = 32768
-	keyLength     = 4096
-	sessionKey    = "Wer das liest, ist doof!"
-	sessionName   = "TeamOrca"
-	sessionMaxAge = 3600 * 24 * 7 // 1 week
+	poolSize            = 4
+	bufSize             = 32768
+	keyLength           = 4096
+	sessionKey          = "Wer das liest, ist doof!"
+	sessionNameAgent    = "TeamOrca"
+	sessionNameFrontend = "Frontend"
+	sessionMaxAge       = 3600 * 24 * 7 // 1 week
 )
 
 //go:embed assets
@@ -153,7 +154,8 @@ func Create(addr string) (*Server, error) {
 	// Web interface handlers
 	srv.router.HandleFunc("/favicon.ico", srv.handleFavIco)
 	srv.router.HandleFunc("/static/{file}", srv.handleStaticFile)
-	// srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
+	srv.router.HandleFunc("/{page:(?:index|main|start)?$}", srv.handleMain)
+	srv.router.HandleFunc("/log/recent/{cnt:(?:\\d+)?$}", srv.handleLogRecent)
 
 	// Agent handlers
 	srv.router.HandleFunc("/ws/init/{hostname:(?:[^/]+$)}", srv.handleAgentInit)
@@ -178,7 +180,7 @@ func (srv *Server) handleFavIco(w http.ResponseWriter, request *http.Request) {
 		request.URL.EscapedPath())
 
 	const (
-		filename = "html/static/favicon.ico"
+		filename = "assets/static/favicon.ico"
 		mimeType = "image/vnd.microsoft.icon"
 	)
 
@@ -209,12 +211,12 @@ func (srv *Server) handleStaticFile(w http.ResponseWriter, request *http.Request
 	// srv.log.Printf("[TRACE] Handle request for %s\n",
 	// 	request.URL.EscapedPath())
 
-	// Since we controll what static files the server has available, we
-	// can easily map MIME type to slice. Soon.
+	// Since we control what static files the server has available,
+	// we can easily map MIME type to slice. Soon.
 
 	vars := mux.Vars(request)
 	filename := vars["file"]
-	path := filepath.Join("html", "static", filename)
+	path := filepath.Join("assets", "static", filename)
 
 	var mimeType string
 

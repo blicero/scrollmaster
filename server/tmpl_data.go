@@ -1,8 +1,8 @@
-// /home/krylon/go/src/ticker/web/tmpl_data.go
+// /home/krylon/go/src/github.com/blicero/server/tmpl_data.go
 // -*- mode: go; coding: utf-8; -*-
 // Created on 06. 05. 2020 by Benjamin Walkenhorst
 // (c) 2020 Benjamin Walkenhorst
-// Time-stamp: <2024-08-22 18:02:50 krylon>
+// Time-stamp: <2024-09-05 21:09:18 krylon>
 //
 // This file contains data structures to be passed to HTML templates.
 
@@ -14,6 +14,7 @@ import (
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
+	"github.com/blicero/scrollmaster/model"
 
 	"github.com/hashicorp/logutils"
 )
@@ -52,6 +53,14 @@ type tmplDataBase struct { // nolint: unused
 
 type tmplDataIndex struct { // nolint: unused,deadcode
 	tmplDataBase
+	Hosts []model.Host
+}
+
+type tmplDataLog struct {
+	tmplDataBase
+	Hosts     []model.Host
+	Hostnames map[int64]string
+	Records   []model.Record
 }
 
 // Local Variables:  //

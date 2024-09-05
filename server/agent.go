@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-04 08:42:44 krylon>
+// Time-stamp: <2024-09-05 20:28:43 krylon>
 
 package server
 
@@ -82,10 +82,10 @@ func (srv *Server) handleAgentInit(w http.ResponseWriter, r *http.Request) {
 		goto SEND_RESPONSE
 	}
 
-	if sess, err = srv.store.Get(r, sessionName); err != nil {
+	if sess, err = srv.store.Get(r, sessionNameAgent); err != nil {
 		res.Message = fmt.Sprintf(
 			"Error getting/creating session %s: %s",
-			sessionName,
+			sessionNameAgent,
 			err.Error())
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		sess = nil
@@ -165,10 +165,10 @@ func (srv *Server) handleGetMostRecent(w http.ResponseWriter, r *http.Request) {
 		timestamp   time.Time
 	)
 
-	if sess, err = srv.store.Get(r, sessionName); err != nil {
+	if sess, err = srv.store.Get(r, sessionNameAgent); err != nil {
 		res.Message = fmt.Sprintf(
 			"Error getting/creating session %s: %s",
-			sessionName,
+			sessionNameAgent,
 			err.Error())
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		sess = nil
@@ -265,10 +265,10 @@ func (srv *Server) handleSubmitRecords(w http.ResponseWriter, r *http.Request) {
 		ok, txStatus bool
 	)
 
-	if sess, err = srv.store.Get(r, sessionName); err != nil {
+	if sess, err = srv.store.Get(r, sessionNameAgent); err != nil {
 		res.Message = fmt.Sprintf(
 			"Error getting/creating session %s: %s",
-			sessionName,
+			sessionNameAgent,
 			err.Error())
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		sess = nil
