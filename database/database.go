@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-05 20:58:00 krylon>
+// Time-stamp: <2024-09-05 22:08:00 krylon>
 
 package database
 
@@ -13,7 +13,6 @@ import (
 	"log"
 	"os"
 	"regexp"
-	"slices"
 	"sync"
 	"time"
 
@@ -1002,7 +1001,7 @@ EXEC_QUERY:
 		records = append(records, r)
 	}
 
-	slices.Reverse(records)
+	//slices.Reverse(records)
 
 	return records, nil
 } // func (db *Database) RecordGetByHost(h *model.Host, max int64) ([]model.Record, error)
