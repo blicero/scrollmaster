@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-07 10:46:47 krylon> */}}
+{{/* Time-stamp: <2024-09-07 14:46:05 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -10,44 +10,45 @@
 
     <h2>Search</h2>
 
-    <table>
-      <tr>
-        <th>By Host</th>
-        <th>By Source</th>
-        <th>By Period</th>
-      </tr>
+    <script>
+     function clear_results() {
+       jQuery("#results")[0].innerHTML = ""
+     } // function clear_results()
 
-      <tr>
-        <td>
-          <table class="horizontal">
+     function clear_filters() {
+       $("#search_filters checkbox").each(() => { $(this).checked = false })
+     } // function clear_filters()
+    </script>
+
+    <div class="wrapper">
+      
+      <div class="row" id="search_filters">
+        <div class="col">
+          <ul>
             {{ range .Hosts }}
-            <tr>
-              <th>{{ .Name }}</th>
-              <td>
-                <input type="checkbox"
-                       id="filter_host_{{ .ID }}"
-                       value="{{ .ID }}" />
-              </td>
-            </tr>
+            <li>
+              <input type="checkbox"
+                     id="filter_host_{{ .ID }}"
+                     value="{{ .ID }}" />
+              {{ .NameShort }}
+            </li>
             {{ end }}
-          </table>
-        </td>
-
-        <td>
-          <table class="horizontal">
-            {{ range .Sources }}
-            <tr>
-              <th>{{ . }}</th>
-              <th>
-                <input type="checkbox"
-                       id="filter_src_{{ sanitize . }}" />
-              </th>
-            </tr>
+          </ul>
+        </div>
+        
+        <div class="col">
+          <ul>
+            {{ range $src, $cnt := .Sources }}
+            <li>
+              <input type="checkbox"
+                     id="filter_src_{{ sanitize $src }}" />
+              {{ $src }} ({{ $cnt }})
+            </li>
             {{ end }}
-          </table>
-        </td>
+          </ul>
+        </div>
 
-        <td>
+        <div class="col">
           <table class="horizontal">
             <tr>
               <th>Begin:</th>
@@ -64,19 +65,22 @@
               </td>
             </tr>
           </table>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td colspan="3">
-          <input type="button"
-                 value="Search" />
-        </td>
-      </tr>
-    </table>
+      <div class="row">
+        <div class="col">
+          <input type="button" value="Search" />
+        </div>
+        <div class="col">
+          <input type="button" value="Clear" onclick="clear_filters()"/>
+        </div>
+      </div>
 
-    <div id="results">
-      Bla
+      <div id="results" class="row">
+        Bla
+      </div>
+
     </div>
 
     {{ template "footer" . }}

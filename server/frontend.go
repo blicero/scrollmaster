@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-07 10:54:59 krylon>
+// Time-stamp: <2024-09-07 11:18:00 krylon>
 //
 // This file contains handlers etc. having to do with the web-based frontend.
 
@@ -182,7 +182,6 @@ func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request) {
 		msg  string
 		tmpl *template.Template
 		db   *database.Database
-		cnt  int64
 		sess *sessions.Session
 		data = tmplDataSearch{
 			tmplDataBase: tmplDataBase{
@@ -212,8 +211,24 @@ func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request) {
 		srv.log.Printf("[ERROR] %s\n", msg)
 		srv.sendErrorMessage(w, msg)
 		return
+	} else if data.Sources, err = db.RecordGetSources(); err != nil {
+		msg = fmt.Sprintf("Failed to query all record sources from database: %s", err.Error())
+		srv.log.Printf("[ERROR] %s\n", msg)
+		srv.sendErrorMessage(w, msg)
+		return
 	}
 
-	data.Sources = make([]string, 0, 16)
-	var srcMap = make(map[string]bool)
+	if err = sess.Save(r, w); err != nil {
+		srv.log.Printf("[ERROR] Failed to set session cookie: %s\n",
+			err.Error())
+	}
+	w.Header().Set("Cache-Control", "no-store, max-age=0")
+	w.Header().Set("Content-Type", "text/html")
+	w.WriteHeader(200)
+	if err = tmpl.Execute(w, &data); err != nil {
+		msg = fmt.Sprintf("Error rendering template %q: %s",
+			tmplName,
+			err.Error())
+		srv.sendErrorMessage(w, msg)
+	}
 } // func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request)
