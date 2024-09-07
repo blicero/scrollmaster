@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-07 14:46:05 krylon> */}}
+{{/* Time-stamp: <2024-09-07 16:10:09 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -10,21 +10,36 @@
 
     <h2>Search</h2>
 
-    <script>
+    <script type="text/javascript">
      function clear_results() {
        jQuery("#results")[0].innerHTML = ""
      } // function clear_results()
 
      function clear_filters() {
-       $("#search_filters checkbox").each(() => { $(this).checked = false })
+       let boxes = jQuery("#search_filters input[type=checkbox]")
+
+       for (var i = 0; i < boxes.length; i++) {
+         boxes[i].checked = false
+       }
      } // function clear_filters()
+
+     function perform_search() {
+       let hosts = _.find(jQuery("#select_hosts input[type=checkbox]"),
+                                (x) => { return x.checked })
+       let sources = _.find(
+         jQuery("#select_sources input[type=checkbox]"),
+         (x) => { return x.checked }
+       )
+       let period = _.map(jQuery("#search_filters input[type=datetime-local]"),
+                          (x) => { return x.value })
+     } // function perform_search()
     </script>
 
-    <div class="wrapper">
+    <div class="container">
       
       <div class="row" id="search_filters">
         <div class="col">
-          <ul>
+          <ul id="select_hosts">
             {{ range .Hosts }}
             <li>
               <input type="checkbox"
@@ -37,7 +52,7 @@
         </div>
         
         <div class="col">
-          <ul>
+          <ul id="select_sources">
             {{ range $src, $cnt := .Sources }}
             <li>
               <input type="checkbox"
@@ -49,7 +64,7 @@
         </div>
 
         <div class="col">
-          <table class="horizontal">
+          <table class="horizontal" id="select_period">
             <tr>
               <th>Begin:</th>
               <td>
@@ -70,7 +85,7 @@
 
       <div class="row">
         <div class="col">
-          <input type="button" value="Search" />
+          <input type="button" value="Search" onclick="perform_search()" />
         </div>
         <div class="col">
           <input type="button" value="Clear" onclick="clear_filters()"/>
