@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-07 11:01:15 krylon>
+// Time-stamp: <2024-09-07 11:25:48 krylon>
 
 package database
 
@@ -12,7 +12,7 @@ var qdb = map[query.ID]string{
 	query.HostAdd:            "INSERT INTO host (name, last_seen) VALUES (?, ?) RETURNING id",
 	query.HostGetByName:      "SELECT id, last_seen FROM host WHERE name = ?",
 	query.HostGetByID:        "SELECT name, last_seen FROM host WHERE id = ?",
-	query.HostGetAll:         "SELECT id, name, last_seen FROM host",
+	query.HostGetAll:         "SELECT id, name, last_seen FROM host ORDER BY name",
 	query.HostUpdateLastSeen: "UPDATE host SET last_seen = ? WHERE id = ?",
 	query.RecordAdd: `
 INSERT INTO record (host_id, stamp, source, message, checksum)
