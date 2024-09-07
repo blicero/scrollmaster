@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-05 22:08:00 krylon>
+// Time-stamp: <2024-09-07 11:04:39 krylon>
 
 package database
 
@@ -1217,3 +1217,56 @@ EXEC_QUERY:
 
 	return records, nil
 } // func (db *Database) RecordGetRecent(max int64) ([]model.Record, error)
+
+// RecordGetSources returns a map of all the distinct sources occurring in the database
+// and their respective frequencies.
+func (db *Database) RecordGetSources() (map[string]int64, error) {
+	const qid query.ID = query.RecordGetSources
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	var sources = make(map[string]int64)
+
+	for rows.Next() {
+		var (
+			src string
+			cnt int64
+		)
+
+		if err = rows.Scan(&src, &cnt); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		sources[src] = cnt
+	}
+
+	return sources, nil
+} // func (db *Database) RecordGetSources() (map[string]int64, error)

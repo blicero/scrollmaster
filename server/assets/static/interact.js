@@ -1,4 +1,4 @@
-// Time-stamp: <2024-09-05 23:39:34 krylon>
+// Time-stamp: <2024-09-06 19:59:55 krylon>
 // -*- mode: javascript; coding: utf-8; -*-
 // Copyright 2015-2020 Benjamin Walkenhorst <krylon@gmx.net>
 //
@@ -144,9 +144,37 @@ function toggle_visibility(hostID) {
     const visible = !$(`#show_${hostID}`)[0].checked
     $(query).each(function () {
         if (visible) {
-            $(this).hide();
+            $(this).hide()
         } else {
-            $(this).show();
+            $(this).show()
         }
-    });
+    })
 } // function toggle_visibility(hostID)
+
+function filter_source(src) {
+    const query = `tr.src_${src}`
+    const visible = !$(`#filter_src_${src}`)[0].checked
+    $(query).each(function () {
+        if (visible) {
+            $(this).hide()
+        } else {
+            $(this).show()
+        }
+    })
+} // function filter_source(src)
+
+function toggle_visibility_all() {
+    const visible = !$("#filter_toggle_all")[0].checked
+
+    const boxes = jQuery("#sources_list input.filter_src_check")
+
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].checked = !visible
+    }
+
+    const rows = jQuery("#records > tr")
+
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].hide()
+    }
+} // function toggle_visibility_all()

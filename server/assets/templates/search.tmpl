@@ -1,0 +1,85 @@
+{{ define "search" }}
+{{/* Created on 06. 09. 2024 */}}
+{{/* Time-stamp: <2024-09-07 10:46:47 krylon> */}}
+<!DOCTYPE html>
+<html>
+  {{ template "head" . }}
+
+  <body>
+    {{ template "intro" . }}
+
+    <h2>Search</h2>
+
+    <table>
+      <tr>
+        <th>By Host</th>
+        <th>By Source</th>
+        <th>By Period</th>
+      </tr>
+
+      <tr>
+        <td>
+          <table class="horizontal">
+            {{ range .Hosts }}
+            <tr>
+              <th>{{ .Name }}</th>
+              <td>
+                <input type="checkbox"
+                       id="filter_host_{{ .ID }}"
+                       value="{{ .ID }}" />
+              </td>
+            </tr>
+            {{ end }}
+          </table>
+        </td>
+
+        <td>
+          <table class="horizontal">
+            {{ range .Sources }}
+            <tr>
+              <th>{{ . }}</th>
+              <th>
+                <input type="checkbox"
+                       id="filter_src_{{ sanitize . }}" />
+              </th>
+            </tr>
+            {{ end }}
+          </table>
+        </td>
+
+        <td>
+          <table class="horizontal">
+            <tr>
+              <th>Begin:</th>
+              <td>
+                <input type="datetime-local"
+                       id="filter_period_begin" />
+              </td>
+            </tr>
+            <tr>
+              <th>End:</th>
+              <td>
+                <input type="datetime-local"
+                       id="filter_period_end" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3">
+          <input type="button"
+                 value="Search" />
+        </td>
+      </tr>
+    </table>
+
+    <div id="results">
+      Bla
+    </div>
+
+    {{ template "footer" . }}
+  </body>
+</html>
+{{ end }}

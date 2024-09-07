@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-05 20:51:18 krylon>
+// Time-stamp: <2024-09-07 11:01:15 krylon>
 
 package database
 
@@ -58,4 +58,11 @@ FROM record
 ORDER BY stamp DESC
 LIMIT ?
 `,
+	query.RecordGetSources: `
+SELECT
+    source,
+    COUNT(source) AS cnt
+FROM record
+GROUP BY source
+ORDER BY source`,
 }

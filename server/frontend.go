@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-05 21:40:20 krylon>
+// Time-stamp: <2024-09-07 10:54:59 krylon>
 //
 // This file contains handlers etc. having to do with the web-based frontend.
 
@@ -12,6 +12,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"slices"
 	"strconv"
 
 	"github.com/blicero/scrollmaster/database"
@@ -143,6 +144,19 @@ func (srv *Server) handleLogRecent(w http.ResponseWriter, r *http.Request) {
 		data.Hostnames[h.ID] = h.NameShort()
 	}
 
+	data.Sources = make([]string, 0, 16)
+	var srcMap = make(map[string]bool)
+
+	for _, r := range data.Records {
+		var ok bool
+		if _, ok = srcMap[r.Source]; !ok {
+			srcMap[r.Source] = true
+			data.Sources = append(data.Sources, r.Source)
+		}
+	}
+
+	slices.Sort(data.Sources)
+
 	if err = sess.Save(r, w); err != nil {
 		srv.log.Printf("[ERROR] Failed to set session cookie: %s\n",
 			err.Error())
@@ -157,3 +171,49 @@ func (srv *Server) handleLogRecent(w http.ResponseWriter, r *http.Request) {
 		srv.sendErrorMessage(w, msg)
 	}
 } // func (srv *Server)  handleLogRecent(w http.ResponseWriter, r *http.Request)
+
+func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request) {
+	srv.log.Printf("[TRACE] Handle request for %s from %s\n",
+		r.URL.EscapedPath(),
+		r.RemoteAddr)
+	const tmplName = "search"
+	var (
+		err  error
+		msg  string
+		tmpl *template.Template
+		db   *database.Database
+		cnt  int64
+		sess *sessions.Session
+		data = tmplDataSearch{
+			tmplDataBase: tmplDataBase{
+				Title: "Main",
+				Debug: true,
+				URL:   r.URL.EscapedPath(),
+			},
+		}
+	)
+
+	db = srv.pool.Get()
+	defer srv.pool.Put(db)
+
+	if sess, err = srv.store.Get(r, sessionNameFrontend); err != nil {
+		msg = fmt.Sprintf("Error getting client session from session store: %s",
+			err.Error())
+		srv.log.Println("[CRITICAL] " + msg)
+		srv.sendErrorMessage(w, msg)
+		return
+	} else if tmpl = srv.tmpl.Lookup(tmplName); tmpl == nil {
+		msg = fmt.Sprintf("Could not find template %q", tmplName)
+		srv.log.Println("[CRITICAL] " + msg)
+		srv.sendErrorMessage(w, msg)
+		return
+	} else if data.Hosts, err = db.HostGetAll(); err != nil {
+		msg = fmt.Sprintf("Failed to query all Hosts from database: %s", err.Error())
+		srv.log.Printf("[ERROR] %s\n", msg)
+		srv.sendErrorMessage(w, msg)
+		return
+	}
+
+	data.Sources = make([]string, 0, 16)
+	var srcMap = make(map[string]bool)
+} // func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request)
