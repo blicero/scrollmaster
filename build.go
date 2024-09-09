@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 01. 02. 2021 by Benjamin Walkenhorst
 // (c) 2021 Benjamin Walkenhorst
-// Time-stamp: <2024-09-02 23:06:40 krylon>
+// Time-stamp: <2024-09-09 20:42:40 krylon>
 
 //go:build ignore
 // +build ignore
@@ -70,6 +70,7 @@ var candidates = map[string][]string{
 	},
 	"test": {
 		"database",
+		"model",
 		"logreader",
 		"server",
 	},
@@ -381,6 +382,7 @@ LOOP:
 	return result
 } // func dispatch(op string, workers int) error
 
+// nolint: gocyclo
 func worker(n int, op string, pkgq <-chan string, errq chan<- error, wg *sync.WaitGroup) {
 	var (
 		pkg string
