@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-09 22:35:00 krylon> */}}
+{{/* Time-stamp: <2024-09-09 23:44:43 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -31,8 +31,8 @@
 
        const sources = _.map(
          _.filter(
-           jQuery("#select_sources input[type=checkbox]"),
-           (x) => { return x.checked }
+           jQuery("#select_sources option"),
+           (x) => { return x.selected }
          ),
          (x) => { return x.value })
 
@@ -86,16 +86,11 @@
         </div>
         
         <div class="col">
-          <ul id="select_sources">
+          <select id="select_sources" multiple size="20">
             {{ range $src, $cnt := .Sources }}
-            <li>
-              <input type="checkbox"
-                     value="{{ $src }}"
-                     id="filter_src_{{ sanitize $src }}" />
-              {{ $src }} ({{ $cnt }})
-            </li>
+            <option>{{ $src }}</option>
             {{ end }}
-          </ul>
+          </select>
         </div>
 
         <div class="col">
