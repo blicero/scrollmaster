@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-09 22:46:02 krylon>
+# Time-stamp: <2024-09-09 23:56:36 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,15 +12,15 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-09 Mo 22:46]
+   #+CAPTION: Clock summary at [2024-09-09 Mo 23:56]
    | Headline                           | Time       |           |       |       |      |
    |------------------------------------+------------+-----------+-------+-------+------|
-   | *Total time*                       | *2d 12:39* |           |       |       |      |
+   | *Total time*                       | *2d 13:25* |           |       |       |      |
    |------------------------------------+------------+-----------+-------+-------+------|
-   | *Scrollmaster*                     | *2d 12:39* |           |       |       |      |
-   | \_  /Features [0/0]/               |            | /8:40/    |       |       |      |
-   | \_    Search [0/0]                 |            |           |  8:40 |       |      |
-   | \_  /Components [10/12]/           |            | /2d 3:59/ |       |       |      |
+   | *Scrollmaster*                     | *2d 13:25* |           |       |       |      |
+   | \_  /Features [0/0]/               |            | /9:26/    |       |       |      |
+   | \_    Search [0/0]                 |            |           |  9:26 |       |      |
+   | \_  /Components [11/12]/           |            | /2d 3:59/ |       |       |      |
    | \_    Main [0/0]                   |            |           |  0:59 |       |      |
    | \_    Common [1/1]                 |            |           |  3:46 |       |      |
    | \_      Paths                      |            |           |       |  3:46 |      |
@@ -38,7 +38,7 @@
    | \_      Don't be clingy            |            |           |       |  1:10 |      |
    | \_      Proper short form hostname |            |           |       |  0:03 |      |
    | \_      Throttle Agent             |            |           |       |  0:58 |      |
-   | \_    Frontend [0/2]               |            |           | 21:43 |       |      |
+   | \_    Frontend [1/2]               |            |           | 21:43 |       |      |
    | \_      Filter [0/0]               |            |           |       | 18:07 |      |
    #+END:
 ** Features [0/0]
@@ -52,6 +52,7 @@
     :VISIBILITY: children
     :END:
     :LOGBOOK:
+    CLOCK: [2024-09-09 Mo 23:09]--[2024-09-09 Mo 23:55] =>  0:46
     CLOCK: [2024-09-09 Mo 22:24]--[2024-09-09 Mo 22:45] =>  0:21
     CLOCK: [2024-09-09 Mo 19:45]--[2024-09-09 Mo 22:14] =>  2:29
     CLOCK: [2024-09-07 Sa 16:10]--[2024-09-07 Sa 19:28] =>  3:18
@@ -62,7 +63,7 @@
     :END:
     If I really expect using this, I have to work on my frontend skills
     somewhat. My current first attempt at build a search form is too ugly to bear. 
-** Components [10/12]
+** Components [11/12]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
@@ -207,7 +208,7 @@
      - compression
      I think limiting the number of records per request is my best option,
      considering that the server has to deal with several Agents concurrently.
-*** Frontend [0/2]
+*** Frontend [1/2]
     :LOGBOOK:
     CLOCK: [2024-09-05 Do 23:56]--[2024-09-05 Do 23:57] =>  0:01
     CLOCK: [2024-09-05 Do 22:05]--[2024-09-05 Do 23:50] =>  1:45
@@ -220,7 +221,8 @@
      :LOGBOOK:
      CLOCK: [2024-09-06 Fr 16:59]--[2024-09-07 Sa 11:06] => 18:07
      :END:
-**** TODO Search [0/0]
+**** DONE Search [0/0]
+     CLOSED: [2024-09-09 Mo 23:56]
 ** Bugs [0/0]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
