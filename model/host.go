@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-05 21:52:23 krylon>
+// Time-stamp: <2024-09-09 20:34:58 krylon>
 
 package model
 
@@ -13,6 +13,7 @@ import (
 
 var namePat = regexp.MustCompile("^([^.]+)")
 
+// Host represents a system that we gather log records from.
 type Host struct {
 	ID       int64
 	Name     string
@@ -24,7 +25,7 @@ type Host struct {
 func (h *Host) NameShort() string {
 	if m := namePat.FindStringSubmatch(h.Name); len(m) > 1 {
 		return m[1]
-	} else {
-		return h.Name
 	}
+
+	return h.Name
 } // func (h *Host) NameShort() string
