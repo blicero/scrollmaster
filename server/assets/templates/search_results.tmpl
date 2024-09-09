@@ -1,0 +1,25 @@
+{{ define "search_results" }}
+{{/* Created on 09. 09. 2024 */}}
+{{/* Time-stamp: <2024-09-09 21:56:56 krylon> */}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Time</th>
+      <th>Source</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody id="records">
+    {{ $hosts := .Hostnames }}
+    {{ range .Records }}
+    <tr class="Host{{ .HostID }} src_{{ .Source }}">
+      <td>{{ index $hosts .HostID }}</td>
+      <td>{{ fmt_time .Time }}</td>
+      <td>{{ .Source }}</td>
+      <td>{{ .Message }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+{{ end }}

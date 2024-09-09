@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-07 16:10:09 krylon> */}}
+{{/* Time-stamp: <2024-09-09 22:11:24 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -24,14 +24,43 @@
      } // function clear_filters()
 
      function perform_search() {
-       let hosts = _.find(jQuery("#select_hosts input[type=checkbox]"),
-                                (x) => { return x.checked })
-       let sources = _.find(
-         jQuery("#select_sources input[type=checkbox]"),
-         (x) => { return x.checked }
-       )
-       let period = _.map(jQuery("#search_filters input[type=datetime-local]"),
-                          (x) => { return x.value })
+       const hosts = _.map(_.filter(jQuery("#select_hosts input[type=checkbox]"),
+                                          (x) => { return x.checked }),
+                           (x) => { return x.value })
+
+
+       const sources = _.map(
+         _.filter(
+           jQuery("#select_sources input[type=checkbox]"),
+           (x) => { return x.checked }
+         ),
+         (x) => { return x.value })
+
+       const period = _.map(jQuery("#search_filters input[type=datetime-local]"),
+                            (x) => { return x.valueAsDate })
+
+       const query = {
+         "hosts": _.map(hosts, (x) => { return Number.parseInt(x) }),
+         "sources": sources,
+         "period": period,
+       }
+
+       const qstr = JSON.stringify(query)
+
+       const req = $.post("/ajax/search",
+                          qstr,
+                          (res) => {
+         console.log(res)
+         const div = jQuery("#results")[0]
+         div.innerHTML = res.Payload["search_results"]
+       },
+                          'json')
+
+       req.fail(function (reply, status_text, xhr) {
+         console.log(`Error searching: ${status_text} ${reply} ${xhr}`)
+       })
+
+       console.log("Things have never been better")
      } // function perform_search()
     </script>
 
@@ -56,6 +85,7 @@
             {{ range $src, $cnt := .Sources }}
             <li>
               <input type="checkbox"
+                     value="{{ $src }}"
                      id="filter_src_{{ sanitize $src }}" />
               {{ $src }} ({{ $cnt }})
             </li>
@@ -69,6 +99,7 @@
               <th>Begin:</th>
               <td>
                 <input type="datetime-local"
+                       value="1970-01-01T00:00:00"
                        id="filter_period_begin" />
               </td>
             </tr>
@@ -76,6 +107,7 @@
               <th>End:</th>
               <td>
                 <input type="datetime-local"
+                       value="2099-31-12T23:59:59"
                        id="filter_period_end" />
               </td>
             </tr>
