@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-07 11:18:00 krylon>
+// Time-stamp: <2024-09-09 22:30:48 krylon>
 //
 // This file contains handlers etc. having to do with the web-based frontend.
 
@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"slices"
 	"strconv"
+	"time"
 
 	"github.com/blicero/scrollmaster/database"
 	"github.com/gorilla/mux"
@@ -189,6 +190,8 @@ func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request) {
 				Debug: true,
 				URL:   r.URL.EscapedPath(),
 			},
+			Begin: time.Now().Add(time.Hour * -24),
+			End:   time.Now(),
 		}
 	)
 

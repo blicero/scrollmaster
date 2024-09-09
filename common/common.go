@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-05 21:59:17 krylon>
+// Time-stamp: <2024-09-09 22:26:23 krylon>
 
 package common
 
@@ -41,6 +41,7 @@ const (
 	TimestampFormatMinute    = "2006-01-02 15:04"
 	TimestampFormatSubSecond = "2006-01-02 15:04:05.0000 MST"
 	TimestampFormatDate      = "2006-01-02"
+	TimestampFormatForm      = "2006-01-02T15:04:05"
 	HeartBeat                = time.Millisecond * 500
 	RCTimeout                = time.Millisecond * 10
 	Port                     = 5102

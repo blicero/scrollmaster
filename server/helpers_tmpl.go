@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 12. 12. 2018 by Benjamin Walkenhorst
 // (c) 2018 Benjamin Walkenhorst
-// Time-stamp: <2024-08-22 18:00:56 krylon>
+// Time-stamp: <2024-09-09 22:27:45 krylon>
 
 package server
 
@@ -36,6 +36,7 @@ var funcmap = template.FuncMap{
 	"hostname":         hostname,
 	"fmt_bytes":        formatBytes,
 	"fmt_time":         formatTime,
+	"fmt_time_form":    formatTimeForm,
 	"fmt_time_minute":  formatTimeMinute,
 	"fmt_float":        formatFloat,
 	"current_year":     currentYear,
@@ -166,6 +167,10 @@ func formatTime(t time.Time) string {
 func formatTimeMinute(t time.Time) string {
 	return t.Format(common.TimestampFormatMinute)
 } // func formatTimeMinute(t time.Time) string
+
+func formatTimeForm(t time.Time) string {
+	return t.Format(common.TimestampFormatForm)
+} // func formatTimeForm(t time.Time) string
 
 func formatFloat(f float64) string {
 	return fmt.Sprintf("%.1f", f)
