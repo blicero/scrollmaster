@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-07 11:04:39 krylon>
+// Time-stamp: <2024-09-09 19:55:06 krylon>
 
 package database
 
@@ -1270,3 +1270,56 @@ EXEC_QUERY:
 
 	return sources, nil
 } // func (db *Database) RecordGetSources() (map[string]int64, error)
+
+// RecordSearch searches ALL Records in the database according to the query.
+func (db *Database) RecordSearch(search *model.SearchQuery, q chan<- model.Record) {
+	const qid query.ID = query.RecordGetRecent
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	defer close(q)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(-1); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	for rows.Next() {
+		var (
+			r         model.Record
+			timestamp int64
+		)
+
+		if err = rows.Scan(&r.ID, &r.HostID, &timestamp, &r.Source, &r.Message); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return
+		}
+
+		r.Time = time.Unix(timestamp, 0)
+		if search.Match(&r) {
+			q <- r
+		}
+	}
+} // func (db *Database) RecordSearch(search *model.SearchQuery, q chan<- model.Record)
