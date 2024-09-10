@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 21:16:25 krylon>
+// Time-stamp: <2024-09-10 17:20:47 krylon>
 
 package database
 
@@ -34,4 +34,15 @@ CREATE TABLE record (
 	"CREATE INDEX record_stamp_idx ON record (stamp)",
 	"CREATE INDEX record_source_idx ON record (source)",
 	"CREATE UNIQUE INDEX record_ck_idx ON record (checksum)",
+
+	`
+CREATE view readable AS
+SELECT
+    r.id,
+    h.name,
+    datetime(r.stamp, 'unixepoch') AS stamp,
+    r.source,
+    r.message
+FROM record r
+INNER JOIN host h ON r.host_id = h.id`,
 }
