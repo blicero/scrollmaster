@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 09. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 20:39:55 krylon>
+// Time-stamp: <2024-09-10 19:21:17 krylon>
 
 package model
 
@@ -71,4 +71,4 @@ func TestSearchSerialize(t *testing.T) {
 				re)
 		}
 	}
-}
+} // func TestSearchSerialize(t *testing.T)

@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-09 23:44:43 krylon> */}}
+{{/* Time-stamp: <2024-09-10 19:44:31 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -21,6 +21,8 @@
        for (var i = 0; i < boxes.length; i++) {
          boxes[i].checked = false
        }
+
+       jQuery("#search_terms")[0].value = ""
      } // function clear_filters()
 
      function perform_search() {
@@ -39,10 +41,18 @@
        const period = _.map(jQuery("#search_filters input[type=datetime-local]"),
                             (x) => { return x.valueAsDate })
 
+       let terms = jQuery("#search_terms")[0].value.split("\n")
+
+       if (jQuery("#case_insensitive")[0].checked) {
+         terms = _.map(terms,
+                       (x) => { return "(?i)" + x })
+       }
+
        const query = {
          "hosts": _.map(hosts, (x) => { return Number.parseInt(x) }),
          "sources": sources,
          "period": period,
+         "terms": terms,
        }
 
        const qstr = JSON.stringify(query)
@@ -69,7 +79,7 @@
      }
     </script>
 
-    <div class="container">
+    <div class="container-fluid">
       
       <div class="row" id="search_filters">
         <div class="col">
@@ -113,6 +123,18 @@
             </tr>
           </table>
         </div>
+
+        <div class="col">
+          <textarea id="search_terms"
+                    spellcheck="false"
+                    rows="5"
+                    cols="30"></textarea>
+          <br />
+          <br />
+          Case-insensitive? <input type="checkbox"
+                                   checked="true"
+                                   id="case_insensitive" />
+        </div>
       </div>
 
       <div class="row">
@@ -123,7 +145,7 @@
           <input type="button" value="Clear Filters" onclick="clear_filters()" />
         </div>
         <div class="col">
-          <input type="button" value="Clear Results" onclick="clear_results()" />
+          <input checked type="button" value="Clear Results" onclick="clear_results()" />
         </div>
       </div>
 
