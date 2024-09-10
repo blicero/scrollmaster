@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-10 17:58:28 krylon>
+# Time-stamp: <2024-09-10 19:56:23 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,14 +12,15 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-10 Di 17:58]
+   #+CAPTION: Clock summary at [2024-09-10 Di 19:56]
    | Headline                           | Time       |           |       |       |      |
    |------------------------------------+------------+-----------+-------+-------+------|
-   | *Total time*                       | *2d 14:05* |           |       |       |      |
+   | *Total time*                       | *2d 15:58* |           |       |       |      |
    |------------------------------------+------------+-----------+-------+-------+------|
-   | *Scrollmaster*                     | *2d 14:05* |           |       |       |      |
-   | \_  /Features [0/0]/               |            | /10:06/   |       |       |      |
-   | \_    Search [0/0]                 |            |           |  9:26 |       |      |
+   | *Scrollmaster*                     | *2d 15:58* |           |       |       |      |
+   | \_  /Features [0/0]/               |            | /11:59/   |       |       |      |
+   | \_    Search [1/3]                 |            |           | 11:19 |       |      |
+   | \_      Limit results              |            |           |       |  0:34 |      |
    | \_    Analysis [0/0]               |            |           |  0:40 |       |      |
    | \_  /Components [11/12]/           |            | /2d 3:59/ |       |       |      |
    | \_    Main [0/0]                   |            |           |  0:59 |       |      |
@@ -47,12 +48,13 @@
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
    :END:
-*** Search [0/0]
+*** Search [1/3]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
     :END:
     :LOGBOOK:
+    CLOCK: [2024-09-10 Di 17:53]--[2024-09-10 Di 19:12] =>  1:19
     CLOCK: [2024-09-09 Mo 23:09]--[2024-09-09 Mo 23:55] =>  0:46
     CLOCK: [2024-09-09 Mo 22:24]--[2024-09-09 Mo 22:45] =>  0:21
     CLOCK: [2024-09-09 Mo 19:45]--[2024-09-09 Mo 22:14] =>  2:29
@@ -69,6 +71,22 @@
     The basic search functionality works. I'm a bit surprised, but it does
     work. The UI is uglier than a blobfish, but I will leave it at that for
     now.
+**** TODO Limit results
+     :LOGBOOK:
+     CLOCK: [2024-09-10 Di 19:12]--[2024-09-10 Di 19:46] =>  0:34
+     :END:
+     Large numbers of search results can somewhat overwhelm the browser even
+     on my relatively beefy desktop (Ryzen 5700X, 32GB RAM)
+     I would have to paginate the results, which means retaining a lot more
+     state on the server side.
+     That would not work as an Ajax query. The search (not that I dislike the
+     idea) becomes an entity in its own  right.
+**** DONE Case-sensitivity optional
+     CLOSED: [2024-09-10 Di 19:50]
+**** TODO Validate patterns before performing search?
+     My first attempt was to parse the patterns in Javascript, but of course
+     Javascript has a different regex engine than Go, so it doesn't buy me
+     anything.
 *** Analysis [0/0]
     :LOGBOOK:
     CLOCK: [2024-09-10 Di 17:10]--[2024-09-10 Di 17:50] =>  0:40
