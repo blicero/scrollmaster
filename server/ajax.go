@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 21:58:39 krylon>
+// Time-stamp: <2024-09-10 19:12:07 krylon>
 
 // This file has handlers for Ajax calls
 
@@ -72,6 +72,13 @@ func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
 			res.Message,
 			buf.String())
 		goto SEND_RESPONSE
+	} else if common.Debug {
+		var patterns = make([]string, len(query.Terms))
+		for idx, pat := range query.Terms {
+			patterns[idx] = pat.String()
+		}
+		srv.log.Printf("[DEBUG] Search Terms = %#v\n",
+			patterns)
 	}
 
 	db = srv.pool.Get()
@@ -101,6 +108,11 @@ func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
 	data.Records = records
 	buf.Reset()
 
+	// For debugging purposes, I restrict the number of results, lest they overwhelm the browser
+	if len(data.Records) > 2500 {
+		data.Records = data.Records[:2500]
+	}
+
 	if tmpl = srv.tmpl.Lookup(tmplName); tmpl == nil {
 		res.Message = fmt.Sprintf("Could not find template %q", tmplName)
 		srv.log.Printf("[CRITICAL] %s\n", msg)
@@ -114,10 +126,13 @@ func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
 		goto SEND_RESPONSE
 	}
 
+	res.Status = true
 	res.Message = fmt.Sprintf("Got %d results", len(records))
 	res.Payload = map[string]string{
 		"search_results": buf.String(),
 	}
+
+	srv.log.Printf("[DEBUG] Search yielded %d results\n", len(records))
 
 SEND_RESPONSE:
 	if sess != nil {
