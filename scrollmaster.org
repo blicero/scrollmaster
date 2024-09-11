@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-10 19:56:23 krylon>
+# Time-stamp: <2024-09-11 21:55:19 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,14 +12,14 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-10 Di 19:56]
+   #+CAPTION: Clock summary at [2024-09-11 Mi 21:55]
    | Headline                           | Time       |           |       |       |      |
    |------------------------------------+------------+-----------+-------+-------+------|
-   | *Total time*                       | *2d 15:58* |           |       |       |      |
+   | *Total time*                       | *2d 21:54* |           |       |       |      |
    |------------------------------------+------------+-----------+-------+-------+------|
-   | *Scrollmaster*                     | *2d 15:58* |           |       |       |      |
-   | \_  /Features [0/0]/               |            | /11:59/   |       |       |      |
-   | \_    Search [1/3]                 |            |           | 11:19 |       |      |
+   | *Scrollmaster*                     | *2d 21:54* |           |       |       |      |
+   | \_  /Features [0/0]/               |            | /17:55/   |       |       |      |
+   | \_    Search [1/3]                 |            |           | 17:15 |       |      |
    | \_      Limit results              |            |           |       |  0:34 |      |
    | \_    Analysis [0/0]               |            |           |  0:40 |       |      |
    | \_  /Components [11/12]/           |            | /2d 3:59/ |       |       |      |
@@ -54,6 +54,8 @@
     :VISIBILITY: children
     :END:
     :LOGBOOK:
+    CLOCK: [2024-09-11 Mi 16:53]--[2024-09-11 Mi 21:55] =>  5:02
+    CLOCK: [2024-09-10 Di 20:22]--[2024-09-10 Di 21:16] =>  0:54
     CLOCK: [2024-09-10 Di 17:53]--[2024-09-10 Di 19:12] =>  1:19
     CLOCK: [2024-09-09 Mo 23:09]--[2024-09-09 Mo 23:55] =>  0:46
     CLOCK: [2024-09-09 Mo 22:24]--[2024-09-09 Mo 22:45] =>  0:21
@@ -71,6 +73,20 @@
     The basic search functionality works. I'm a bit surprised, but it does
     work. The UI is uglier than a blobfish, but I will leave it at that for
     now.
+**** Persistent searches [0/0]
+     :PROPERTIES:
+     :COOKIE_DATA: todo recursive
+     :VISIBILITY: children
+     :END:
+     So here's what I'm going to do: I add a new table to the database to
+     store searches that contains the following columns:
+     | id        | INTEGER PRIMARY KEY  |
+     | timestamp | INTEGER NOT NULL     |
+     | search    | TEXT NOT NULL (JSON) |
+     | results   | TEXT (JSON)          |
+     Where search will contain a JSON representation of the search parameters
+     and results will contain a JSON representation of an array of the IDs of
+     the records that make up the result set.
 **** TODO Limit results
      :LOGBOOK:
      CLOCK: [2024-09-10 Di 19:12]--[2024-09-10 Di 19:46] =>  0:34
