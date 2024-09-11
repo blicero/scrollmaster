@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 16:58:26 krylon>
+// Time-stamp: <2024-09-11 19:59:57 krylon>
 
 //go:generate stringer -type=ID
 
@@ -27,6 +27,7 @@ const (
 	RecordGetSources
 	SearchAdd
 	SearchGetByID
+	SearchGetAllID
 	SearchDelete
 	SearchGetResults
 )

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 18:06:04 krylon>
+// Time-stamp: <2024-09-11 20:10:03 krylon>
 
 package database
 
@@ -1540,3 +1540,54 @@ EXEC_QUERY:
 
 	return records, nil
 } // func (db *Database) SearchGetResults(id int64) ([]model.Record, error)
+
+// SearchGetAllID fetches the IDs of all Searches that currently exist in the database.
+func (db *Database) SearchGetAllID() ([]int64, error) {
+	const qid query.ID = query.SearchGetAllID
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	var idlist = make([]int64, 0)
+
+	for rows.Next() {
+		var (
+			id int64
+		)
+
+		if err = rows.Scan(&id); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		idlist = append(idlist, id)
+	}
+
+	return idlist, nil
+} // func (db *Database) SearchGetAllID() ([]int64, error)

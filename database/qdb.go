@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 17:50:38 krylon>
+// Time-stamp: <2024-09-11 20:07:12 krylon>
 
 package database
 
@@ -96,4 +96,5 @@ FROM idlist i
 INNER JOIN record r ON i.id = r.id
 ORDER BY r.stamp
 `,
+	query.SearchGetAllID: "SELECT id FROM search",
 }
