@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-10 19:44:31 krylon> */}}
+{{/* Time-stamp: <2024-09-11 21:20:15 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -25,7 +25,7 @@
        jQuery("#search_terms")[0].value = ""
      } // function clear_filters()
 
-     function perform_search() {
+     function search_create() {
        const hosts = _.map(_.filter(jQuery("#select_hosts input[type=checkbox]"),
                                           (x) => { return x.checked }),
                            (x) => { return x.value })
@@ -43,7 +43,9 @@
 
        let terms = jQuery("#search_terms")[0].value.split("\n")
 
-       if (jQuery("#case_insensitive")[0].checked) {
+       if (_.all(terms, (x) => { return x == "" })) {
+         terms = []
+       } else if (jQuery("#case_insensitive")[0].checked) {
          terms = _.map(terms,
                        (x) => { return "(?i)" + x })
        }
@@ -57,12 +59,13 @@
 
        const qstr = JSON.stringify(query)
 
-       const req = $.post("/ajax/search",
+       const req = $.post("/ajax/search/create",
                           qstr,
                           (res) => {
          console.log(res)
-         const div = jQuery("#results")[0]
-         div.innerHTML = res.Payload["search_results"]
+         const item = `<li>${res.Payload.id} (${res.Payload.cnt})</li>`
+         const div = jQuery("#searches")[0]
+         div.innerHTML += item
        },
                           'json')
 
@@ -71,7 +74,7 @@
        })
 
        console.log("Things have never been better")
-     } // function perform_search()
+     } // function search_create()
 
      function clear_results() {
        const resDiv = jQuery("#results")[0]
@@ -80,74 +83,88 @@
     </script>
 
     <div class="container-fluid">
-      
-      <div class="row" id="search_filters">
+      <div class="row">
         <div class="col">
-          <ul id="select_hosts">
-            {{ range .Hosts }}
+          <p />
+          <input type="button" value="Submit" onclick="search_create()" />
+          <p />
+          <input type="button" value="Clear Filters" onclick="clear_filters()" />
+          <p />
+          <input checked type="button" value="Clear Results" onclick="clear_results()" />
+        </div>
+        <div class="col">
+          <h4>Searches</h4>
+          <ul id="searches">
+            {{ range .Searches }}
             <li>
-              <input type="checkbox"
-                     id="filter_host_{{ .ID }}"
-                     value="{{ .ID }}" />
-              {{ .NameShort }}
-            </li>
+              {{ . }}
+              <input type="button"
+                     value="Load"
+                     onclick="load_search({{ . }})" />
+              </li>
             {{ end }}
           </ul>
         </div>
-        
-        <div class="col">
-          <select id="select_sources" multiple size="20">
-            {{ range $src, $cnt := .Sources }}
-            <option>{{ $src }}</option>
-            {{ end }}
-          </select>
-        </div>
-
-        <div class="col">
-          <table class="horizontal" id="select_period">
-            <tr>
-              <th>Begin:</th>
-              <td>
-                <input type="datetime-local"
-                       value="{{ fmt_time_form .Begin }}"
-                       id="filter_period_begin" />
-              </td>
-            </tr>
-            <tr>
-              <th>End:</th>
-              <td>
-                <input type="datetime-local"
-                       value="{{ fmt_time_form .End }}"
-                       id="filter_period_end" />
-              </td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="col">
-          <textarea id="search_terms"
-                    spellcheck="false"
-                    rows="5"
-                    cols="30"></textarea>
-          <br />
-          <br />
-          Case-insensitive? <input type="checkbox"
-                                   checked="true"
-                                   id="case_insensitive" />
-        </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <input type="button" value="Search" onclick="perform_search()" />
+      <details open="true">
+        <summary>Search Parameters</summary>
+        <div class="row" id="search_filters">
+          <div class="col">
+            <ul id="select_hosts">
+              {{ range .Hosts }}
+              <li>
+                <input type="checkbox"
+                       id="filter_host_{{ .ID }}"
+                       value="{{ .ID }}" />
+                {{ .NameShort }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          
+          <div class="col">
+            <select id="select_sources" multiple size="20">
+              {{ range $src, $cnt := .Sources }}
+              <option>{{ $src }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div class="col">
+            <table class="horizontal" id="select_period">
+              <tr>
+                <th>Begin:</th>
+                <td>
+                  <input type="datetime-local"
+                         value="{{ fmt_time_form .Begin }}"
+                         id="filter_period_begin" />
+                </td>
+              </tr>
+              <tr>
+                <th>End:</th>
+                <td>
+                  <input type="datetime-local"
+                         value="{{ fmt_time_form .End }}"
+                         id="filter_period_end" />
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="col">
+            <textarea id="search_terms"
+                      spellcheck="false"
+                      rows="5"
+                      cols="30"></textarea>
+            <br />
+            <br />
+            Case-insensitive? <input type="checkbox"
+                                     checked="true"
+                                     id="case_insensitive" />
+          </div>
         </div>
-        <div class="col">
-          <input type="button" value="Clear Filters" onclick="clear_filters()" />
-        </div>
-        <div class="col">
-          <input checked type="button" value="Clear Results" onclick="clear_results()" />
-        </div>
-      </div>
+      </details>
 
       <div id="results" class="row">
         Bla

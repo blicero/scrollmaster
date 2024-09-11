@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 05. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 22:30:48 krylon>
+// Time-stamp: <2024-09-11 20:12:22 krylon>
 //
 // This file contains handlers etc. having to do with the web-based frontend.
 
@@ -190,7 +190,7 @@ func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request) {
 				Debug: true,
 				URL:   r.URL.EscapedPath(),
 			},
-			Begin: time.Now().Add(time.Hour * -24),
+			Begin: time.Unix(0, 0),
 			End:   time.Now(),
 		}
 	)
@@ -217,6 +217,12 @@ func (srv *Server) handleSearch(w http.ResponseWriter, r *http.Request) {
 	} else if data.Sources, err = db.RecordGetSources(); err != nil {
 		msg = fmt.Sprintf("Failed to query all record sources from database: %s", err.Error())
 		srv.log.Printf("[ERROR] %s\n", msg)
+		srv.sendErrorMessage(w, msg)
+		return
+	} else if data.Searches, err = db.SearchGetAllID(); err != nil {
+		msg = fmt.Sprintf("Failed to query all search IDs: %s", err.Error())
+		srv.log.Printf("[ERROR] %s\n",
+			msg)
 		srv.sendErrorMessage(w, msg)
 		return
 	}

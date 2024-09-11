@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 06. 05. 2020 by Benjamin Walkenhorst
 // (c) 2020 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 22:30:00 krylon>
+// Time-stamp: <2024-09-11 20:11:01 krylon>
 //
 // This file contains data structures to be passed to HTML templates.
 
@@ -66,10 +66,11 @@ type tmplDataLog struct {
 
 type tmplDataSearch struct {
 	tmplDataBase
-	Hosts   []model.Host
-	Sources map[string]int64
-	Begin   time.Time
-	End     time.Time
+	Hosts    []model.Host
+	Sources  map[string]int64
+	Begin    time.Time
+	End      time.Time
+	Searches []int64
 }
 
 type tmplDataSearchResults struct {

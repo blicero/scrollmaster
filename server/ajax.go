@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-10 19:12:07 krylon>
+// Time-stamp: <2024-09-11 19:40:40 krylon>
 
 // This file has handlers for Ajax calls
 
@@ -12,9 +12,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"html/template"
 	"io"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
@@ -23,24 +23,23 @@ import (
 	"github.com/gorilla/sessions"
 )
 
-func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
+func (srv *Server) handleAjaxSearchCreate(w http.ResponseWriter, r *http.Request) {
 	srv.log.Printf("[TRACE] Handle request for %s from %s\n",
 		r.URL.EscapedPath(),
 		r.RemoteAddr)
 
-	const tmplName = "search_results"
 	var (
-		err     error
-		msg     string
-		sess    *sessions.Session
-		db      *database.Database
-		buf     bytes.Buffer
-		query   model.SearchQuery
-		tmpl    *template.Template
-		res     model.Response
+		err    error
+		msg    string
+		sess   *sessions.Session
+		db     *database.Database
+		buf    bytes.Buffer
+		search model.Search
+		res    = model.Response{
+			Payload: make(map[string]string),
+		}
 		hstatus int = 200
 		q       chan model.Record
-		records []model.Record
 		data    tmplDataSearchResults
 		hosts   []model.Host
 	)
@@ -65,7 +64,7 @@ func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
 		hstatus = 500
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		goto SEND_RESPONSE
-	} else if err = json.Unmarshal(buf.Bytes(), &query); err != nil {
+	} else if err = json.Unmarshal(buf.Bytes(), &search.Query); err != nil {
 		res.Message = fmt.Sprintf("Failed to parse search query: %s", err.Error())
 		hstatus = 500
 		srv.log.Printf("[ERROR] %s\n\n%s\n",
@@ -73,8 +72,8 @@ func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
 			buf.String())
 		goto SEND_RESPONSE
 	} else if common.Debug {
-		var patterns = make([]string, len(query.Terms))
-		for idx, pat := range query.Terms {
+		var patterns = make([]string, len(search.Query.Terms))
+		for idx, pat := range search.Query.Terms {
 			patterns[idx] = pat.String()
 		}
 		srv.log.Printf("[DEBUG] Search Terms = %#v\n",
@@ -98,41 +97,27 @@ func (srv *Server) handleAjaxSearch(w http.ResponseWriter, r *http.Request) {
 	}
 
 	q = make(chan model.Record)
-	go db.RecordSearch(&query, q)
-	records = make([]model.Record, 0, 32)
+	go db.RecordSearch(&search.Query, q)
+	search.Results = make([]int64, 0, 32)
 
 	for r := range q {
-		records = append(records, r)
+		search.Results = append(search.Results, r.ID)
 	}
 
-	data.Records = records
-	buf.Reset()
+	search.Timestamp = time.Now()
 
-	// For debugging purposes, I restrict the number of results, lest they overwhelm the browser
-	if len(data.Records) > 2500 {
-		data.Records = data.Records[:2500]
-	}
-
-	if tmpl = srv.tmpl.Lookup(tmplName); tmpl == nil {
-		res.Message = fmt.Sprintf("Could not find template %q", tmplName)
-		srv.log.Printf("[CRITICAL] %s\n", msg)
-		hstatus = 500
-		goto SEND_RESPONSE
-	} else if err = tmpl.Execute(&buf, &data); err != nil {
-		res.Message = fmt.Sprintf("Error rendering search results: %s",
+	if err = db.SearchAdd(&search); err != nil {
+		res.Message = fmt.Sprintf("Failed to create Search: %s",
 			err.Error())
-		srv.log.Printf("[ERROR] %s\n", res.Message)
 		hstatus = 500
 		goto SEND_RESPONSE
 	}
 
+	res.Message = fmt.Sprintf("Search was performed and persisted successfully, yielding %d records",
+		len(search.Results))
 	res.Status = true
-	res.Message = fmt.Sprintf("Got %d results", len(records))
-	res.Payload = map[string]string{
-		"search_results": buf.String(),
-	}
-
-	srv.log.Printf("[DEBUG] Search yielded %d results\n", len(records))
+	res.Payload["id"] = strconv.FormatInt(search.ID, 10)
+	res.Payload["cnt"] = strconv.FormatInt(int64(len(search.Results)), 10)
 
 SEND_RESPONSE:
 	if sess != nil {
