@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-10 17:20:47 krylon>
+// Time-stamp: <2024-09-11 18:08:55 krylon>
 
 package database
 
@@ -45,4 +45,15 @@ SELECT
     r.message
 FROM record r
 INNER JOIN host h ON r.host_id = h.id`,
+
+	`
+CREATE TABLE search (
+    id			INTEGER PRIMARY KEY,
+    timestamp		INTEGER NOT NULL,
+    query               TEXT NOT NULL,
+    results             TEXT NOT NULL DEFAULT '[]',
+    CHECK (json_valid(query) > 0 AND json_valid(results) > 0)
+) STRICT
+`,
+	"CREATE INDEX search_time_idx ON search (timestamp)",
 }

@@ -2,17 +2,19 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 09. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 20:22:30 krylon>
+// Time-stamp: <2024-09-11 18:27:10 krylon>
 
 package database
 
 import (
+	"slices"
 	"testing"
+	"time"
 
 	"github.com/blicero/scrollmaster/model"
 )
 
-func TestSearch(t *testing.T) {
+func TestSearchExecute(t *testing.T) {
 	if tdb == nil {
 		t.SkipNow()
 	}
@@ -53,4 +55,64 @@ func TestSearch(t *testing.T) {
 				cnt)
 		}
 	}
-} // func TestSearch(t *testing.T)
+} // func TestSearchExecute(t *testing.T)
+
+func TestSearchAdd(t *testing.T) {
+	if tdb == nil {
+		t.SkipNow()
+	}
+
+	var s = model.Search{
+		Timestamp: time.Now(),
+		Query: model.SearchQuery{
+			Hosts: []int64{hosts[1].ID},
+		},
+		Results: make([]int64, 0, recordCnt),
+	}
+	var q = make(chan model.Record)
+
+	go tdb.RecordSearch(&s.Query, q)
+
+	for r := range q {
+		s.Results = append(s.Results, r.ID)
+	}
+
+	if len(s.Results) != recordCnt {
+		t.Fatalf("Unexpected number of results from Search: want %d got %d",
+			recordCnt,
+			len(s.Results))
+	}
+
+	var err error
+
+	if err = tdb.SearchAdd(&s); err != nil {
+		t.Fatalf("Error adding Search to database: %s", err.Error())
+	} else if s.ID == 0 {
+		t.Fatal("SearchAdd did not set the Search ID")
+	}
+
+	var results []model.Record
+
+	if results, err = tdb.SearchGetResults(s.ID); err != nil {
+		t.Fatalf("Error getting search results: %s", err.Error())
+	} else if len(results) != recordCnt {
+		t.Fatalf("Unexpected number of results: got %d want %d",
+			len(results),
+			recordCnt)
+	}
+
+	var idlist = make([]int64, len(s.Results))
+
+	for idx, r := range results {
+		idlist[idx] = r.ID
+	}
+
+	slices.Sort(s.Results)
+	slices.Sort(idlist)
+
+	if !slices.Equal(s.Results, idlist) {
+		t.Errorf("Unexpected list of Records return from Search:\n%#v\n%#v\n",
+			idlist,
+			s.Results)
+	}
+} // func TestSearchAdd(t *testing.T)

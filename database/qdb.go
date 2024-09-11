@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-07 11:25:48 krylon>
+// Time-stamp: <2024-09-11 17:50:38 krylon>
 
 package database
 
@@ -65,4 +65,35 @@ SELECT
 FROM record
 GROUP BY source
 ORDER BY source`,
+	query.SearchAdd: `
+INSERT INTO search (timestamp, query, results)
+            VALUES (        ?,     ?,       ?)
+RETURNING id
+`,
+	query.SearchGetByID: `
+SELECT
+    timestamp,
+    query,
+    results
+FROM search
+WHERE id = ?
+`,
+	query.SearchDelete: "DELETE FROM search WHERE id = ?",
+	query.SearchGetResults: `
+WITH idlist (id) AS (
+	SELECT value
+	FROM search s, json_each(s.results)
+	WHERE s.id = ?
+)
+
+SELECT
+        i.id,
+	r.stamp,
+	r.host_id,
+	r.source,
+	r.message
+FROM idlist i
+INNER JOIN record r ON i.id = r.id
+ORDER BY r.stamp
+`,
 }

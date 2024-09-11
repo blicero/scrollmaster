@@ -2,12 +2,13 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 19:55:06 krylon>
+// Time-stamp: <2024-09-11 18:06:04 krylon>
 
 package database
 
 import (
 	"database/sql"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"log"
@@ -1323,3 +1324,219 @@ EXEC_QUERY:
 		}
 	}
 } // func (db *Database) RecordSearch(search *model.SearchQuery, q chan<- model.Record)
+
+// SearchAdd adds a Search to the database, including both the query and the results.
+func (db *Database) SearchAdd(search *model.Search) error {
+	const qid query.ID = query.SearchAdd
+	var (
+		err                  error
+		msg                  string
+		stmt                 *sql.Stmt
+		tx                   *sql.Tx
+		bufQuery, bufResults []byte
+		status               bool
+	)
+
+	if bufQuery, err = json.Marshal(&search.Query); err != nil {
+		db.log.Printf("[ERROR] Cannot serialize Query to JSON: %s\n",
+			err.Error())
+		return err
+	} else if bufResults, err = json.Marshal(search.Results); err != nil {
+		db.log.Printf("[ERROR] Cannot serialize Results to JSON: %s\n",
+			err.Error())
+	}
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid.String(),
+			err.Error())
+		return err
+	} else if db.tx != nil {
+		tx = db.tx
+	} else {
+		db.log.Println("[INFO] Start ad-hoc transaction for adding Record.")
+	BEGIN_AD_HOC:
+		if tx, err = db.db.Begin(); err != nil {
+			if worthARetry(err) {
+				waitForRetry()
+				goto BEGIN_AD_HOC
+			} else {
+				msg = fmt.Sprintf("Error starting transaction: %s\n",
+					err.Error())
+				db.log.Printf("[ERROR] %s\n", msg)
+				return errors.New(msg)
+			}
+
+		} else {
+			defer func() {
+				var err2 error
+				if status {
+					if err2 = tx.Commit(); err2 != nil {
+						db.log.Printf("[ERROR] Failed to commit ad-hoc transaction: %s\n",
+							err2.Error())
+					}
+				} else if err2 = tx.Rollback(); err2 != nil {
+					db.log.Printf("[ERROR] Rollback of ad-hoc transaction failed: %s\n",
+						err2.Error())
+				}
+			}()
+		}
+	}
+
+	stmt = tx.Stmt(stmt)
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(search.Timestamp.Unix(), string(bufQuery), string(bufResults)); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		} else {
+			err = fmt.Errorf("Cannot add Record to database: %s",
+				err.Error())
+			db.log.Printf("[ERROR] %s\n", err.Error())
+			return err
+		}
+	}
+
+	var id int64
+
+	defer rows.Close()
+
+	if !rows.Next() {
+		// CANTHAPPEN
+		err = fmt.Errorf("Query %s did not return a value", qid)
+		db.log.Printf("[CANTHAPPEN] %s\n", err.Error())
+		return err
+	} else if err = rows.Scan(&id); err != nil {
+		err = fmt.Errorf("Failed to get ID for newly added Search: %s",
+			err.Error())
+		db.log.Printf("[ERROR] %s\n", err.Error())
+		return err
+	}
+
+	search.ID = id
+	status = true
+	return nil
+} // func (db *Database) SearchAdd(search *model.Search) error
+
+// SearchGetByID fetches a Search by its ID
+func (db *Database) SearchGetByID(id int64) (*model.Search, error) {
+	const qid query.ID = query.SearchGetByID
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(id); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	if rows.Next() {
+		var (
+			timestamp  int64
+			qstr, rstr string
+			s          = &model.Search{ID: id}
+		)
+
+		if err = rows.Scan(&timestamp, &qstr, &rstr); err != nil {
+			msg = fmt.Sprintf("Error scanning row for Host %d: %s",
+				id,
+				err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		if err = json.Unmarshal([]byte(qstr), &s.Query); err != nil {
+			db.log.Printf("[ERROR] Cannot parse Query: %s\n\n%s\n\n",
+				err.Error(),
+				qstr)
+			return nil, err
+		} else if err = json.Unmarshal([]byte(rstr), &s.Results); err != nil {
+			db.log.Printf("[ERROR] Cannot parse Results: %s\n\n%s\n\n",
+				err.Error(),
+				rstr)
+			return nil, err
+		}
+
+		s.Timestamp = time.Unix(timestamp, 0)
+
+		return s, nil
+	}
+
+	db.log.Printf("[INFO] Search #%d was not found in database\n", id)
+	return nil, nil
+} // func (db *Database) SearchGetByID(id int64) (*model.Search, error)
+
+// SearchGetResults fetches the Records that were matched by a Search.
+func (db *Database) SearchGetResults(id int64) ([]model.Record, error) {
+	const qid query.ID = query.SearchGetResults
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return nil, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(id); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return nil, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	var records = make([]model.Record, 0)
+
+	for rows.Next() {
+		var (
+			r         model.Record
+			timestamp int64
+		)
+
+		if err = rows.Scan(&r.ID, &r.HostID, &timestamp, &r.Source, &r.Message); err != nil {
+			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return nil, errors.New(msg)
+		}
+
+		r.Time = time.Unix(timestamp, 0)
+		records = append(records, r)
+	}
+
+	return records, nil
+} // func (db *Database) SearchGetResults(id int64) ([]model.Record, error)

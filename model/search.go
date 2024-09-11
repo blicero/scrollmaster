@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 09. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-10 19:39:10 krylon>
+// Time-stamp: <2024-09-11 16:57:35 krylon>
 
 package model
 
@@ -45,3 +45,12 @@ func (q *SearchQuery) Match(r *Record) bool {
 
 	return true
 } // func (q *SearchQuery) Match(r *Record) bool
+
+// Search represents a search, including the Query and the list of IDs
+// it returned.
+type Search struct {
+	ID        int64
+	Timestamp time.Time
+	Query     SearchQuery
+	Results   []int64
+}
