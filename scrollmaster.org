@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-12 19:39:08 krylon>
+# Time-stamp: <2024-09-12 21:32:56 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,17 +12,17 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-12 Do 19:39]
+   #+CAPTION: Clock summary at [2024-09-12 Do 21:32]
    | Headline                           | Time      |           |       |       |      |
    |------------------------------------+-----------+-----------+-------+-------+------|
-   | *Total time*                       | *3d 0:06* |           |       |       |      |
+   | *Total time*                       | *3d 0:41* |           |       |       |      |
    |------------------------------------+-----------+-----------+-------+-------+------|
-   | *Scrollmaster*                     | *3d 0:06* |           |       |       |      |
-   | \_  /Features [0/0]/               |           | /20:07/   |       |       |      |
-   | \_    Search [1/3]                 |           |           | 19:27 |       |      |
+   | *Scrollmaster*                     | *3d 0:41* |           |       |       |      |
+   | \_  /Features [3/3]/               |           | /20:42/   |       |       |      |
+   | \_    Search [3/3]                 |           |           | 20:02 |       |      |
    | \_      Limit results              |           |           |       |  0:34 |      |
    | \_    Analysis [0/0]               |           |           |  0:40 |       |      |
-   | \_  /Components [11/12]/           |           | /2d 3:59/ |       |       |      |
+   | \_  /Components [12/12]/           |           | /2d 3:59/ |       |       |      |
    | \_    Main [0/0]                   |           |           |  0:59 |       |      |
    | \_    Common [1/1]                 |           |           |  3:46 |       |      |
    | \_      Paths                      |           |           |       |  3:46 |      |
@@ -40,20 +40,21 @@
    | \_      Don't be clingy            |           |           |       |  1:10 |      |
    | \_      Proper short form hostname |           |           |       |  0:03 |      |
    | \_      Throttle Agent             |           |           |       |  0:58 |      |
-   | \_    Frontend [1/2]               |           |           | 21:43 |       |      |
+   | \_    Frontend [2/2]               |           |           | 21:43 |       |      |
    | \_      Filter [0/0]               |           |           |       | 18:07 |      |
    #+END:
-** Features [0/0]
+** Features [3/3]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
    :END:
-*** Search [1/3]
+*** Search [3/3]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
     :END:
     :LOGBOOK:
+    CLOCK: [2024-09-12 Do 20:56]--[2024-09-12 Do 21:31] =>  0:35
     CLOCK: [2024-09-12 Do 17:27]--[2024-09-12 Do 19:39] =>  2:12
     CLOCK: [2024-09-11 Mi 16:53]--[2024-09-11 Mi 21:55] =>  5:02
     CLOCK: [2024-09-10 Di 20:22]--[2024-09-10 Di 21:16] =>  0:54
@@ -81,14 +82,17 @@
      :END:
      So here's what I'm going to do: I add a new table to the database to
      store searches that contains the following columns:
-     | id        | INTEGER PRIMARY KEY  |
-     | timestamp | INTEGER NOT NULL     |
-     | search    | TEXT NOT NULL (JSON) |
-     | results   | TEXT (JSON)          |
+     | id        | INTEGER PRIMARY KEY        |
+     | timestamp | INTEGER NOT NULL           |
+     | search    | TEXT NOT NULL (JSON)       |
+     | results   | TEXT (JSON)                |
+     | cnt       | INTEGER NOT NULL DEFAULT 0 |
+     |-----------+----------------------------|
      Where search will contain a JSON representation of the search parameters
      and results will contain a JSON representation of an array of the IDs of
      the records that make up the result set.
-**** TODO Limit results
+**** DONE Limit results
+     CLOSED: [2024-09-12 Do 20:45]
      :LOGBOOK:
      CLOCK: [2024-09-10 Di 19:12]--[2024-09-10 Di 19:46] =>  0:34
      :END:
@@ -100,7 +104,8 @@
      idea) becomes an entity in its own  right.
 **** DONE Case-sensitivity optional
      CLOSED: [2024-09-10 Di 19:50]
-**** TODO Validate patterns before performing search?
+**** CANCELLED Validate patterns before performing search?
+     CLOSED: [2024-09-12 Do 20:46]
      My first attempt was to parse the patterns in Javascript, but of course
      Javascript has a different regex engine than Go, so it doesn't buy me
      anything.
@@ -111,7 +116,7 @@
     I would like to perform a little analysis on the log records I
     gather. Basically, sniff out the ones that are somehow urgent or
     interesting in some way.
-** Components [11/12]
+** Components [12/12]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
@@ -256,7 +261,7 @@
      - compression
      I think limiting the number of records per request is my best option,
      considering that the server has to deal with several Agents concurrently.
-*** Frontend [1/2]
+*** Frontend [2/2]
     :LOGBOOK:
     CLOCK: [2024-09-05 Do 23:56]--[2024-09-05 Do 23:57] =>  0:01
     CLOCK: [2024-09-05 Do 22:05]--[2024-09-05 Do 23:50] =>  1:45
@@ -265,7 +270,8 @@
     Okay, I declare the rest of the app sufficiently working that I can move
     on to the frontend. Since we already have a web server in place, a web
     frontend appears to be the logical approach.
-**** TODO Filter [0/0]
+**** DONE Filter [0/0]
+     CLOSED: [2024-09-12 Do 20:47]
      :LOGBOOK:
      CLOCK: [2024-09-06 Fr 16:59]--[2024-09-07 Sa 11:06] => 18:07
      :END:
