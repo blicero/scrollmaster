@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-12 20:52:15 krylon>
+// Time-stamp: <2024-09-12 21:40:59 krylon>
 
 // This file has handlers for Ajax calls
 
@@ -221,8 +221,15 @@ func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request) 
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		hstatus = 500
 		goto SEND_RESPONSE
-	} else if data.ResultCountTotal, err = db.SearchGetResultCount(sid); err != nil {
-		res.Message = fmt.Sprintf("Failed to query number of results for Search %d: %s",
+		// } else if data.ResultCountTotal, err = db.SearchGetResultCount(sid); err != nil {
+		// 	res.Message = fmt.Sprintf("Failed to query number of results for Search %d: %s",
+		// 		sid,
+		// 		err.Error())
+		// 	srv.log.Printf("[ERROR] %s\n", res.Message)
+		// 	hstatus = 500
+		// 	goto SEND_RESPONSE
+	} else if data.Search, err = db.SearchGetByID(sid); err != nil {
+		res.Message = fmt.Sprintf("Failed to load Search #%d: %s",
 			sid,
 			err.Error())
 		srv.log.Printf("[ERROR] %s\n", res.Message)
@@ -230,6 +237,7 @@ func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request) 
 		goto SEND_RESPONSE
 	}
 
+	data.ResultCountTotal = data.Search.Count
 	data.Hostnames = make(map[int64]string, len(hosts))
 	for _, h := range hosts {
 		data.Hostnames[h.ID] = h.Name

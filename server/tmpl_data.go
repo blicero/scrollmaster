@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 06. 05. 2020 by Benjamin Walkenhorst
 // (c) 2020 Benjamin Walkenhorst
-// Time-stamp: <2024-09-12 18:48:26 krylon>
+// Time-stamp: <2024-09-12 21:38:03 krylon>
 //
 // This file contains data structures to be passed to HTML templates.
 
@@ -80,6 +80,7 @@ type tmplDataSearchResults struct {
 	Page             int64
 	MaxPage          int64
 	ResultCountTotal int64
+	Search           *model.Search
 }
 
 // Local Variables:  //
