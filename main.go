@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 19:59:39 krylon>
+// Time-stamp: <2024-09-12 20:19:43 krylon>
 
 package main
 
@@ -22,8 +22,6 @@ func main() {
 		common.AppName,
 		common.Version,
 		common.BuildStamp.Format(common.TimestampFormat))
-
-	fmt.Println("IMPLEMENT ME!")
 
 	const defaultAddr = "::1"
 
