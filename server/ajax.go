@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-12 19:27:35 krylon>
+// Time-stamp: <2024-09-12 20:52:15 krylon>
 
 // This file has handlers for Ajax calls
 
@@ -236,6 +236,9 @@ func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request) 
 	}
 
 	data.MaxPage = data.ResultCountTotal / searchPageCount
+	if data.ResultCountTotal%searchPageCount != 0 {
+		data.MaxPage++
+	}
 
 	if data.Records, err = db.SearchGetResults(sid, offset, searchPageCount); err != nil {
 		res.Message = fmt.Sprintf("Error fetching Results for Search #%d: %s",
