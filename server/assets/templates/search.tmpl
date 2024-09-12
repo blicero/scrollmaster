@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-11 21:20:15 krylon> */}}
+{{/* Time-stamp: <2024-09-12 19:28:33 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -63,7 +63,7 @@
                           qstr,
                           (res) => {
          console.log(res)
-         const item = `<li>${res.Payload.id} (${res.Payload.cnt})</li>`
+         const item = `<li>${res.Payload.id} (${res.Payload.cnt}) <input type="button" value="Load" onclick="search_load_results(${res.Payload.id}, 1)" /></li>`
          const div = jQuery("#searches")[0]
          div.innerHTML += item
        },
@@ -97,10 +97,10 @@
           <ul id="searches">
             {{ range .Searches }}
             <li>
-              {{ . }}
+              {{ index . 0 }} ({{ index . 1 }})
               <input type="button"
                      value="Load"
-                     onclick="load_search({{ . }})" />
+                     onclick="search_load_results({{ index . 0 }}, 1)" />
               </li>
             {{ end }}
           </ul>

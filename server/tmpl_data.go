@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 06. 05. 2020 by Benjamin Walkenhorst
 // (c) 2020 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 20:11:01 krylon>
+// Time-stamp: <2024-09-12 18:48:26 krylon>
 //
 // This file contains data structures to be passed to HTML templates.
 
@@ -70,12 +70,16 @@ type tmplDataSearch struct {
 	Sources  map[string]int64
 	Begin    time.Time
 	End      time.Time
-	Searches []int64
+	Searches [][2]int64
 }
 
 type tmplDataSearchResults struct {
-	Hostnames map[int64]string
-	Records   []model.Record
+	ID               int64
+	Hostnames        map[int64]string
+	Records          []model.Record
+	Page             int64
+	MaxPage          int64
+	ResultCountTotal int64
 }
 
 // Local Variables:  //

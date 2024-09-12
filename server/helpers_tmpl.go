@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 12. 12. 2018 by Benjamin Walkenhorst
 // (c) 2018 Benjamin Walkenhorst
-// Time-stamp: <2024-09-09 22:27:45 krylon>
+// Time-stamp: <2024-09-12 19:09:48 krylon>
 
 package server
 
@@ -56,6 +56,7 @@ var funcmap = template.FuncMap{
 	"truncate":         truncateHTML,
 	"intRange":         intRange,
 	"inc":              inc,
+	"dec":              dec,
 }
 
 type generator struct {
@@ -315,3 +316,7 @@ func intRange(n int64) []int64 {
 func inc(n int64) int64 {
 	return n + 1
 } // func inc(n int64) int64
+
+func dec(n int64) int64 {
+	return n - 1
+} // func dec(n int64) int64
