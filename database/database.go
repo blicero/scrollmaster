@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 20:10:03 krylon>
+// Time-stamp: <2024-09-12 19:07:12 krylon>
 
 package database
 
@@ -242,7 +242,7 @@ PREPARE_QUERY:
 			goto PREPARE_QUERY
 		}
 
-		db.log.Printf("[ERROR] Cannor parse query %s: %s\n%s\n",
+		db.log.Printf("[ERROR] Cannot parse query %s: %s\n%s\n",
 			id,
 			err.Error(),
 			qdb[id])
@@ -1387,7 +1387,11 @@ func (db *Database) SearchAdd(search *model.Search) error {
 	var rows *sql.Rows
 
 EXEC_QUERY:
-	if rows, err = stmt.Query(search.Timestamp.Unix(), string(bufQuery), string(bufResults)); err != nil {
+	if rows, err = stmt.Query(
+		search.Timestamp.Unix(),
+		string(bufQuery),
+		string(bufResults),
+		len(search.Results)); err != nil {
 		if worthARetry(err) {
 			waitForRetry()
 			goto EXEC_QUERY
@@ -1459,7 +1463,7 @@ EXEC_QUERY:
 			s          = &model.Search{ID: id}
 		)
 
-		if err = rows.Scan(&timestamp, &qstr, &rstr); err != nil {
+		if err = rows.Scan(&timestamp, &qstr, &rstr, &s.Count); err != nil {
 			msg = fmt.Sprintf("Error scanning row for Host %d: %s",
 				id,
 				err.Error())
@@ -1489,7 +1493,7 @@ EXEC_QUERY:
 } // func (db *Database) SearchGetByID(id int64) (*model.Search, error)
 
 // SearchGetResults fetches the Records that were matched by a Search.
-func (db *Database) SearchGetResults(id int64) ([]model.Record, error) {
+func (db *Database) SearchGetResults(id, offset, cnt int64) ([]model.Record, error) {
 	const qid query.ID = query.SearchGetResults
 	var (
 		err  error
@@ -1509,7 +1513,7 @@ func (db *Database) SearchGetResults(id int64) ([]model.Record, error) {
 	var rows *sql.Rows
 
 EXEC_QUERY:
-	if rows, err = stmt.Query(id); err != nil {
+	if rows, err = stmt.Query(id, cnt, offset); err != nil {
 		if worthARetry(err) {
 			waitForRetry()
 			goto EXEC_QUERY
@@ -1539,10 +1543,10 @@ EXEC_QUERY:
 	}
 
 	return records, nil
-} // func (db *Database) SearchGetResults(id int64) ([]model.Record, error)
+} // func (db *Database) SearchGetResults(id, offset, cnt int64) ([]model.Record, error)
 
-// SearchGetAllID fetches the IDs of all Searches that currently exist in the database.
-func (db *Database) SearchGetAllID() ([]int64, error) {
+// SearchGetAllID fetches the IDs and the number of results of all searches in the database.
+func (db *Database) SearchGetAllID() ([][2]int64, error) {
 	const qid query.ID = query.SearchGetAllID
 	var (
 		err  error
@@ -1573,21 +1577,69 @@ EXEC_QUERY:
 
 	defer rows.Close() // nolint: errcheck,gosec
 
-	var idlist = make([]int64, 0)
+	var idlist = make([][2]int64, 0)
 
 	for rows.Next() {
 		var (
-			id int64
+			id, cnt int64
 		)
 
-		if err = rows.Scan(&id); err != nil {
+		if err = rows.Scan(&id, &cnt); err != nil {
 			msg = fmt.Sprintf("Failed to scan row: %s", err.Error())
 			db.log.Printf("[ERROR] %s\n", msg)
 			return nil, errors.New(msg)
 		}
 
-		idlist = append(idlist, id)
+		idlist = append(idlist, [2]int64{id, cnt})
 	}
 
 	return idlist, nil
 } // func (db *Database) SearchGetAllID() ([]int64, error)
+
+func (db *Database) SearchGetResultCount(id int64) (int64, error) {
+	const qid query.ID = query.SearchGetResultCount
+	var (
+		err  error
+		msg  string
+		stmt *sql.Stmt
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid,
+			err.Error())
+		return 0, err
+	} else if db.tx != nil {
+		stmt = db.tx.Stmt(stmt)
+	}
+
+	var rows *sql.Rows
+
+EXEC_QUERY:
+	if rows, err = stmt.Query(id); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		}
+
+		return 0, err
+	}
+
+	defer rows.Close() // nolint: errcheck,gosec
+
+	if rows.Next() {
+		var cnt int64
+
+		if err = rows.Scan(&cnt); err != nil {
+			msg = fmt.Sprintf("Error scanning row for Search %d: %s",
+				id,
+				err.Error())
+			db.log.Printf("[ERROR] %s\n", msg)
+			return 0, errors.New(msg)
+		}
+
+		return cnt, nil
+	}
+
+	return 0, fmt.Errorf("No Search with ID %d was found in the database", id)
+} // func (db *Database) SearchGetResultCount(id int64) (int64, error)

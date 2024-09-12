@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 09. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 18:27:10 krylon>
+// Time-stamp: <2024-09-12 19:04:49 krylon>
 
 package database
 
@@ -93,7 +93,7 @@ func TestSearchAdd(t *testing.T) {
 
 	var results []model.Record
 
-	if results, err = tdb.SearchGetResults(s.ID); err != nil {
+	if results, err = tdb.SearchGetResults(s.ID, 0, -1); err != nil {
 		t.Fatalf("Error getting search results: %s", err.Error())
 	} else if len(results) != recordCnt {
 		t.Fatalf("Unexpected number of results: got %d want %d",

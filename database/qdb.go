@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 20:07:12 krylon>
+// Time-stamp: <2024-09-12 19:23:43 krylon>
 
 package database
 
@@ -66,15 +66,16 @@ FROM record
 GROUP BY source
 ORDER BY source`,
 	query.SearchAdd: `
-INSERT INTO search (timestamp, query, results)
-            VALUES (        ?,     ?,       ?)
+INSERT INTO search (timestamp, query, results, cnt)
+            VALUES (        ?,     ?,       ?,   ?)
 RETURNING id
 `,
 	query.SearchGetByID: `
 SELECT
     timestamp,
     query,
-    results
+    results,
+    cnt
 FROM search
 WHERE id = ?
 `,
@@ -88,13 +89,16 @@ WITH idlist (id) AS (
 
 SELECT
         i.id,
-	r.stamp,
 	r.host_id,
+	r.stamp,
 	r.source,
 	r.message
 FROM idlist i
 INNER JOIN record r ON i.id = r.id
 ORDER BY r.stamp
+LIMIT ?
+OFFSET ?
 `,
-	query.SearchGetAllID: "SELECT id FROM search",
+	query.SearchGetAllID:       "SELECT id, cnt FROM search",
+	query.SearchGetResultCount: "SELECT cnt FROM search WHERE id = ?",
 }

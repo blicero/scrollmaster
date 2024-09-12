@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 18:08:55 krylon>
+// Time-stamp: <2024-09-12 11:08:59 krylon>
 
 package database
 
@@ -52,7 +52,9 @@ CREATE TABLE search (
     timestamp		INTEGER NOT NULL,
     query               TEXT NOT NULL,
     results             TEXT NOT NULL DEFAULT '[]',
-    CHECK (json_valid(query) > 0 AND json_valid(results) > 0)
+    cnt                 INTEGER NOT NULL DEFAULT 0,
+    CHECK (json_valid(query) > 0 AND json_valid(results) > 0),
+    CHECK (cnt >= 0)
 ) STRICT
 `,
 	"CREATE INDEX search_time_idx ON search (timestamp)",

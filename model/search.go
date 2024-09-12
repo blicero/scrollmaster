@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 09. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-11 16:57:35 krylon>
+// Time-stamp: <2024-09-12 11:11:11 krylon>
 
 package model
 
@@ -53,4 +53,5 @@ type Search struct {
 	Timestamp time.Time
 	Query     SearchQuery
 	Results   []int64
+	Count     int64
 }
