@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 13. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-12 19:07:12 krylon>
+// Time-stamp: <2024-09-13 18:09:09 krylon>
 
 package database
 
@@ -1354,7 +1354,7 @@ func (db *Database) SearchAdd(search *model.Search) error {
 	} else if db.tx != nil {
 		tx = db.tx
 	} else {
-		db.log.Println("[INFO] Start ad-hoc transaction for adding Record.")
+		db.log.Println("[INFO] Start ad-hoc transaction for adding Search.")
 	BEGIN_AD_HOC:
 		if tx, err = db.db.Begin(); err != nil {
 			if worthARetry(err) {
@@ -1396,7 +1396,7 @@ EXEC_QUERY:
 			waitForRetry()
 			goto EXEC_QUERY
 		} else {
-			err = fmt.Errorf("Cannot add Record to database: %s",
+			err = fmt.Errorf("Cannot add Search to database: %s",
 				err.Error())
 			db.log.Printf("[ERROR] %s\n", err.Error())
 			return err
@@ -1423,6 +1423,75 @@ EXEC_QUERY:
 	status = true
 	return nil
 } // func (db *Database) SearchAdd(search *model.Search) error
+
+// SearchDelete removes a Search from the database.
+func (db *Database) SearchDelete(id int64) error {
+	const qid query.ID = query.SearchDelete
+
+	var (
+		err    error
+		msg    string
+		stmt   *sql.Stmt
+		tx     *sql.Tx
+		status bool
+	)
+
+	if stmt, err = db.getQuery(qid); err != nil {
+		db.log.Printf("[ERROR] Cannot prepare query %s: %s\n",
+			qid.String(),
+			err.Error())
+		return err
+	} else if db.tx != nil {
+		tx = db.tx
+	} else {
+		db.log.Printf("[INFO] Start ad-hoc transaction for deleting Search %d.\n", id)
+	BEGIN_AD_HOC:
+		if tx, err = db.db.Begin(); err != nil {
+			if worthARetry(err) {
+				waitForRetry()
+				goto BEGIN_AD_HOC
+			} else {
+				msg = fmt.Sprintf("Error starting transaction: %s\n",
+					err.Error())
+				db.log.Printf("[ERROR] %s\n", msg)
+				return errors.New(msg)
+			}
+
+		} else {
+			defer func() {
+				var err2 error
+				if status {
+					if err2 = tx.Commit(); err2 != nil {
+						db.log.Printf("[ERROR] Failed to commit ad-hoc transaction: %s\n",
+							err2.Error())
+					}
+				} else if err2 = tx.Rollback(); err2 != nil {
+					db.log.Printf("[ERROR] Rollback of ad-hoc transaction failed: %s\n",
+						err2.Error())
+				}
+			}()
+		}
+	}
+
+	stmt = tx.Stmt(stmt)
+
+EXEC_QUERY:
+	if _, err = stmt.Exec(id); err != nil {
+		if worthARetry(err) {
+			waitForRetry()
+			goto EXEC_QUERY
+		} else {
+			err = fmt.Errorf("Cannot delete Search %d from database: %s",
+				id,
+				err.Error())
+			db.log.Printf("[ERROR] %s\n", err.Error())
+			return err
+		}
+	}
+
+	status = true
+	return nil
+} // func (db *Database) SearchDelete(id int64) error
 
 // SearchGetByID fetches a Search by its ID
 func (db *Database) SearchGetByID(id int64) (*model.Search, error) {
@@ -1596,6 +1665,7 @@ EXEC_QUERY:
 	return idlist, nil
 } // func (db *Database) SearchGetAllID() ([]int64, error)
 
+// SearchGetResultCount returns the number of Records returned by the given Search.
 func (db *Database) SearchGetResultCount(id int64) (int64, error) {
 	const qid query.ID = query.SearchGetResultCount
 	var (
