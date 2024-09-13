@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-13 18:18:32 krylon>
+// Time-stamp: <2024-09-13 20:20:55 krylon>
 
 // This file has handlers for Ajax calls
 
@@ -181,9 +181,6 @@ func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request) 
 		sess = nil
 		hstatus = 403
 		goto SEND_RESPONSE
-	} else if common.Debug {
-		msg = dumpSession(sess)
-		srv.log.Printf("[DEBUG] Existing session %s\n", msg)
 	}
 
 	vars = mux.Vars(r)
@@ -330,9 +327,6 @@ func (srv *Server) handleAjaxSearchDelete(w http.ResponseWriter, r *http.Request
 		sess = nil
 		hstatus = 403
 		goto SEND_RESPONSE
-	} else if common.Debug {
-		msg = dumpSession(sess)
-		srv.log.Printf("[DEBUG] Existing session %s\n", msg)
 	}
 
 	if id, err = strconv.ParseInt(vars["id"], 10, 64); err != nil {
