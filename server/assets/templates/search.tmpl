@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-12 19:28:33 krylon> */}}
+{{/* Time-stamp: <2024-09-13 18:50:11 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -11,20 +11,6 @@
     <h2>Search</h2>
 
     <script type="text/javascript">
-     function clear_results() {
-       jQuery("#results")[0].innerHTML = ""
-     } // function clear_results()
-
-     function clear_filters() {
-       let boxes = jQuery("#search_filters input[type=checkbox]")
-
-       for (var i = 0; i < boxes.length; i++) {
-         boxes[i].checked = false
-       }
-
-       jQuery("#search_terms")[0].value = ""
-     } // function clear_filters()
-
      function search_create() {
        const hosts = _.map(_.filter(jQuery("#select_hosts input[type=checkbox]"),
                                           (x) => { return x.checked }),
@@ -63,9 +49,10 @@
                           qstr,
                           (res) => {
          console.log(res)
-         const item = `<li>${res.Payload.id} (${res.Payload.cnt}) <input type="button" value="Load" onclick="search_load_results(${res.Payload.id}, 1)" /></li>`
+         const item = `<li id="search_${res.Payload.id}">${res.Payload.id} (${res.Payload.cnt}) <input type="button" value="Load" onclick="search_load_results(${res.Payload.id}, 1)" />&nbsp;<input type="button" value="Delete" onclick="search_delete(${res.Payload.id})" /></li>`
          const div = jQuery("#searches")[0]
          div.innerHTML += item
+         window.setTimeout(() => { search_load_results(Number.parseInt(res.Payload.id), 1) }, 100)
        },
                           'json')
 
@@ -80,9 +67,28 @@
        const resDiv = jQuery("#results")[0]
        resDiv.innerHTML = "&nbsp;"
      }
+
+     function clear_filters() {
+       const boxes = jQuery("#search_filters input[type=checkbox]")
+
+       for (var i = 0; i < boxes.length; i++) {
+         boxes[i].checked = false
+       }
+
+       const sources = jQuery("#select_sources option")
+
+       for (var s of sources) {
+         s.selected = false
+       }
+
+       jQuery("#search_terms")[0].value = ""
+     } // function clear_filters()
     </script>
 
     <div class="container-fluid">
+      <input type="hidden"
+             id="search_id"
+             value="" />
       <div class="row">
         <div class="col">
           <p />
@@ -96,12 +102,17 @@
           <h4>Searches</h4>
           <ul id="searches">
             {{ range .Searches }}
-            <li>
+            <li id="search_{{ index . 0 }}">
               {{ index . 0 }} ({{ index . 1 }})
               <input type="button"
                      value="Load"
                      onclick="search_load_results({{ index . 0 }}, 1)" />
-              </li>
+              &nbsp;
+              <input type="button"
+                     value="Delete"
+                     onclick="search_delete({{ index . 0 }})" />
+            </li>
+            
             {{ end }}
           </ul>
         </div>
@@ -126,7 +137,7 @@
           <div class="col">
             <select id="select_sources" multiple size="20">
               {{ range $src, $cnt := .Sources }}
-              <option>{{ $src }}</option>
+              <option id="filter_src_{{ $src }}">{{ $src }}</option>
               {{ end }}
             </select>
           </div>

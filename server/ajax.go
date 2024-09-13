@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 07. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-12 21:40:59 krylon>
+// Time-stamp: <2024-09-13 18:18:32 krylon>
 
 // This file has handlers for Ajax calls
 
@@ -161,6 +161,7 @@ func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request) 
 		sid, page, offset int64
 		db                *database.Database
 		buf               bytes.Buffer
+		rbuf              []byte
 		tmpl              *template.Template
 		res               = model.Response{
 			Payload: make(map[string]string),
@@ -261,9 +262,17 @@ func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request) 
 		srv.log.Printf("[ERROR] %s\n", res.Message)
 		hstatus = 500
 		goto SEND_RESPONSE
+	} else if rbuf, err = json.Marshal(&data.Search); err != nil {
+		res.Message = fmt.Sprintf("Failed to serialize Search parameters: %s",
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		hstatus = 500
+		goto SEND_RESPONSE
 	}
 
 	res.Payload["results"] = buf.String()
+	res.Payload["search"] = string(rbuf)
+
 	res.Message = "Success"
 	res.Status = true
 
@@ -275,7 +284,6 @@ SEND_RESPONSE:
 		}
 	}
 	res.Timestamp = time.Now()
-	var rbuf []byte
 	if rbuf, err = json.Marshal(&res); err != nil {
 		srv.log.Printf("[ERROR] Error serializing response: %s\n",
 			err.Error())
@@ -291,3 +299,86 @@ SEND_RESPONSE:
 		srv.log.Println("[ERROR] " + msg)
 	}
 } // func (srv *Server) handleAjaxSearchLoad(w http.ResponseWriter, r *http.Request)
+
+func (srv *Server) handleAjaxSearchDelete(w http.ResponseWriter, r *http.Request) {
+	srv.log.Printf("[TRACE] Handle request for %s from %s\n",
+		r.URL.EscapedPath(),
+		r.RemoteAddr)
+
+	var (
+		err  error
+		msg  string
+		sess *sessions.Session
+		id   int64
+		db   *database.Database
+		rbuf []byte
+		res  = model.Response{
+			Payload: make(map[string]string),
+		}
+		hstatus int = 200
+		vars    map[string]string
+	)
+
+	vars = mux.Vars(r)
+
+	if sess, err = srv.store.Get(r, sessionNameFrontend); err != nil {
+		res.Message = fmt.Sprintf(
+			"Error getting/creating session %s: %s",
+			sessionNameFrontend,
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		sess = nil
+		hstatus = 403
+		goto SEND_RESPONSE
+	} else if common.Debug {
+		msg = dumpSession(sess)
+		srv.log.Printf("[DEBUG] Existing session %s\n", msg)
+	}
+
+	if id, err = strconv.ParseInt(vars["id"], 10, 64); err != nil {
+		res.Message = fmt.Sprintf("Cannot parse Search ID %q: %s",
+			vars["id"],
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		hstatus = 400
+		goto SEND_RESPONSE
+	}
+
+	db = srv.pool.Get()
+	defer srv.pool.Put(db)
+
+	if err = db.SearchDelete(id); err != nil {
+		res.Message = fmt.Sprintf("Failed to delete Search %d: %s",
+			id,
+			err.Error())
+		srv.log.Printf("[ERROR] %s\n", res.Message)
+		hstatus = 500
+		goto SEND_RESPONSE
+	}
+
+	res.Status = true
+	res.Message = fmt.Sprintf("Search %d was deleted", id)
+
+SEND_RESPONSE:
+	if sess != nil {
+		if err = sess.Save(r, w); err != nil {
+			srv.log.Printf("[ERROR] Failed to set session cookie: %s\n",
+				err.Error())
+		}
+	}
+	res.Timestamp = time.Now()
+	if rbuf, err = json.Marshal(&res); err != nil {
+		srv.log.Printf("[ERROR] Error serializing response: %s\n",
+			err.Error())
+		rbuf = errJSON(err.Error())
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "no-store, max-age=0")
+	w.WriteHeader(hstatus)
+	if _, err = w.Write(rbuf); err != nil {
+		msg = fmt.Sprintf("Failed to send result: %s",
+			err.Error())
+		srv.log.Println("[ERROR] " + msg)
+	}
+} // func (srv *Server) handleAjaxSearchDelete(w http.ResponseWriter, r *http.Request)

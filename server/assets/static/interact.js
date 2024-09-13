@@ -1,4 +1,4 @@
-// Time-stamp: <2024-09-12 19:03:15 krylon>
+// Time-stamp: <2024-09-13 18:52:34 krylon>
 // -*- mode: javascript; coding: utf-8; -*-
 // Copyright 2015-2020 Benjamin Walkenhorst <krylon@gmx.net>
 //
@@ -187,6 +187,34 @@ function search_load_results(sid, page) {
                         function (res) {
                             if (res.Status) {
                                 jQuery("#results")[0].innerHTML = res.Payload["results"]
+
+                                const params = JSON.parse(res.Payload["search"])
+
+                                for (var h of params.Query.hosts) {
+                                    const filter_id = `#filter_host_${h}`
+                                    jQuery(filter_id)[0].checked = true
+                                }
+
+                                for (var s of params.Query.sources) {
+                                    const filter_id = `#filter_src_${s}`
+                                    jQuery(filter_id)[0].selected = true
+                                }
+
+                                jQuery("#filter_period_begin")[0].valueAsDate =
+                                    new Date(params.Query.period[0])
+                                jQuery("#filter_period_end")[0].valueAsDate =
+                                    new Date(params.Query.period[1])
+
+                                if (_.all(params.Query.terms, (x) => { return x.indexOf("(?i)") >= 0 })) {
+                                    params.Query.terms =
+                                        _.map(params.Query.terms, (x) => { return x.substring(4) })
+                                    jQuery("#case_insensitive")[0].checked = true
+                                } else {
+                                    jQuery("#case_insensitive")[0].checked = false
+                                }
+
+                                jQuery("#search_terms")[0].value = params.Query.terms.join("\n")
+                                jQuery("#search_id")[0].value = sid
                             } else {
                                 const msg = `Error loading search results: ${res.Message}`
                                 console.log(msg)
@@ -198,3 +226,32 @@ function search_load_results(sid, page) {
                            console.log(`Error searching: ${status_text} ${reply} ${xhr}`)
                        })
 } // function search_load_results(sid, page)
+
+function search_delete(id) {
+    const addr = `/ajax/search/delete/${id}`
+
+    const reply = $.get(addr,
+                        {},
+                        (res) => {
+                            if (res.Status) {
+                                const lid = `#search_${id}`
+                                jQuery(lid)[0].remove()
+
+                                const cur_id = Number.parseInt(jQuery("#search_id")[0].value)
+
+                                if (id == cur_id) {
+                                    clear_results()
+                                    clear_filters()
+                                    jQuery("#search_id")[0].value = ""
+                                }
+                            } else {
+                                console.log(res.Message)
+                                alert(res.Message)
+                            }
+                        },
+                        'json')
+
+    reply.fail((reply, status_text, xhr) => {
+                           console.log(`Error searching: ${status_text} ${reply} ${xhr}`)
+                       })
+} // function search_delete(id)

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 20. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-12 18:19:40 krylon>
+// Time-stamp: <2024-09-13 18:12:43 krylon>
 
 // Package server implements the server side of the application.
 // It handles both talking to the Agents and the frontend.
@@ -169,6 +169,7 @@ func Create(addr string) (*Server, error) {
 	srv.router.HandleFunc(
 		"/ajax/search/load/{id:(?:\\d+)}/{page:(?:\\d+)$}",
 		srv.handleAjaxSearchLoad)
+	srv.router.HandleFunc("/ajax/search/delete/{id:(?:\\d+)$}", srv.handleAjaxSearchDelete)
 
 	return srv, nil
 } // func Create(addr string) (*Server, error)
