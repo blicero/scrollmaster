@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-12 21:57:26 krylon>
+# Time-stamp: <2024-09-13 18:55:32 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,14 +12,16 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-12 Do 21:57]
+   #+CAPTION: Clock summary at [2024-09-13 Fr 18:55]
    | Headline                           | Time      |           |       |       |      |
    |------------------------------------+-----------+-----------+-------+-------+------|
-   | *Total time*                       | *3d 0:56* |           |       |       |      |
+   | *Total time*                       | *3d 2:49* |           |       |       |      |
    |------------------------------------+-----------+-----------+-------+-------+------|
-   | *Scrollmaster*                     | *3d 0:56* |           |       |       |      |
-   | \_  /Features [3/4]/               |           | /20:57/   |       |       |      |
-   | \_    Search [3/4]                 |           |           | 20:17 |       |      |
+   | *Scrollmaster*                     | *3d 2:49* |           |       |       |      |
+   | \_  /Features [5/5]/               |           | /22:50/   |       |       |      |
+   | \_    Search [5/5]                 |           |           | 22:10 |       |      |
+   | \_      Feinschliff                |           |           |       |  1:03 |      |
+   | \_      Load Search Parameters     |           |           |       |  0:50 |      |
    | \_      Limit results              |           |           |       |  0:34 |      |
    | \_    Analysis [0/0]               |           |           |  0:40 |       |      |
    | \_  /Components [12/12]/           |           | /2d 3:59/ |       |       |      |
@@ -43,12 +45,12 @@
    | \_    Frontend [2/2]               |           |           | 21:43 |       |      |
    | \_      Filter [0/0]               |           |           |       | 18:07 |      |
    #+END:
-** Features [3/4]
+** Features [5/5]
    :PROPERTIES:
    :COOKIE_DATA: todo recursive
    :VISIBILITY: children
    :END:
-*** Search [3/4]
+*** Search [5/5]
     :PROPERTIES:
     :COOKIE_DATA: todo recursive
     :VISIBILITY: children
@@ -76,7 +78,18 @@
     The basic search functionality works. I'm a bit surprised, but it does
     work. The UI is uglier than a blobfish, but I will leave it at that for
     now.
-**** TODO Load Search Parameters
+**** DONE Feinschliff
+     CLOSED: [2024-09-13 Fr 18:55]
+     :LOGBOOK:
+     CLOCK: [2024-09-13 Fr 17:52]--[2024-09-13 Fr 18:55] =>  1:03
+     :END:
+     There are a few minor things I need to take care of, and maybe make the
+     thing a little less ugly while I'm at it.
+**** DONE Load Search Parameters
+     CLOSED: [2024-09-13 Fr 17:52]
+     :LOGBOOK:
+     CLOCK: [2024-09-13 Fr 17:02]--[2024-09-13 Fr 17:52] =>  0:50
+     :END:
      When loading a Search, the Search parameters should be filled in the form
      elements as they were when the Search was submitted.
 **** Persistent searches [0/0]
