@@ -1,4 +1,4 @@
-// Time-stamp: <2024-09-13 18:52:34 krylon>
+// Time-stamp: <2024-09-13 19:42:14 krylon>
 // -*- mode: javascript; coding: utf-8; -*-
 // Copyright 2015-2020 Benjamin Walkenhorst <krylon@gmx.net>
 //
@@ -200,10 +200,13 @@ function search_load_results(sid, page) {
                                     jQuery(filter_id)[0].selected = true
                                 }
 
-                                jQuery("#filter_period_begin")[0].valueAsDate =
-                                    new Date(params.Query.period[0])
-                                jQuery("#filter_period_end")[0].valueAsDate =
-                                    new Date(params.Query.period[1])
+                                if (params.Query.period.length == 2) {
+                                    jQuery("#filter_period_begin")[0].valueAsDate =
+                                        new Date(params.Query.period[0])
+                                    jQuery("#filter_period_end")[0].valueAsDate =
+                                        new Date(params.Query.period[1])
+                                    jQuery("#filter_by_period_p")[0].checked = true
+                                }
 
                                 if (_.all(params.Query.terms, (x) => { return x.indexOf("(?i)") >= 0 })) {
                                     params.Query.terms =

@@ -1,6 +1,6 @@
 {{ define "search" }}
 {{/* Created on 06. 09. 2024 */}}
-{{/* Time-stamp: <2024-09-13 18:50:11 krylon> */}}
+{{/* Time-stamp: <2024-09-13 19:33:46 krylon> */}}
 <!DOCTYPE html>
 <html>
   {{ template "head" . }}
@@ -26,6 +26,7 @@
 
        const period = _.map(jQuery("#search_filters input[type=datetime-local]"),
                             (x) => { return x.valueAsDate })
+       const do_filter_period = jQuery("#filter_by_period_p")[0].checked
 
        let terms = jQuery("#search_terms")[0].value.split("\n")
 
@@ -39,7 +40,7 @@
        const query = {
          "hosts": _.map(hosts, (x) => { return Number.parseInt(x) }),
          "sources": sources,
-         "period": period,
+         "period": do_filter_period ? period : [],
          "terms": terms,
        }
 
@@ -144,6 +145,14 @@
 
           <div class="col">
             <table class="horizontal" id="select_period">
+              <tr>
+                <th>Filter by date?</th>
+                <td>
+                  <input type="checkbox"
+                         id="filter_by_period_p"
+                         checked="true" />
+                </td>
+              </tr>
               <tr>
                 <th>Begin:</th>
                 <td>
