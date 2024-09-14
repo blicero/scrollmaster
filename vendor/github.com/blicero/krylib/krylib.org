@@ -1,0 +1,8 @@
+# Krylib - my personal, digital utilitiy belt
+# Time-stamp: <2022-09-06 19:11:41 krylon>
+
+* Krylib
+** MsgBuf
+*** TODO Generics
+    Now that Go has Generics, I think it would be nice to rewrite the
+    message buffer so it carries a generic payload.
