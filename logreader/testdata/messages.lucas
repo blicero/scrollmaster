@@ -1,0 +1,1966 @@
+2024-08-26T18:00:02.035Z lucas newsyslog[65647]: logfile turned over
+Aug 26 20:00:02 lucas syslogd[54040]: restart
+Aug 26 20:00:23 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:01:00 lucas last message repeated 9 times
+Aug 26 20:01:00 lucas last message repeated 8 times
+Aug 26 20:01:09 lucas pulseaudio[82543]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:01:09 lucas pulseaudio[82543]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:01:09 lucas pulseaudio[82543]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:01:50 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:01:50 lucas last message repeated 8 times
+Aug 26 20:02:14 lucas ntpd[92734]: constraints configured but none available
+Aug 26 20:02:31 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:02:31 lucas last message repeated 8 times
+Aug 26 20:02:38 lucas pulseaudio[28179]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:02:38 lucas pulseaudio[28179]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:02:38 lucas pulseaudio[28179]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:03:19 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:03:19 lucas last message repeated 8 times
+Aug 26 20:03:57 lucas last message repeated 9 times
+Aug 26 20:04:06 lucas pulseaudio[41264]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:04:06 lucas pulseaudio[41264]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:04:06 lucas pulseaudio[41264]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:04:47 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:04:47 lucas last message repeated 8 times
+Aug 26 20:05:25 lucas last message repeated 9 times
+Aug 26 20:05:35 lucas pulseaudio[32696]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:05:35 lucas pulseaudio[32696]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:05:35 lucas pulseaudio[32696]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:06:16 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:06:16 lucas last message repeated 8 times
+Aug 26 20:06:53 lucas last message repeated 9 times
+Aug 26 20:07:03 lucas pulseaudio[24595]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:07:03 lucas pulseaudio[24595]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:07:03 lucas pulseaudio[24595]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:07:44 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:07:44 lucas last message repeated 8 times
+Aug 26 20:08:16 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 20:08:16 lucas /bsd: drm:pid8593:intel_pipe_update_end *ERROR* [drm] *ERROR* Atomic update failure on pipe B (start=79438 end=79439) time 7 us, min 795, max 799, scanline start 797, end 800
+Aug 26 20:08:21 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:08:21 lucas last message repeated 8 times
+Aug 26 20:08:32 lucas pulseaudio[56490]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:08:32 lucas pulseaudio[56490]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:08:32 lucas pulseaudio[56490]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:09:13 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:09:13 lucas last message repeated 8 times
+Aug 26 20:09:51 lucas last message repeated 9 times
+Aug 26 20:10:01 lucas pulseaudio[78582]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:10:01 lucas pulseaudio[78582]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:10:01 lucas pulseaudio[78582]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:10:42 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:11:19 lucas last message repeated 9 times
+Aug 26 20:11:19 lucas last message repeated 8 times
+Aug 26 20:11:29 lucas pulseaudio[28321]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:11:29 lucas pulseaudio[28321]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:11:29 lucas pulseaudio[28321]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:12:10 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:12:48 lucas last message repeated 9 times
+Aug 26 20:12:48 lucas last message repeated 8 times
+Aug 26 20:12:57 lucas pulseaudio[34511]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:12:57 lucas pulseaudio[34511]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:12:57 lucas pulseaudio[34511]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:13:38 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:14:16 lucas last message repeated 9 times
+Aug 26 20:14:16 lucas last message repeated 8 times
+Aug 26 20:14:26 lucas pulseaudio[29491]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:14:26 lucas pulseaudio[29491]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:14:26 lucas pulseaudio[29491]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:15:07 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:15:44 lucas last message repeated 9 times
+Aug 26 20:15:44 lucas last message repeated 8 times
+Aug 26 20:15:54 lucas pulseaudio[80185]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:15:54 lucas pulseaudio[80185]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:15:54 lucas pulseaudio[80185]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:16:35 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:17:13 lucas last message repeated 9 times
+Aug 26 20:17:13 lucas last message repeated 8 times
+Aug 26 20:17:25 lucas pulseaudio[70649]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:17:25 lucas pulseaudio[70649]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:17:25 lucas pulseaudio[70649]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:18:06 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:18:43 lucas last message repeated 9 times
+Aug 26 20:18:43 lucas last message repeated 8 times
+Aug 26 20:18:53 lucas pulseaudio[57436]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:18:53 lucas pulseaudio[57436]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:18:53 lucas pulseaudio[57436]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:19:34 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:19:34 lucas last message repeated 8 times
+Aug 26 20:19:36 lucas ntpd[92734]: constraints configured but none available
+Aug 26 20:20:12 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:20:12 lucas last message repeated 8 times
+Aug 26 20:20:21 lucas pulseaudio[17579]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:20:21 lucas pulseaudio[17579]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:20:21 lucas pulseaudio[17579]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:21:02 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:21:39 lucas last message repeated 9 times
+Aug 26 20:21:39 lucas last message repeated 8 times
+Aug 26 20:21:49 lucas pulseaudio[30185]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:21:49 lucas pulseaudio[30185]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:21:49 lucas pulseaudio[30185]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:22:30 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:23:07 lucas last message repeated 9 times
+Aug 26 20:23:07 lucas last message repeated 8 times
+Aug 26 20:23:17 lucas pulseaudio[11216]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:23:17 lucas pulseaudio[11216]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:23:17 lucas pulseaudio[11216]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:23:58 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:24:36 lucas last message repeated 9 times
+Aug 26 20:24:36 lucas last message repeated 8 times
+Aug 26 20:24:45 lucas pulseaudio[47709]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:24:45 lucas pulseaudio[47709]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:24:45 lucas pulseaudio[47709]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:25:26 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:26:04 lucas last message repeated 9 times
+Aug 26 20:26:04 lucas last message repeated 8 times
+Aug 26 20:26:13 lucas pulseaudio[29107]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:26:13 lucas pulseaudio[29107]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:26:13 lucas pulseaudio[29107]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:26:54 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:27:31 lucas last message repeated 9 times
+Aug 26 20:27:31 lucas last message repeated 8 times
+Aug 26 20:27:40 lucas pulseaudio[18389]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:27:40 lucas pulseaudio[18389]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:27:40 lucas pulseaudio[18389]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:28:21 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:28:58 lucas last message repeated 9 times
+Aug 26 20:28:58 lucas last message repeated 8 times
+Aug 26 20:29:07 lucas pulseaudio[4746]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:29:07 lucas pulseaudio[4746]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:29:07 lucas pulseaudio[4746]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:29:48 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:29:48 lucas last message repeated 8 times
+Aug 26 20:30:25 lucas last message repeated 9 times
+Aug 26 20:30:35 lucas pulseaudio[90874]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:30:35 lucas pulseaudio[90874]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:30:35 lucas pulseaudio[90874]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:31:16 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:31:16 lucas last message repeated 8 times
+Aug 26 20:31:54 lucas last message repeated 9 times
+Aug 26 20:32:03 lucas pulseaudio[71784]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:32:03 lucas pulseaudio[71784]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:32:03 lucas pulseaudio[71784]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:32:44 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:32:44 lucas last message repeated 8 times
+Aug 26 20:33:21 lucas last message repeated 9 times
+Aug 26 20:33:32 lucas pulseaudio[8750]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:33:32 lucas pulseaudio[8750]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:33:32 lucas pulseaudio[8750]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:34:13 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:34:50 lucas last message repeated 9 times
+Aug 26 20:34:50 lucas last message repeated 8 times
+Aug 26 20:35:00 lucas pulseaudio[44510]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:35:00 lucas pulseaudio[44510]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:35:00 lucas pulseaudio[44510]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:35:41 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:36:18 lucas last message repeated 9 times
+Aug 26 20:36:18 lucas last message repeated 8 times
+Aug 26 20:36:28 lucas pulseaudio[30838]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:36:28 lucas pulseaudio[30838]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:36:28 lucas pulseaudio[30838]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:37:09 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:37:46 lucas last message repeated 9 times
+Aug 26 20:37:46 lucas last message repeated 8 times
+Aug 26 20:37:57 lucas pulseaudio[44338]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:37:57 lucas pulseaudio[44338]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:37:57 lucas pulseaudio[44338]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:38:38 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:39:16 lucas last message repeated 9 times
+Aug 26 20:39:16 lucas last message repeated 8 times
+Aug 26 20:39:25 lucas pulseaudio[99907]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:39:25 lucas pulseaudio[99907]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:39:25 lucas pulseaudio[99907]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:40:06 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:40:43 lucas last message repeated 9 times
+Aug 26 20:40:43 lucas last message repeated 8 times
+Aug 26 20:40:53 lucas pulseaudio[38613]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:40:53 lucas pulseaudio[38613]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:40:53 lucas pulseaudio[38613]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:41:34 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:42:10 lucas last message repeated 9 times
+Aug 26 20:42:11 lucas last message repeated 8 times
+Aug 26 20:42:20 lucas pulseaudio[95883]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:42:20 lucas pulseaudio[95883]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:42:20 lucas pulseaudio[95883]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:43:01 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:43:38 lucas last message repeated 9 times
+Aug 26 20:43:38 lucas last message repeated 8 times
+Aug 26 20:43:47 lucas pulseaudio[28989]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:43:47 lucas pulseaudio[28989]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:43:47 lucas pulseaudio[28989]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:44:28 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:45:07 lucas last message repeated 9 times
+Aug 26 20:45:07 lucas last message repeated 8 times
+Aug 26 20:45:16 lucas pulseaudio[89422]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:45:16 lucas pulseaudio[89422]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:45:16 lucas pulseaudio[89422]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:45:57 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:46:34 lucas last message repeated 9 times
+Aug 26 20:46:34 lucas last message repeated 8 times
+Aug 26 20:46:44 lucas pulseaudio[95517]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:46:44 lucas pulseaudio[95517]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:46:44 lucas pulseaudio[95517]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:46:45 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 20:47:25 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:48:02 lucas last message repeated 9 times
+Aug 26 20:48:02 lucas last message repeated 8 times
+Aug 26 20:48:12 lucas pulseaudio[77100]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:48:12 lucas pulseaudio[77100]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:48:12 lucas pulseaudio[77100]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:48:21 lucas ntpd[92734]: constraints configured but none available
+Aug 26 20:48:53 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:49:31 lucas last message repeated 9 times
+Aug 26 20:49:31 lucas last message repeated 8 times
+Aug 26 20:49:40 lucas pulseaudio[68091]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:49:40 lucas pulseaudio[68091]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:49:40 lucas pulseaudio[68091]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:50:21 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:50:21 lucas last message repeated 8 times
+Aug 26 20:50:59 lucas last message repeated 9 times
+Aug 26 20:51:07 lucas pulseaudio[55321]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:51:08 lucas pulseaudio[55321]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:51:08 lucas pulseaudio[55321]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:51:49 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:51:49 lucas last message repeated 8 times
+Aug 26 20:52:26 lucas last message repeated 9 times
+Aug 26 20:52:36 lucas pulseaudio[39939]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:52:36 lucas pulseaudio[39939]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:52:36 lucas pulseaudio[39939]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:53:17 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:53:17 lucas last message repeated 8 times
+Aug 26 20:53:54 lucas last message repeated 9 times
+Aug 26 20:54:04 lucas pulseaudio[16873]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:54:04 lucas pulseaudio[16873]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:54:04 lucas pulseaudio[16873]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:54:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 20:54:45 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:54:45 lucas last message repeated 8 times
+Aug 26 20:55:22 lucas last message repeated 9 times
+Aug 26 20:55:32 lucas pulseaudio[91317]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:55:32 lucas pulseaudio[91317]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:55:32 lucas pulseaudio[91317]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:56:12 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:56:50 lucas last message repeated 9 times
+Aug 26 20:56:50 lucas last message repeated 8 times
+Aug 26 20:57:00 lucas pulseaudio[53838]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:57:00 lucas pulseaudio[53838]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:57:00 lucas pulseaudio[53838]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:57:41 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:58:18 lucas last message repeated 9 times
+Aug 26 20:58:18 lucas last message repeated 8 times
+Aug 26 20:58:29 lucas pulseaudio[36212]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:58:29 lucas pulseaudio[36212]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:58:29 lucas pulseaudio[36212]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 20:59:10 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 20:59:47 lucas last message repeated 9 times
+Aug 26 20:59:47 lucas last message repeated 8 times
+Aug 26 20:59:58 lucas pulseaudio[99127]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 20:59:58 lucas pulseaudio[99127]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 20:59:58 lucas pulseaudio[99127]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:00:01 lucas syslogd[54040]: restart
+Aug 26 21:00:39 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:00:39 lucas last message repeated 8 times
+Aug 26 21:01:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 21:01:16 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:01:16 lucas last message repeated 8 times
+Aug 26 21:01:26 lucas pulseaudio[51858]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:01:26 lucas pulseaudio[51858]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:01:26 lucas pulseaudio[51858]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:02:07 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:02:44 lucas last message repeated 9 times
+Aug 26 21:02:44 lucas last message repeated 8 times
+Aug 26 21:02:55 lucas pulseaudio[96930]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:02:55 lucas pulseaudio[96930]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:02:55 lucas pulseaudio[96930]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:03:36 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:04:13 lucas last message repeated 9 times
+Aug 26 21:04:13 lucas last message repeated 8 times
+Aug 26 21:04:23 lucas pulseaudio[36613]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:04:23 lucas pulseaudio[36613]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:04:23 lucas pulseaudio[36613]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:05:04 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:05:41 lucas last message repeated 9 times
+Aug 26 21:05:41 lucas last message repeated 8 times
+Aug 26 21:05:51 lucas pulseaudio[25576]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:05:51 lucas pulseaudio[25576]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:05:51 lucas pulseaudio[25576]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:06:32 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:07:09 lucas last message repeated 9 times
+Aug 26 21:07:09 lucas last message repeated 8 times
+Aug 26 21:07:19 lucas pulseaudio[73268]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:07:19 lucas pulseaudio[73268]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:07:19 lucas pulseaudio[73268]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:07:44 lucas ntpd[92734]: constraints configured but none available
+Aug 26 21:08:00 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:08:38 lucas last message repeated 9 times
+Aug 26 21:08:38 lucas last message repeated 8 times
+Aug 26 21:08:47 lucas pulseaudio[68467]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:08:47 lucas pulseaudio[68467]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:08:47 lucas pulseaudio[68467]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:09:28 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:10:07 lucas last message repeated 9 times
+Aug 26 21:10:07 lucas last message repeated 8 times
+Aug 26 21:10:15 lucas pulseaudio[86849]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:10:15 lucas pulseaudio[86849]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:10:15 lucas pulseaudio[86849]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:10:56 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:11:34 lucas last message repeated 9 times
+Aug 26 21:11:34 lucas last message repeated 8 times
+Aug 26 21:11:43 lucas pulseaudio[10494]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:11:43 lucas pulseaudio[10494]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:11:43 lucas pulseaudio[10494]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:12:24 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:13:02 lucas last message repeated 9 times
+Aug 26 21:13:02 lucas last message repeated 8 times
+Aug 26 21:13:12 lucas pulseaudio[1128]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:13:12 lucas pulseaudio[1128]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:13:12 lucas pulseaudio[1128]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:13:52 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:14:30 lucas last message repeated 9 times
+Aug 26 21:14:30 lucas last message repeated 8 times
+Aug 26 21:14:40 lucas pulseaudio[10083]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:14:40 lucas pulseaudio[10083]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:14:40 lucas pulseaudio[10083]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:15:21 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:15:21 lucas last message repeated 8 times
+Aug 26 21:15:58 lucas last message repeated 9 times
+Aug 26 21:16:08 lucas pulseaudio[725]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:16:08 lucas pulseaudio[725]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:16:08 lucas pulseaudio[725]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:16:49 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:16:49 lucas last message repeated 8 times
+Aug 26 21:17:28 lucas last message repeated 9 times
+Aug 26 21:17:36 lucas pulseaudio[26605]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:17:36 lucas pulseaudio[26605]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:17:36 lucas pulseaudio[26605]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:18:17 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:18:17 lucas last message repeated 8 times
+Aug 26 21:18:55 lucas last message repeated 9 times
+Aug 26 21:19:04 lucas pulseaudio[91548]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:19:04 lucas pulseaudio[91548]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:19:04 lucas pulseaudio[91548]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:19:45 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:19:45 lucas last message repeated 8 times
+Aug 26 21:20:23 lucas last message repeated 9 times
+Aug 26 21:20:32 lucas pulseaudio[35131]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:20:32 lucas pulseaudio[35131]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:20:32 lucas pulseaudio[35131]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:21:13 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:21:51 lucas last message repeated 9 times
+Aug 26 21:21:51 lucas last message repeated 8 times
+Aug 26 21:22:00 lucas pulseaudio[80326]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:22:00 lucas pulseaudio[80326]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:22:00 lucas pulseaudio[80326]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:22:41 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:23:18 lucas last message repeated 9 times
+Aug 26 21:23:19 lucas last message repeated 8 times
+Aug 26 21:23:28 lucas pulseaudio[31656]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:23:28 lucas pulseaudio[31656]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:23:28 lucas pulseaudio[31656]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:24:09 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:24:47 lucas last message repeated 9 times
+Aug 26 21:24:47 lucas last message repeated 8 times
+Aug 26 21:24:57 lucas pulseaudio[93936]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:24:57 lucas pulseaudio[93936]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:24:57 lucas pulseaudio[93936]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:25:38 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:26:15 lucas last message repeated 9 times
+Aug 26 21:26:15 lucas last message repeated 8 times
+Aug 26 21:26:25 lucas pulseaudio[69182]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:26:25 lucas pulseaudio[69182]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:26:25 lucas pulseaudio[69182]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:27:06 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:27:44 lucas last message repeated 9 times
+Aug 26 21:27:44 lucas last message repeated 8 times
+Aug 26 21:27:53 lucas pulseaudio[99515]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:27:53 lucas pulseaudio[99515]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:27:53 lucas pulseaudio[99515]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:28:34 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:29:11 lucas last message repeated 9 times
+Aug 26 21:29:11 lucas last message repeated 8 times
+Aug 26 21:29:21 lucas pulseaudio[1890]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:29:21 lucas pulseaudio[1890]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:29:21 lucas pulseaudio[1890]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:30:03 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:30:39 lucas last message repeated 9 times
+Aug 26 21:30:39 lucas last message repeated 8 times
+Aug 26 21:30:49 lucas pulseaudio[75287]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:30:49 lucas pulseaudio[75287]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:30:49 lucas pulseaudio[75287]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:31:30 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:32:08 lucas last message repeated 9 times
+Aug 26 21:32:08 lucas last message repeated 8 times
+Aug 26 21:32:17 lucas pulseaudio[104]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:32:17 lucas pulseaudio[104]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:32:17 lucas pulseaudio[104]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:32:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 21:32:59 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:33:36 lucas last message repeated 9 times
+Aug 26 21:33:36 lucas last message repeated 8 times
+Aug 26 21:33:45 lucas pulseaudio[74361]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:33:45 lucas pulseaudio[74361]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:33:45 lucas pulseaudio[74361]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:34:26 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:34:26 lucas last message repeated 8 times
+Aug 26 21:34:28 lucas ntpd[92734]: constraints configured but none available
+Aug 26 21:35:05 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:35:05 lucas last message repeated 8 times
+Aug 26 21:35:14 lucas pulseaudio[59064]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:35:14 lucas pulseaudio[59064]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:35:14 lucas pulseaudio[59064]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:35:55 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:36:32 lucas last message repeated 9 times
+Aug 26 21:36:32 lucas last message repeated 8 times
+Aug 26 21:36:42 lucas pulseaudio[81774]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:36:42 lucas pulseaudio[81774]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:36:42 lucas pulseaudio[81774]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:37:23 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:38:00 lucas last message repeated 9 times
+Aug 26 21:38:00 lucas last message repeated 8 times
+Aug 26 21:38:09 lucas pulseaudio[11507]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:38:09 lucas pulseaudio[11507]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:38:09 lucas pulseaudio[11507]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:38:50 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:38:50 lucas last message repeated 8 times
+Aug 26 21:39:28 lucas last message repeated 9 times
+Aug 26 21:39:37 lucas pulseaudio[81608]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:39:37 lucas pulseaudio[81608]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:39:37 lucas pulseaudio[81608]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:40:18 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:40:18 lucas last message repeated 8 times
+Aug 26 21:40:56 lucas last message repeated 9 times
+Aug 26 21:41:06 lucas pulseaudio[35349]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:41:06 lucas pulseaudio[35349]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:41:06 lucas pulseaudio[35349]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:41:47 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:41:47 lucas last message repeated 8 times
+Aug 26 21:42:25 lucas last message repeated 9 times
+Aug 26 21:42:34 lucas pulseaudio[5136]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:42:34 lucas pulseaudio[5136]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:42:34 lucas pulseaudio[5136]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:43:15 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:43:52 lucas last message repeated 9 times
+Aug 26 21:43:52 lucas last message repeated 8 times
+Aug 26 21:44:02 lucas pulseaudio[83040]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:44:02 lucas pulseaudio[83040]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:44:02 lucas pulseaudio[83040]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:44:43 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:45:20 lucas last message repeated 9 times
+Aug 26 21:45:20 lucas last message repeated 8 times
+Aug 26 21:45:30 lucas pulseaudio[80440]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:45:30 lucas pulseaudio[80440]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:45:30 lucas pulseaudio[80440]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:46:10 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:46:48 lucas last message repeated 9 times
+Aug 26 21:46:48 lucas last message repeated 8 times
+Aug 26 21:46:57 lucas pulseaudio[98591]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:46:57 lucas pulseaudio[98591]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:46:57 lucas pulseaudio[98591]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:47:38 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:48:15 lucas last message repeated 9 times
+Aug 26 21:48:15 lucas last message repeated 8 times
+Aug 26 21:48:25 lucas pulseaudio[19405]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:48:25 lucas pulseaudio[19405]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:48:25 lucas pulseaudio[19405]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:49:06 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:49:43 lucas last message repeated 9 times
+Aug 26 21:49:43 lucas last message repeated 8 times
+Aug 26 21:49:54 lucas pulseaudio[1903]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:49:54 lucas pulseaudio[1903]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:49:54 lucas pulseaudio[1903]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:50:35 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:51:13 lucas last message repeated 9 times
+Aug 26 21:51:13 lucas last message repeated 8 times
+Aug 26 21:51:23 lucas pulseaudio[52215]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:51:23 lucas pulseaudio[52215]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:51:23 lucas pulseaudio[52215]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:52:04 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:52:41 lucas last message repeated 9 times
+Aug 26 21:52:41 lucas last message repeated 8 times
+Aug 26 21:52:50 lucas pulseaudio[63005]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:52:50 lucas pulseaudio[63005]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:52:50 lucas pulseaudio[63005]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:53:31 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:54:09 lucas last message repeated 9 times
+Aug 26 21:54:09 lucas last message repeated 8 times
+Aug 26 21:54:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 21:54:19 lucas pulseaudio[14395]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:54:19 lucas pulseaudio[14395]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:54:19 lucas pulseaudio[14395]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:55:00 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:55:37 lucas last message repeated 9 times
+Aug 26 21:55:37 lucas last message repeated 8 times
+Aug 26 21:55:47 lucas pulseaudio[72415]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:55:47 lucas pulseaudio[72415]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:55:47 lucas pulseaudio[72415]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:55:51 lucas ntpd[92734]: constraints configured but none available
+Aug 26 21:56:28 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:57:05 lucas last message repeated 9 times
+Aug 26 21:57:05 lucas last message repeated 8 times
+Aug 26 21:57:15 lucas pulseaudio[1979]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:57:15 lucas pulseaudio[1979]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:57:15 lucas pulseaudio[1979]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:57:56 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 21:58:34 lucas last message repeated 9 times
+Aug 26 21:58:34 lucas last message repeated 8 times
+Aug 26 21:58:43 lucas pulseaudio[81491]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 21:58:43 lucas pulseaudio[81491]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 21:58:43 lucas pulseaudio[81491]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 21:59:24 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:00:02 lucas last message repeated 9 times
+Aug 26 22:00:02 lucas last message repeated 8 times
+Aug 26 22:00:12 lucas pulseaudio[82696]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:00:12 lucas pulseaudio[82696]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:00:12 lucas pulseaudio[82696]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:00:53 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:01:31 lucas last message repeated 9 times
+Aug 26 22:01:31 lucas last message repeated 8 times
+Aug 26 22:01:40 lucas pulseaudio[83792]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:01:40 lucas pulseaudio[83792]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:01:40 lucas pulseaudio[83792]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:02:22 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:02:22 lucas last message repeated 8 times
+Aug 26 22:02:59 lucas last message repeated 9 times
+Aug 26 22:03:08 lucas pulseaudio[56228]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:03:08 lucas pulseaudio[56228]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:03:08 lucas pulseaudio[56228]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:03:49 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:03:49 lucas last message repeated 8 times
+Aug 26 22:04:27 lucas last message repeated 9 times
+Aug 26 22:04:36 lucas pulseaudio[55822]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:04:36 lucas pulseaudio[55822]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:04:36 lucas pulseaudio[55822]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:05:17 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:05:17 lucas last message repeated 8 times
+Aug 26 22:05:55 lucas last message repeated 9 times
+Aug 26 22:06:04 lucas pulseaudio[97755]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:06:04 lucas pulseaudio[97755]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:06:04 lucas pulseaudio[97755]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:06:45 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:06:45 lucas last message repeated 8 times
+Aug 26 22:07:24 lucas last message repeated 9 times
+Aug 26 22:07:32 lucas pulseaudio[85251]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:07:32 lucas pulseaudio[85251]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:07:32 lucas pulseaudio[85251]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:08:13 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:08:51 lucas last message repeated 9 times
+Aug 26 22:08:51 lucas last message repeated 8 times
+Aug 26 22:09:01 lucas pulseaudio[57464]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:09:01 lucas pulseaudio[57464]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:09:01 lucas pulseaudio[57464]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:09:42 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:10:19 lucas last message repeated 9 times
+Aug 26 22:10:19 lucas last message repeated 8 times
+Aug 26 22:10:28 lucas pulseaudio[78535]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:10:28 lucas pulseaudio[78535]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:10:28 lucas pulseaudio[78535]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:11:09 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:11:46 lucas last message repeated 9 times
+Aug 26 22:11:46 lucas last message repeated 8 times
+Aug 26 22:11:56 lucas pulseaudio[93725]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:11:56 lucas pulseaudio[93725]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:11:56 lucas pulseaudio[93725]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:12:37 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:12:37 lucas last message repeated 8 times
+Aug 26 22:12:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 22:13:15 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:13:15 lucas last message repeated 8 times
+Aug 26 22:13:24 lucas pulseaudio[45983]: [(null)] ltdl-bind-now.c: Failed to open module module-esound-protocol-tcp.so: File not found
+Aug 26 22:13:24 lucas pulseaudio[45983]: [(null)] module.c: Failed to open module "module-esound-protocol-tcp".
+Aug 26 22:13:24 lucas pulseaudio[45983]: [(null)] socket-util.c: IP_TOS failed: Invalid argument
+Aug 26 22:14:05 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 22:14:43 lucas last message repeated 9 times
+Aug 26 22:14:43 lucas last message repeated 8 times
+Aug 26 22:20:35 lucas ntpd[92734]: constraints configured but none available
+Aug 26 22:39:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 26 22:43:58 lucas ntpd[92734]: constraints configured but none available
+Aug 26 23:06:42 lucas ntpd[92734]: constraints configured but none available
+Aug 26 23:13:44 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 26 23:14:28 lucas pulseaudio[53730]: [(null)] main.c: Daemon startup failed.
+Aug 26 23:14:28 lucas mate-settings-daemon: vfprintf %s NULL in "changed::%s"
+Aug 26 23:14:28 lucas last message repeated 8 times
+Aug 26 23:22:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 23:29:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 23:29:53 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 26 23:31:25 lucas apmd: system suspending
+Aug 26 23:31:25 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 26 23:31:28 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Aug 26 23:31:28 lucas /bsd: uhub1 detached
+Aug 26 23:31:28 lucas /bsd: uhub2 detached
+Aug 26 23:31:28 lucas /bsd: uhub3 detached
+Aug 26 23:31:28 lucas /bsd: uhub4 detached
+Aug 26 23:31:28 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Aug 26 23:31:28 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Aug 27 16:09:50 lucas /bsd: rum0 detached
+Aug 27 16:09:50 lucas /bsd: uhub0 detached
+Aug 27 16:09:50 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 27 16:09:50 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 27 16:09:50 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 27 16:09:50 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 27 16:09:50 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Aug 27 16:09:50 lucas /bsd: inteldrm0: no ifp
+Aug 27 16:09:51 lucas ntpd[13767]: IMSG_CONSTRAINT_KILL for invalid id 1
+Aug 27 16:09:51 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Aug 27 16:09:51 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Aug 27 16:09:51 lucas ntpd[92734]: constraints configured but none available
+Aug 27 16:09:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 16:09:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 16:09:53 lucas apmd: system resumed from sleep
+Aug 27 16:09:53 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 27 16:23:47 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 16:25:25 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 16:25:47 lucas ntpd[92734]: constraints configured but none available
+Aug 27 16:28:05 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 16:48:51 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 16:49:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 16:52:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 16:55:51 lucas ntpd[92734]: constraints configured but none available
+Aug 27 17:00:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 17:04:06 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 17:13:53 lucas ntpd[92734]: constraints configured but none available
+Aug 27 17:15:42 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 17:41:57 lucas ntpd[92734]: constraints configured but none available
+Aug 27 17:46:08 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 17:46:38 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:00:01 lucas syslogd[54040]: restart
+Aug 27 18:02:00 lucas ntpd[92734]: constraints configured but none available
+Aug 27 18:06:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:13:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:14:16 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:23:47 lucas last message repeated 2 times
+Aug 27 18:28:03 lucas ntpd[92734]: constraints configured but none available
+Aug 27 18:35:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:42:41 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:49:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:50:06 lucas ntpd[92734]: constraints configured but none available
+Aug 27 18:56:14 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 18:58:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 19:08:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 19:14:09 lucas ntpd[92734]: constraints configured but none available
+Aug 27 19:21:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 19:38:13 lucas ntpd[92734]: constraints configured but none available
+Aug 27 20:00:01 lucas syslogd[54040]: restart
+Aug 27 20:00:16 lucas ntpd[92734]: constraints configured but none available
+Aug 27 20:26:19 lucas ntpd[92734]: constraints configured but none available
+Aug 27 20:35:58 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 20:40:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 20:46:22 lucas ntpd[92734]: constraints configured but none available
+Aug 27 20:50:08 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 20:52:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 21:10:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 21:14:26 lucas ntpd[92734]: constraints configured but none available
+Aug 27 21:32:29 lucas ntpd[92734]: constraints configured but none available
+Aug 27 21:43:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 21:45:47 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 21:53:14 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:02:33 lucas ntpd[92734]: constraints configured but none available
+Aug 27 22:05:19 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:07:10 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:09:45 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:16:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:18:35 lucas ntpd[92734]: constraints configured but none available
+Aug 27 22:20:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:27:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:35:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 22:39:44 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 27 22:46:23 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:49:19 lucas ntpd[92734]: constraints configured but none available
+Aug 27 22:50:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:51:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 22:54:43 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 23:06:42 lucas ntpd[92734]: constraints configured but none available
+Aug 27 23:35:26 lucas ntpd[92734]: constraints configured but none available
+Aug 27 23:41:59 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 23:44:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 23:48:39 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 23:50:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 27 23:54:48 lucas ntpd[92734]: constraints configured but none available
+Aug 27 23:57:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 00:00:02 lucas syslogd[54040]: restart
+Aug 28 00:00:40 lucas apmd: system suspending
+Aug 28 00:00:40 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 28 00:00:42 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Aug 28 00:00:42 lucas /bsd: uhub0 detached
+Aug 28 00:00:42 lucas /bsd: uhub1 detached
+Aug 28 00:00:42 lucas /bsd: uhub2 detached
+Aug 28 00:00:42 lucas /bsd: uhub3 detached
+Aug 28 00:00:42 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Aug 28 00:00:42 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Aug 28 12:34:20 lucas /bsd: rum0 detached
+Aug 28 12:34:20 lucas /bsd: uhub4 detached
+Aug 28 12:34:20 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 28 12:34:20 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 28 12:34:20 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 28 12:34:20 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 28 12:34:20 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Aug 28 12:34:20 lucas /bsd: inteldrm0: no ifp
+Aug 28 12:34:20 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 12:34:21 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Aug 28 12:34:21 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Aug 28 12:34:21 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 12:34:23 lucas apmd: system resumed from sleep
+Aug 28 12:34:23 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 28 12:48:23 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 12:49:47 lucas ntpd[92734]: constraints configured but none available
+Aug 28 12:55:42 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 13:00:01 lucas usermod[57915]: user information modified: name=krylon, uid=1000, gid=5, home=/home/krylon, shell=/usr/local/bin/zsh
+Aug 28 13:07:09 lucas ntpd[92734]: constraints configured but none available
+Aug 28 13:32:57 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 13:35:54 lucas ntpd[92734]: constraints configured but none available
+Aug 28 13:55:17 lucas ntpd[92734]: constraints configured but none available
+Aug 28 14:22:01 lucas ntpd[92734]: constraints configured but none available
+Aug 28 14:43:24 lucas ntpd[92734]: constraints configured but none available
+Aug 28 15:03:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 15:08:07 lucas ntpd[92734]: constraints configured but none available
+Aug 28 15:19:18 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 15:31:31 lucas ntpd[92734]: constraints configured but none available
+Aug 28 15:34:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 15:43:42 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 15:54:14 lucas ntpd[92734]: constraints configured but none available
+Aug 28 15:57:08 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 16:19:38 lucas ntpd[92734]: constraints configured but none available
+Aug 28 16:20:37 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 16:40:21 lucas ntpd[92734]: constraints configured but none available
+Aug 28 17:07:45 lucas ntpd[92734]: constraints configured but none available
+Aug 28 17:26:28 lucas ntpd[92734]: constraints configured but none available
+Aug 28 17:55:52 lucas ntpd[92734]: constraints configured but none available
+Aug 28 18:12:35 lucas ntpd[92734]: constraints configured but none available
+Aug 28 18:43:19 lucas ntpd[92734]: constraints configured but none available
+Aug 28 19:00:02 lucas ntpd[92734]: constraints configured but none available
+Aug 28 19:29:26 lucas ntpd[92734]: constraints configured but none available
+Aug 28 19:46:45 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 19:48:09 lucas ntpd[92734]: constraints configured but none available
+Aug 28 20:00:01 lucas syslogd[54040]: restart
+Aug 28 20:15:32 lucas ntpd[92734]: constraints configured but none available
+Aug 28 20:36:15 lucas ntpd[92734]: constraints configured but none available
+Aug 28 21:01:39 lucas ntpd[92734]: constraints configured but none available
+Aug 28 21:14:11 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 21:19:48 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 28 21:19:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 21:24:22 lucas ntpd[92734]: constraints configured but none available
+Aug 28 21:47:46 lucas ntpd[92734]: constraints configured but none available
+Aug 28 22:08:53 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 22:12:29 lucas ntpd[92734]: constraints configured but none available
+Aug 28 22:13:34 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 22:33:52 lucas ntpd[92734]: constraints configured but none available
+Aug 28 23:00:01 lucas syslogd[54040]: restart
+Aug 28 23:00:36 lucas ntpd[92734]: constraints configured but none available
+Aug 28 23:19:59 lucas ntpd[92734]: constraints configured but none available
+Aug 28 23:28:09 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 28 23:47:34 lucas apmd: system suspending
+Aug 28 23:47:34 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 28 23:47:36 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Aug 28 23:47:36 lucas /bsd: uhub0 detached
+Aug 28 23:47:36 lucas /bsd: uhub1 detached
+Aug 28 23:47:36 lucas /bsd: uhub2 detached
+Aug 28 23:47:36 lucas /bsd: uhub3 detached
+Aug 28 23:47:36 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Aug 28 23:47:36 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Aug 29 18:35:16 lucas /bsd: rum0 detached
+Aug 29 18:35:16 lucas /bsd: uhub4 detached
+Aug 29 18:35:16 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 29 18:35:16 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 29 18:35:16 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 29 18:35:16 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 29 18:35:16 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Aug 29 18:35:16 lucas /bsd: inteldrm0: no ifp
+Aug 29 18:35:16 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Aug 29 18:35:17 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Aug 29 18:35:17 lucas ntpd[92734]: constraints configured but none available
+Aug 29 18:35:17 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 29 18:35:17 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 29 18:35:19 lucas apmd: system resumed from sleep
+Aug 29 18:35:19 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 29 18:51:43 lucas ntpd[92734]: constraints configured but none available
+Aug 29 19:11:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 29 19:21:07 lucas ntpd[92734]: constraints configured but none available
+Aug 29 19:36:53 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 29 19:39:50 lucas ntpd[92734]: constraints configured but none available
+Aug 29 20:00:02 lucas syslogd[54040]: restart
+Aug 29 20:07:14 lucas ntpd[92734]: constraints configured but none available
+Aug 29 20:27:57 lucas ntpd[92734]: constraints configured but none available
+Aug 29 20:51:30 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 29 20:52:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 29 20:53:21 lucas ntpd[92734]: constraints configured but none available
+Aug 29 21:16:04 lucas ntpd[92734]: constraints configured but none available
+Aug 29 21:39:27 lucas ntpd[92734]: constraints configured but none available
+Aug 29 22:04:11 lucas ntpd[92734]: constraints configured but none available
+Aug 29 22:19:10 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 29 22:23:39 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 29 22:25:34 lucas ntpd[92734]: constraints configured but none available
+Aug 29 22:43:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 29 22:44:12 lucas apmd: system suspending
+Aug 29 22:44:12 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 29 22:44:14 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Aug 29 22:44:14 lucas /bsd: uhub0 detached
+Aug 29 22:44:14 lucas /bsd: uhub1 detached
+Aug 29 22:44:14 lucas /bsd: uhub2 detached
+Aug 29 22:44:14 lucas /bsd: uhub3 detached
+Aug 29 22:44:14 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Aug 29 22:44:14 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Aug 30 16:29:27 lucas /bsd: rum0 detached
+Aug 30 16:29:27 lucas /bsd: uhub4 detached
+Aug 30 16:29:27 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 30 16:29:27 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 30 16:29:27 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 30 16:29:27 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 30 16:29:27 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Aug 30 16:29:28 lucas /bsd: inteldrm0: no ifp
+Aug 30 16:29:28 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Aug 30 16:29:28 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Aug 30 16:29:28 lucas ntpd[92734]: constraints configured but none available
+Aug 30 16:29:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 16:29:30 lucas apmd: system resumed from sleep
+Aug 30 16:29:30 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 30 16:34:27 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 16:34:54 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 16:46:09 lucas ntpd[92734]: constraints configured but none available
+Aug 30 16:53:00 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 16:54:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 17:07:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 17:15:33 lucas ntpd[92734]: constraints configured but none available
+Aug 30 17:34:16 lucas ntpd[92734]: constraints configured but none available
+Aug 30 17:42:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 17:45:21 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 17:52:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 18:01:40 lucas ntpd[92734]: constraints configured but none available
+Aug 30 18:11:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 18:22:23 lucas ntpd[92734]: constraints configured but none available
+Aug 30 18:47:47 lucas ntpd[92734]: constraints configured but none available
+Aug 30 18:57:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 19:04:35 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 19:10:30 lucas ntpd[92734]: constraints configured but none available
+Aug 30 19:19:20 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 19:26:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 19:33:53 lucas ntpd[92734]: constraints configured but none available
+Aug 30 19:47:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 19:58:37 lucas ntpd[92734]: constraints configured but none available
+Aug 30 20:00:01 lucas syslogd[54040]: restart
+Aug 30 20:20:00 lucas ntpd[92734]: constraints configured but none available
+Aug 30 20:24:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 20:46:44 lucas ntpd[92734]: constraints configured but none available
+Aug 30 20:58:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 21:06:06 lucas ntpd[92734]: constraints configured but none available
+Aug 30 21:14:59 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 21:24:30 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 21:34:51 lucas ntpd[92734]: constraints configured but none available
+Aug 30 21:41:18 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 21:52:13 lucas ntpd[92734]: constraints configured but none available
+Aug 30 22:00:01 lucas syslogd[54040]: restart
+Aug 30 22:22:58 lucas ntpd[92734]: constraints configured but none available
+Aug 30 22:36:08 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 22:37:25 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 30 22:39:00 lucas ntpd[92734]: constraints configured but none available
+Aug 30 22:42:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 23:04:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 23:04:54 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 23:09:04 lucas ntpd[92734]: constraints configured but none available
+Aug 30 23:27:07 lucas ntpd[92734]: constraints configured but none available
+Aug 30 23:51:10 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 23:54:31 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 30 23:55:11 lucas ntpd[92734]: constraints configured but none available
+Aug 31 00:15:14 lucas ntpd[92734]: constraints configured but none available
+Aug 31 00:20:02 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 00:41:17 lucas ntpd[92734]: constraints configured but none available
+Aug 31 00:43:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 01:03:21 lucas ntpd[92734]: constraints configured but none available
+Aug 31 01:10:53 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 01:27:24 lucas ntpd[92734]: constraints configured but none available
+Aug 31 01:35:10 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 01:36:04 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 01:51:28 lucas ntpd[92734]: constraints configured but none available
+Aug 31 01:54:11 lucas apmd: system suspending
+Aug 31 01:54:11 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 31 01:54:14 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Aug 31 01:54:14 lucas /bsd: uhub0 detached
+Aug 31 01:54:14 lucas /bsd: uhub1 detached
+Aug 31 01:54:14 lucas /bsd: uhub2 detached
+Aug 31 01:54:14 lucas /bsd: uhub3 detached
+Aug 31 01:54:14 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Aug 31 01:54:14 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Aug 31 13:22:41 lucas /bsd: rum0 detached
+Aug 31 13:22:41 lucas /bsd: uhub4 detached
+Aug 31 13:22:41 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 31 13:22:41 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 31 13:22:41 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 31 13:22:41 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Aug 31 13:22:41 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Aug 31 13:22:41 lucas /bsd: inteldrm0: no ifp
+Aug 31 13:22:41 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 13:22:42 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Aug 31 13:22:42 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Aug 31 13:22:43 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 13:22:44 lucas apmd: system resumed from sleep
+Aug 31 13:22:44 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 31 13:37:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 13:37:53 lucas ntpd[92734]: constraints configured but none available
+Aug 31 13:49:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 13:54:18 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 13:55:16 lucas ntpd[92734]: constraints configured but none available
+Aug 31 14:23:07 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 14:24:00 lucas ntpd[92734]: constraints configured but none available
+Aug 31 14:29:16 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 14:32:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 14:39:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 14:42:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 14:43:23 lucas ntpd[92734]: constraints configured but none available
+Aug 31 14:59:18 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 15:04:36 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 15:10:06 lucas ntpd[92734]: constraints configured but none available
+Aug 31 15:14:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:14:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:14:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:25:16 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:31:30 lucas ntpd[92734]: constraints configured but none available
+Aug 31 15:32:49 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:43:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:52:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 15:56:13 lucas ntpd[92734]: constraints configured but none available
+Aug 31 16:01:09 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 16:04:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 16:12:59 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 16:17:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 16:19:37 lucas ntpd[92734]: constraints configured but none available
+Aug 31 16:30:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 16:34:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 16:42:20 lucas ntpd[92734]: constraints configured but none available
+Aug 31 17:05:41 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 17:07:44 lucas ntpd[92734]: constraints configured but none available
+Aug 31 17:12:01 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 17:23:32 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 17:28:28 lucas ntpd[92734]: constraints configured but none available
+Aug 31 17:54:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 17:55:52 lucas ntpd[92734]: constraints configured but none available
+Aug 31 18:14:34 lucas ntpd[92734]: constraints configured but none available
+Aug 31 18:43:59 lucas ntpd[92734]: constraints configured but none available
+Aug 31 18:47:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 18:50:05 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 19:00:41 lucas ntpd[92734]: constraints configured but none available
+Aug 31 19:16:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 19:24:03 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 19:29:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 19:31:26 lucas ntpd[92734]: constraints configured but none available
+Aug 31 19:35:33 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 19:48:08 lucas ntpd[92734]: constraints configured but none available
+Aug 31 20:00:01 lucas syslogd[54040]: restart
+Aug 31 20:17:33 lucas ntpd[92734]: constraints configured but none available
+Aug 31 20:18:39 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 20:22:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 20:24:41 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 20:36:15 lucas ntpd[92734]: constraints configured but none available
+Aug 31 21:03:39 lucas ntpd[92734]: constraints configured but none available
+Aug 31 21:16:49 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Aug 31 21:24:22 lucas ntpd[92734]: constraints configured but none available
+Aug 31 21:41:55 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Aug 31 21:49:46 lucas ntpd[92734]: constraints configured but none available
+Aug 31 21:52:33 lucas apmd: system suspending
+Aug 31 21:52:33 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Aug 31 21:52:35 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Aug 31 21:52:35 lucas /bsd: uhub0 detached
+Aug 31 21:52:35 lucas /bsd: uhub1 detached
+Aug 31 21:52:35 lucas /bsd: uhub2 detached
+Aug 31 21:52:35 lucas /bsd: uhub3 detached
+Aug 31 21:52:35 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Aug 31 21:52:35 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  1 16:41:25 lucas /bsd: rum0 detached
+Sep  1 16:41:25 lucas /bsd: uhub4 detached
+Sep  1 16:41:25 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  1 16:41:25 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  1 16:41:25 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  1 16:41:25 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  1 16:41:25 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  1 16:41:26 lucas /bsd: inteldrm0: no ifp
+Sep  1 16:41:26 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  1 16:41:26 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  1 16:41:26 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  1 16:41:28 lucas apmd: system resumed from sleep
+Sep  1 16:41:28 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  1 16:56:37 lucas ntpd[92734]: constraints configured but none available
+Sep  1 17:00:01 lucas syslogd[54040]: restart
+Sep  1 17:13:59 lucas ntpd[92734]: constraints configured but none available
+Sep  1 17:14:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 17:42:43 lucas ntpd[92734]: constraints configured but none available
+Sep  1 18:02:06 lucas ntpd[92734]: constraints configured but none available
+Sep  1 18:28:50 lucas ntpd[92734]: constraints configured but none available
+Sep  1 18:39:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 18:50:13 lucas ntpd[92734]: constraints configured but none available
+Sep  1 18:58:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 19:11:03 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  1 19:14:56 lucas ntpd[92734]: constraints configured but none available
+Sep  1 19:38:20 lucas ntpd[92734]: constraints configured but none available
+Sep  1 19:38:44 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  1 19:40:39 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 19:42:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 19:53:04 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 20:00:01 lucas syslogd[54040]: restart
+Sep  1 20:01:03 lucas ntpd[92734]: constraints configured but none available
+Sep  1 20:22:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 20:26:26 lucas ntpd[92734]: constraints configured but none available
+Sep  1 20:30:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 20:31:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 20:32:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 20:34:32 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  1 20:35:54 lucas apmd: system suspending
+Sep  1 20:35:54 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  1 20:35:56 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  1 20:35:56 lucas /bsd: uhub0 detached
+Sep  1 20:35:56 lucas /bsd: uhub1 detached
+Sep  1 20:35:56 lucas /bsd: uhub2 detached
+Sep  1 20:35:56 lucas /bsd: uhub3 detached
+Sep  1 20:35:56 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  1 20:35:56 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  2 17:06:31 lucas /bsd: rum0 detached
+Sep  2 17:06:31 lucas /bsd: uhub4 detached
+Sep  2 17:06:31 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  2 17:06:31 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  2 17:06:31 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  2 17:06:31 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  2 17:06:31 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  2 17:06:32 lucas /bsd: inteldrm0: no ifp
+Sep  2 17:06:32 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 17:06:32 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  2 17:06:32 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  2 17:06:32 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 17:06:34 lucas apmd: system resumed from sleep
+Sep  2 17:06:34 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  2 17:07:01 lucas ntpd[92734]: constraints configured but none available
+Sep  2 17:37:05 lucas ntpd[92734]: constraints configured but none available
+Sep  2 17:39:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 17:48:43 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 17:50:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 17:55:08 lucas ntpd[92734]: constraints configured but none available
+Sep  2 18:23:12 lucas ntpd[92734]: constraints configured but none available
+Sep  2 18:28:37 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 18:38:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 18:43:15 lucas ntpd[92734]: constraints configured but none available
+Sep  2 18:46:35 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 19:09:19 lucas ntpd[92734]: constraints configured but none available
+Sep  2 19:10:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 19:31:22 lucas ntpd[92734]: constraints configured but none available
+Sep  2 19:55:04 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 19:55:26 lucas ntpd[92734]: constraints configured but none available
+Sep  2 20:00:02 lucas syslogd[54040]: restart
+Sep  2 20:19:29 lucas ntpd[92734]: constraints configured but none available
+Sep  2 20:41:32 lucas ntpd[92734]: constraints configured but none available
+Sep  2 20:41:43 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 21:02:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 21:07:36 lucas ntpd[92734]: constraints configured but none available
+Sep  2 21:27:39 lucas ntpd[92734]: constraints configured but none available
+Sep  2 21:47:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 21:55:43 lucas ntpd[92734]: constraints configured but none available
+Sep  2 22:00:01 lucas syslogd[54040]: restart
+Sep  2 22:08:16 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 22:13:46 lucas ntpd[92734]: constraints configured but none available
+Sep  2 22:19:32 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  2 22:43:50 lucas ntpd[92734]: constraints configured but none available
+Sep  2 22:59:52 lucas ntpd[92734]: constraints configured but none available
+Sep  2 23:20:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  2 23:30:37 lucas ntpd[92734]: constraints configured but none available
+Sep  2 23:32:19 lucas apmd: system suspending
+Sep  2 23:32:19 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  2 23:32:21 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  2 23:32:21 lucas /bsd: uhub0 detached
+Sep  2 23:32:21 lucas /bsd: uhub1 detached
+Sep  2 23:32:21 lucas /bsd: uhub2 detached
+Sep  2 23:32:21 lucas /bsd: uhub3 detached
+Sep  2 23:32:21 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  2 23:32:21 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  3 17:07:06 lucas /bsd: rum0 detached
+Sep  3 17:07:06 lucas /bsd: uhub4 detached
+Sep  3 17:07:06 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  3 17:07:06 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  3 17:07:06 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  3 17:07:06 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  3 17:07:06 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  3 17:07:07 lucas /bsd: inteldrm0: no ifp
+Sep  3 17:07:07 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 17:07:07 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  3 17:07:07 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  3 17:07:07 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 17:07:09 lucas apmd: system resumed from sleep
+Sep  3 17:07:09 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  3 17:07:21 lucas ntpd[92734]: constraints configured but none available
+Sep  3 17:12:06 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 17:12:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 17:38:05 lucas ntpd[92734]: constraints configured but none available
+Sep  3 17:50:58 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 17:52:19 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 17:55:27 lucas ntpd[92734]: constraints configured but none available
+Sep  3 18:15:00 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 18:24:11 lucas ntpd[92734]: constraints configured but none available
+Sep  3 18:43:34 lucas ntpd[92734]: constraints configured but none available
+Sep  3 18:53:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 19:10:18 lucas ntpd[92734]: constraints configured but none available
+Sep  3 19:22:05 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 19:31:41 lucas ntpd[92734]: constraints configured but none available
+Sep  3 19:38:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 19:41:08 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 19:56:24 lucas ntpd[92734]: constraints configured but none available
+Sep  3 20:00:02 lucas syslogd[54040]: restart
+Sep  3 20:19:48 lucas ntpd[92734]: constraints configured but none available
+Sep  3 20:41:25 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 20:42:31 lucas ntpd[92734]: constraints configured but none available
+Sep  3 21:00:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 21:01:55 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 21:07:55 lucas ntpd[92734]: constraints configured but none available
+Sep  3 21:28:38 lucas ntpd[92734]: constraints configured but none available
+Sep  3 21:56:02 lucas ntpd[92734]: constraints configured but none available
+Sep  3 22:01:08 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 22:01:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 22:14:44 lucas ntpd[92734]: constraints configured but none available
+Sep  3 22:14:54 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 22:16:21 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 22:38:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 22:44:09 lucas ntpd[92734]: constraints configured but none available
+Sep  3 22:45:18 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  3 23:00:51 lucas ntpd[92734]: constraints configured but none available
+Sep  3 23:23:46 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 23:31:35 lucas ntpd[92734]: constraints configured but none available
+Sep  3 23:47:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  3 23:48:18 lucas ntpd[92734]: constraints configured but none available
+Sep  4 00:04:12 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 00:17:42 lucas ntpd[92734]: constraints configured but none available
+Sep  4 00:18:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 00:36:24 lucas ntpd[92734]: constraints configured but none available
+Sep  4 00:53:22 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 01:03:49 lucas ntpd[92734]: constraints configured but none available
+Sep  4 01:09:30 lucas apmd: system suspending
+Sep  4 01:09:30 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  4 01:09:32 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  4 01:09:32 lucas /bsd: uhub0 detached
+Sep  4 01:09:32 lucas /bsd: uhub1 detached
+Sep  4 01:09:32 lucas /bsd: uhub2 detached
+Sep  4 01:09:32 lucas /bsd: uhub3 detached
+Sep  4 01:09:33 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  4 01:09:33 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  4 12:04:23 lucas /bsd: rum0 detached
+Sep  4 12:04:23 lucas /bsd: uhub4 detached
+Sep  4 12:04:23 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  4 12:04:23 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  4 12:04:23 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  4 12:04:23 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  4 12:04:23 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  4 12:04:23 lucas /bsd: inteldrm0: no ifp
+Sep  4 12:04:24 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  4 12:04:24 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  4 12:04:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 12:04:26 lucas apmd: system resumed from sleep
+Sep  4 12:04:26 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  4 12:04:38 lucas ntpd[92734]: constraints configured but none available
+Sep  4 12:35:22 lucas ntpd[92734]: constraints configured but none available
+Sep  4 12:42:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 12:48:02 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 12:52:45 lucas ntpd[92734]: constraints configured but none available
+Sep  4 13:00:01 lucas syslogd[54040]: restart
+Sep  4 13:02:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 13:10:39 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 13:15:04 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 13:21:29 lucas ntpd[92734]: constraints configured but none available
+Sep  4 13:28:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 13:40:51 lucas ntpd[92734]: constraints configured but none available
+Sep  4 13:57:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:07:35 lucas ntpd[92734]: constraints configured but none available
+Sep  4 14:22:12 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:23:45 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:27:06 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:28:58 lucas ntpd[92734]: constraints configured but none available
+Sep  4 14:36:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:43:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:51:50 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 14:53:42 lucas ntpd[92734]: constraints configured but none available
+Sep  4 14:55:05 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 15:17:05 lucas ntpd[92734]: constraints configured but none available
+Sep  4 15:17:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 15:37:08 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 15:39:48 lucas ntpd[92734]: constraints configured but none available
+Sep  4 16:05:12 lucas ntpd[92734]: constraints configured but none available
+Sep  4 16:25:55 lucas ntpd[92734]: constraints configured but none available
+Sep  4 16:28:08 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 16:39:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 16:53:19 lucas ntpd[92734]: constraints configured but none available
+Sep  4 17:12:02 lucas ntpd[92734]: constraints configured but none available
+Sep  4 17:32:37 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 17:41:27 lucas ntpd[92734]: constraints configured but none available
+Sep  4 17:58:09 lucas ntpd[92734]: constraints configured but none available
+Sep  4 18:28:54 lucas ntpd[92734]: constraints configured but none available
+Sep  4 18:40:36 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 18:45:36 lucas ntpd[92734]: constraints configured but none available
+Sep  4 19:15:01 lucas ntpd[92734]: constraints configured but none available
+Sep  4 19:33:43 lucas ntpd[92734]: constraints configured but none available
+Sep  4 20:00:01 lucas syslogd[54040]: restart
+Sep  4 20:00:45 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 20:01:07 lucas ntpd[92734]: constraints configured but none available
+Sep  4 20:21:50 lucas ntpd[92734]: constraints configured but none available
+Sep  4 20:26:20 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  4 20:38:54 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 20:42:33 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 20:47:14 lucas ntpd[92734]: constraints configured but none available
+Sep  4 21:09:57 lucas ntpd[92734]: constraints configured but none available
+Sep  4 21:33:21 lucas ntpd[92734]: constraints configured but none available
+Sep  4 21:45:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 21:52:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 21:56:50 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 21:58:04 lucas ntpd[92734]: constraints configured but none available
+Sep  4 22:17:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  4 22:19:27 lucas ntpd[92734]: constraints configured but none available
+Sep  4 22:20:51 lucas apmd: system suspending
+Sep  4 22:20:51 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  4 22:20:54 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  4 22:20:54 lucas /bsd: uhub0 detached
+Sep  4 22:20:54 lucas /bsd: uhub1 detached
+Sep  4 22:20:54 lucas /bsd: uhub2 detached
+Sep  4 22:20:54 lucas /bsd: uhub3 detached
+Sep  4 22:20:54 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  4 22:20:54 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  5 18:18:59 lucas /bsd: rum0 detached
+Sep  5 18:18:59 lucas /bsd: uhub4 detached
+Sep  5 18:18:59 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  5 18:18:59 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  5 18:18:59 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  5 18:18:59 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  5 18:18:59 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  5 18:18:59 lucas /bsd: inteldrm0: no ifp
+Sep  5 18:19:00 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 18:19:00 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  5 18:19:00 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  5 18:19:00 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 18:19:02 lucas apmd: system resumed from sleep
+Sep  5 18:19:02 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  5 18:34:11 lucas ntpd[92734]: constraints configured but none available
+Sep  5 18:35:10 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 18:51:33 lucas ntpd[92734]: constraints configured but none available
+Sep  5 19:00:01 lucas syslogd[54040]: restart
+Sep  5 19:01:44 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 19:08:41 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 19:20:17 lucas ntpd[92734]: constraints configured but none available
+Sep  5 19:28:05 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 19:39:40 lucas ntpd[92734]: constraints configured but none available
+Sep  5 19:45:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 20:00:01 lucas syslogd[54040]: restart
+Sep  5 20:02:07 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 20:06:24 lucas ntpd[92734]: constraints configured but none available
+Sep  5 20:21:20 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 20:22:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 20:23:49 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 20:27:23 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 20:27:47 lucas ntpd[92734]: constraints configured but none available
+Sep  5 20:52:31 lucas ntpd[92734]: constraints configured but none available
+Sep  5 21:05:50 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 21:12:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 21:15:54 lucas ntpd[92734]: constraints configured but none available
+Sep  5 21:18:04 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 21:38:38 lucas ntpd[92734]: constraints configured but none available
+Sep  5 21:38:40 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 21:46:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 22:04:01 lucas ntpd[92734]: constraints configured but none available
+Sep  5 22:24:44 lucas ntpd[92734]: constraints configured but none available
+Sep  5 22:49:39 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 22:51:02 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  5 22:52:08 lucas ntpd[92734]: constraints configured but none available
+Sep  5 22:55:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 23:07:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 23:10:51 lucas ntpd[92734]: constraints configured but none available
+Sep  5 23:12:42 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 23:40:15 lucas ntpd[92734]: constraints configured but none available
+Sep  5 23:52:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  5 23:56:57 lucas ntpd[92734]: constraints configured but none available
+Sep  6 00:27:41 lucas ntpd[92734]: constraints configured but none available
+Sep  6 00:44:24 lucas ntpd[92734]: constraints configured but none available
+Sep  6 01:02:53 lucas apmd: system suspending
+Sep  6 01:02:53 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  6 01:02:56 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  6 01:02:56 lucas /bsd: uhub0 detached
+Sep  6 01:02:56 lucas /bsd: uhub1 detached
+Sep  6 01:02:56 lucas /bsd: uhub2 detached
+Sep  6 01:02:56 lucas /bsd: uhub3 detached
+Sep  6 01:02:56 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  6 01:02:56 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  6 16:28:40 lucas /bsd: rum0 detached
+Sep  6 16:28:40 lucas /bsd: uhub4 detached
+Sep  6 16:28:40 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  6 16:28:40 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  6 16:28:40 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  6 16:28:40 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  6 16:28:40 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  6 16:28:41 lucas /bsd: inteldrm0: no ifp
+Sep  6 16:28:41 lucas ntpd[92734]: constraints configured but none available
+Sep  6 16:28:41 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 16:28:41 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  6 16:28:41 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  6 16:28:41 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 16:28:43 lucas apmd: system resumed from sleep
+Sep  6 16:28:43 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  6 16:44:52 lucas ntpd[92734]: constraints configured but none available
+Sep  6 16:46:57 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 16:47:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 17:14:56 lucas ntpd[92734]: constraints configured but none available
+Sep  6 17:32:59 lucas ntpd[92734]: constraints configured but none available
+Sep  6 18:01:02 lucas ntpd[92734]: constraints configured but none available
+Sep  6 18:18:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 18:21:05 lucas ntpd[92734]: constraints configured but none available
+Sep  6 18:22:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 18:47:09 lucas ntpd[92734]: constraints configured but none available
+Sep  6 18:55:45 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 18:57:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 19:04:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 19:09:12 lucas ntpd[92734]: constraints configured but none available
+Sep  6 19:16:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 19:33:15 lucas ntpd[92734]: constraints configured but none available
+Sep  6 19:49:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 19:57:18 lucas ntpd[92734]: constraints configured but none available
+Sep  6 20:00:01 lucas syslogd[54040]: restart
+Sep  6 20:07:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 20:12:58 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 20:14:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 20:15:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 20:19:22 lucas ntpd[92734]: constraints configured but none available
+Sep  6 20:27:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 20:44:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 20:45:26 lucas ntpd[92734]: constraints configured but none available
+Sep  6 21:00:02 lucas syslogd[54040]: restart
+Sep  6 21:02:21 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 21:05:29 lucas ntpd[92734]: constraints configured but none available
+Sep  6 21:33:33 lucas ntpd[92734]: constraints configured but none available
+Sep  6 21:50:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 21:51:36 lucas ntpd[92734]: constraints configured but none available
+Sep  6 22:16:52 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 22:21:40 lucas ntpd[92734]: constraints configured but none available
+Sep  6 22:26:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  6 22:33:49 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 22:37:42 lucas ntpd[92734]: constraints configured but none available
+Sep  6 22:44:57 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 22:59:50 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  6 23:08:27 lucas ntpd[92734]: constraints configured but none available
+Sep  6 23:13:05 lucas apmd: system suspending
+Sep  6 23:13:05 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  6 23:13:08 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  6 23:13:08 lucas /bsd: uhub0 detached
+Sep  6 23:13:08 lucas /bsd: uhub1 detached
+Sep  6 23:13:08 lucas /bsd: uhub2 detached
+Sep  6 23:13:08 lucas /bsd: uhub3 detached
+Sep  6 23:13:08 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  6 23:13:08 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  7 13:33:59 lucas /bsd: rum0 detached
+Sep  7 13:33:59 lucas /bsd: uhub4 detached
+Sep  7 13:33:59 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  7 13:33:59 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  7 13:33:59 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  7 13:33:59 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  7 13:33:59 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  7 13:33:59 lucas /bsd: inteldrm0: no ifp
+Sep  7 13:33:59 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 13:34:00 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  7 13:34:00 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  7 13:34:00 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 13:34:02 lucas apmd: system resumed from sleep
+Sep  7 13:34:02 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  7 13:34:34 lucas ntpd[92734]: constraints configured but none available
+Sep  7 13:39:00 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 13:39:45 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 14:01:25 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  7 14:04:38 lucas ntpd[92734]: constraints configured but none available
+Sep  7 14:22:40 lucas ntpd[92734]: constraints configured but none available
+Sep  7 14:45:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 14:50:44 lucas ntpd[92734]: constraints configured but none available
+Sep  7 14:54:20 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 15:10:47 lucas ntpd[92734]: constraints configured but none available
+Sep  7 15:36:51 lucas ntpd[92734]: constraints configured but none available
+Sep  7 15:57:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  7 15:58:54 lucas ntpd[92734]: constraints configured but none available
+Sep  7 16:22:58 lucas ntpd[92734]: constraints configured but none available
+Sep  7 16:31:21 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  7 16:32:02 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  7 16:47:01 lucas ntpd[92734]: constraints configured but none available
+Sep  7 16:57:32 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 17:09:05 lucas ntpd[92734]: constraints configured but none available
+Sep  7 17:35:08 lucas ntpd[92734]: constraints configured but none available
+Sep  7 17:55:11 lucas ntpd[92734]: constraints configured but none available
+Sep  7 18:23:15 lucas ntpd[92734]: constraints configured but none available
+Sep  7 18:41:18 lucas ntpd[92734]: constraints configured but none available
+Sep  7 18:41:23 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 19:11:22 lucas ntpd[92734]: constraints configured but none available
+Sep  7 19:27:24 lucas ntpd[92734]: constraints configured but none available
+Sep  7 19:44:54 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  7 19:58:08 lucas ntpd[92734]: constraints configured but none available
+Sep  7 20:00:01 lucas syslogd[54040]: restart
+Sep  7 20:15:31 lucas ntpd[92734]: constraints configured but none available
+Sep  7 20:28:21 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 20:42:46 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  7 20:44:15 lucas ntpd[92734]: constraints configured but none available
+Sep  7 21:03:38 lucas ntpd[92734]: constraints configured but none available
+Sep  7 21:12:50 lucas apmd: system suspending
+Sep  7 21:12:50 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  7 21:12:52 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  7 21:12:53 lucas /bsd: uhub0 detached
+Sep  7 21:12:53 lucas /bsd: uhub1 detached
+Sep  7 21:12:53 lucas /bsd: uhub2 detached
+Sep  7 21:12:53 lucas /bsd: uhub3 detached
+Sep  7 21:12:53 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  7 21:12:53 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  8 17:04:50 lucas /bsd: rum0 detached
+Sep  8 17:04:50 lucas /bsd: uhub4 detached
+Sep  8 17:04:50 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  8 17:04:50 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  8 17:04:50 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  8 17:04:50 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  8 17:04:50 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  8 17:04:50 lucas /bsd: inteldrm0: no ifp
+Sep  8 17:04:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 17:04:51 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  8 17:04:51 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  8 17:04:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 17:04:53 lucas apmd: system resumed from sleep
+Sep  8 17:04:53 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  8 17:09:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 17:15:35 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 17:20:17 lucas ntpd[92734]: constraints configured but none available
+Sep  8 17:34:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  8 17:37:39 lucas ntpd[92734]: constraints configured but none available
+Sep  8 18:00:01 lucas syslogd[54040]: restart
+Sep  8 18:06:23 lucas ntpd[92734]: constraints configured but none available
+Sep  8 18:09:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  8 18:25:46 lucas ntpd[92734]: constraints configured but none available
+Sep  8 18:29:25 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 18:32:58 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 18:40:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  8 18:52:30 lucas ntpd[92734]: constraints configured but none available
+Sep  8 18:53:02 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  8 19:13:53 lucas ntpd[92734]: constraints configured but none available
+Sep  8 19:38:37 lucas ntpd[92734]: constraints configured but none available
+Sep  8 20:00:02 lucas syslogd[54040]: restart
+Sep  8 20:02:00 lucas ntpd[92734]: constraints configured but none available
+Sep  8 20:24:43 lucas ntpd[92734]: constraints configured but none available
+Sep  8 20:50:07 lucas ntpd[92734]: constraints configured but none available
+Sep  8 21:10:49 lucas ntpd[92734]: constraints configured but none available
+Sep  8 21:38:17 lucas ntpd[92734]: constraints configured but none available
+Sep  8 21:57:00 lucas ntpd[92734]: constraints configured but none available
+Sep  8 22:26:24 lucas ntpd[92734]: constraints configured but none available
+Sep  8 22:43:06 lucas ntpd[92734]: constraints configured but none available
+Sep  8 23:13:51 lucas ntpd[92734]: constraints configured but none available
+Sep  8 23:30:33 lucas ntpd[92734]: constraints configured but none available
+Sep  8 23:59:58 lucas ntpd[92734]: constraints configured but none available
+Sep  9 00:18:41 lucas ntpd[92734]: constraints configured but none available
+Sep  9 00:46:05 lucas ntpd[92734]: constraints configured but none available
+Sep  9 01:06:48 lucas ntpd[92734]: constraints configured but none available
+Sep  9 01:32:12 lucas ntpd[92734]: constraints configured but none available
+Sep  9 01:50:14 lucas apmd: system suspending
+Sep  9 01:50:14 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  9 01:50:17 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep  9 01:50:17 lucas /bsd: uhub0 detached
+Sep  9 01:50:17 lucas /bsd: uhub1 detached
+Sep  9 01:50:17 lucas /bsd: uhub2 detached
+Sep  9 01:50:17 lucas /bsd: uhub3 detached
+Sep  9 01:50:17 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep  9 01:50:17 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep  9 18:44:18 lucas /bsd: rum0 detached
+Sep  9 18:44:18 lucas /bsd: uhub4 detached
+Sep  9 18:44:18 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  9 18:44:18 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  9 18:44:18 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  9 18:44:18 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep  9 18:44:18 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep  9 18:44:18 lucas /bsd: inteldrm0: no ifp
+Sep  9 18:44:19 lucas ntpd[92734]: constraints configured but none available
+Sep  9 18:44:19 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep  9 18:44:19 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep  9 18:44:19 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 18:44:21 lucas apmd: system resumed from sleep
+Sep  9 18:44:21 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep  9 19:00:55 lucas ntpd[92734]: constraints configured but none available
+Sep  9 19:18:30 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 19:18:47 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 19:30:19 lucas ntpd[92734]: constraints configured but none available
+Sep  9 19:37:49 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 19:49:02 lucas ntpd[92734]: constraints configured but none available
+Sep  9 20:00:01 lucas syslogd[54040]: restart
+Sep  9 20:05:06 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 20:16:26 lucas ntpd[92734]: constraints configured but none available
+Sep  9 20:27:16 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 20:37:09 lucas ntpd[92734]: constraints configured but none available
+Sep  9 21:00:01 lucas syslogd[54040]: restart
+Sep  9 21:02:33 lucas ntpd[92734]: constraints configured but none available
+Sep  9 21:25:16 lucas ntpd[92734]: constraints configured but none available
+Sep  9 21:46:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 21:48:39 lucas ntpd[92734]: constraints configured but none available
+Sep  9 21:51:44 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 21:53:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 21:58:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:00:31 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:09:38 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:13:23 lucas ntpd[92734]: constraints configured but none available
+Sep  9 22:13:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:15:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:17:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:24:01 lucas last message repeated 7 times
+Sep  9 22:34:08 lucas last message repeated 6 times
+Sep  9 22:34:45 lucas ntpd[92734]: constraints configured but none available
+Sep  9 22:36:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:38:34 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 22:40:48 lucas last message repeated 3 times
+Sep  9 22:45:37 lucas last message repeated 2 times
+Sep  9 22:53:07 lucas last message repeated 2 times
+Sep  9 23:01:29 lucas ntpd[92734]: constraints configured but none available
+Sep  9 23:02:00 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 23:02:07 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 23:04:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 23:11:11 lucas last message repeated 2 times
+Sep  9 23:19:47 lucas last message repeated 4 times
+Sep  9 23:20:52 lucas ntpd[92734]: constraints configured but none available
+Sep  9 23:25:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 23:30:44 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 23:37:43 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep  9 23:40:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep  9 23:49:40 lucas ntpd[92734]: constraints configured but none available
+Sep 10 00:07:02 lucas ntpd[92734]: constraints configured but none available
+Sep 10 00:33:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 00:37:47 lucas ntpd[92734]: constraints configured but none available
+Sep 10 00:47:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 00:48:31 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 00:49:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 00:50:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 00:53:00 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 00:53:49 lucas ntpd[92734]: constraints configured but none available
+Sep 10 00:54:47 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 00:58:32 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 00:59:59 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 01:05:55 lucas last message repeated 3 times
+Sep 10 01:13:21 lucas last message repeated 2 times
+Sep 10 01:23:54 lucas ntpd[92734]: constraints configured but none available
+Sep 10 01:28:49 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 01:41:57 lucas ntpd[92734]: constraints configured but none available
+Sep 10 01:44:36 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 01:49:37 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 01:56:32 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 02:01:23 lucas apmd: system suspending
+Sep 10 02:01:23 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 10 02:01:26 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep 10 02:01:26 lucas /bsd: uhub0 detached
+Sep 10 02:01:26 lucas /bsd: uhub1 detached
+Sep 10 02:01:26 lucas /bsd: uhub2 detached
+Sep 10 02:01:26 lucas /bsd: uhub3 detached
+Sep 10 02:01:26 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep 10 02:01:26 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep 10 16:36:03 lucas /bsd: rum0 detached
+Sep 10 16:36:03 lucas /bsd: uhub4 detached
+Sep 10 16:36:03 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 10 16:36:03 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 10 16:36:03 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 10 16:36:03 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 10 16:36:03 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep 10 16:36:04 lucas /bsd: inteldrm0: no ifp
+Sep 10 16:36:04 lucas ntpd[92734]: constraints configured but none available
+Sep 10 16:36:04 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 16:36:04 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep 10 16:36:04 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep 10 16:36:05 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 16:36:06 lucas apmd: system resumed from sleep
+Sep 10 16:36:06 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 10 16:49:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 16:51:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 16:52:35 lucas ntpd[92734]: constraints configured but none available
+Sep 10 16:56:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:21:59 lucas ntpd[92734]: constraints configured but none available
+Sep 10 17:22:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:25:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:33:31 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:40:15 lucas last message repeated 4 times
+Sep 10 17:40:42 lucas ntpd[92734]: constraints configured but none available
+Sep 10 17:41:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:45:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:52:00 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 17:53:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:00:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 18:07:25 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 18:08:06 lucas ntpd[92734]: constraints configured but none available
+Sep 10 18:12:00 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:13:38 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:18:41 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:24:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:28:49 lucas ntpd[92734]: constraints configured but none available
+Sep 10 18:40:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:46:18 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:48:39 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 18:54:13 lucas ntpd[92734]: constraints configured but none available
+Sep 10 19:16:56 lucas ntpd[92734]: constraints configured but none available
+Sep 10 19:32:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 19:38:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 19:38:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 19:40:20 lucas ntpd[92734]: constraints configured but none available
+Sep 10 19:42:32 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 19:48:47 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 19:52:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 19:53:33 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 20:00:01 lucas syslogd[54040]: restart
+Sep 10 20:02:55 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 20:05:03 lucas ntpd[92734]: constraints configured but none available
+Sep 10 20:09:31 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 20:20:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 20:26:26 lucas ntpd[92734]: constraints configured but none available
+Sep 10 20:26:46 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 20:32:09 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 20:38:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 20:53:10 lucas ntpd[92734]: constraints configured but none available
+Sep 10 21:12:33 lucas ntpd[92734]: constraints configured but none available
+Sep 10 21:41:17 lucas ntpd[92734]: constraints configured but none available
+Sep 10 21:57:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 21:58:40 lucas ntpd[92734]: constraints configured but none available
+Sep 10 22:00:01 lucas syslogd[54040]: restart
+Sep 10 22:03:56 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 22:22:45 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 10 22:25:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 22:29:24 lucas ntpd[92734]: constraints configured but none available
+Sep 10 22:32:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 10 22:38:33 lucas apmd: system suspending
+Sep 10 22:38:33 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 10 22:38:35 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep 10 22:38:35 lucas /bsd: uhub0 detached
+Sep 10 22:38:35 lucas /bsd: uhub1 detached
+Sep 10 22:38:35 lucas /bsd: uhub2 detached
+Sep 10 22:38:35 lucas /bsd: uhub3 detached
+Sep 10 22:38:35 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep 10 22:38:35 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep 11 16:28:51 lucas /bsd: rum0 detached
+Sep 11 16:28:51 lucas /bsd: uhub4 detached
+Sep 11 16:28:51 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 11 16:28:51 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 11 16:28:51 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 11 16:28:51 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 11 16:28:51 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep 11 16:28:51 lucas /bsd: inteldrm0: no ifp
+Sep 11 16:28:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 16:28:52 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep 11 16:28:52 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep 11 16:28:52 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 16:28:54 lucas apmd: system resumed from sleep
+Sep 11 16:28:54 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 11 16:29:01 lucas ntpd[92734]: constraints configured but none available
+Sep 11 16:33:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 16:53:04 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 16:59:45 lucas ntpd[92734]: constraints configured but none available
+Sep 11 17:01:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:03:08 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:08:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:17:08 lucas ntpd[92734]: constraints configured but none available
+Sep 11 17:29:37 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:34:09 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:36:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:45:52 lucas ntpd[92734]: constraints configured but none available
+Sep 11 17:49:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:56:48 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 17:59:59 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:02:14 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:05:15 lucas ntpd[92734]: constraints configured but none available
+Sep 11 18:07:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:09:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:11:34 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:28:38 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:30:09 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:31:58 lucas ntpd[92734]: constraints configured but none available
+Sep 11 18:38:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:41:54 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 18:53:21 lucas ntpd[92734]: constraints configured but none available
+Sep 11 18:57:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:01:31 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:02:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:17:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:18:05 lucas ntpd[92734]: constraints configured but none available
+Sep 11 19:23:44 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:28:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:34:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 19:41:28 lucas ntpd[92734]: constraints configured but none available
+Sep 11 19:47:03 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 19:53:58 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 20:00:01 lucas syslogd[54040]: restart
+Sep 11 20:04:11 lucas ntpd[92734]: constraints configured but none available
+Sep 11 20:29:35 lucas ntpd[92734]: constraints configured but none available
+Sep 11 20:50:18 lucas ntpd[92734]: constraints configured but none available
+Sep 11 20:56:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 21:15:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 21:17:42 lucas ntpd[92734]: constraints configured but none available
+Sep 11 21:36:25 lucas ntpd[92734]: constraints configured but none available
+Sep 11 22:04:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 22:05:50 lucas ntpd[92734]: constraints configured but none available
+Sep 11 22:22:32 lucas ntpd[92734]: constraints configured but none available
+Sep 11 22:30:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 11 22:53:17 lucas ntpd[92734]: constraints configured but none available
+Sep 11 22:56:33 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 23:07:15 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 11 23:09:59 lucas ntpd[92734]: constraints configured but none available
+Sep 11 23:30:51 lucas apmd: system suspending
+Sep 11 23:30:51 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 11 23:30:54 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep 11 23:30:54 lucas /bsd: uhub0 detached
+Sep 11 23:30:54 lucas /bsd: uhub1 detached
+Sep 11 23:30:54 lucas /bsd: uhub2 detached
+Sep 11 23:30:54 lucas /bsd: uhub3 detached
+Sep 11 23:30:54 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep 11 23:30:54 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep 12 17:09:40 lucas /bsd: rum0 detached
+Sep 12 17:09:40 lucas /bsd: uhub4 detached
+Sep 12 17:09:40 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 12 17:09:40 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 12 17:09:40 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 12 17:09:40 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 12 17:09:40 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep 12 17:09:40 lucas /bsd: inteldrm0: no ifp
+Sep 12 17:09:40 lucas ntpd[92734]: constraints configured but none available
+Sep 12 17:09:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 17:09:41 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep 12 17:09:41 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep 12 17:09:41 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 17:09:43 lucas apmd: system resumed from sleep
+Sep 12 17:09:43 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 12 17:14:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 17:16:42 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 17:23:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 17:24:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 17:26:07 lucas ntpd[92734]: constraints configured but none available
+Sep 12 17:55:31 lucas ntpd[92734]: constraints configured but none available
+Sep 12 18:00:01 lucas syslogd[54040]: restart
+Sep 12 18:00:41 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:14:14 lucas ntpd[92734]: constraints configured but none available
+Sep 12 18:20:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:21:44 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:30:07 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:40:01 lucas last message repeated 3 times
+Sep 12 18:41:38 lucas ntpd[92734]: constraints configured but none available
+Sep 12 18:49:45 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:51:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:52:30 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 18:55:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 19:02:21 lucas ntpd[92734]: constraints configured but none available
+Sep 12 19:10:24 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 19:13:05 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 19:14:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 19:24:03 lucas last message repeated 2 times
+Sep 12 19:27:44 lucas ntpd[92734]: constraints configured but none available
+Sep 12 19:33:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 19:36:08 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 19:50:27 lucas ntpd[92734]: constraints configured but none available
+Sep 12 20:00:01 lucas syslogd[54040]: restart
+Sep 12 20:06:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 20:13:51 lucas ntpd[92734]: constraints configured but none available
+Sep 12 20:14:47 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 20:17:45 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 20:38:35 lucas ntpd[92734]: constraints configured but none available
+Sep 12 20:42:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 20:44:40 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 20:54:38 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 20:59:58 lucas ntpd[92734]: constraints configured but none available
+Sep 12 21:01:43 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 21:15:13 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 21:15:53 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 21:26:42 lucas ntpd[92734]: constraints configured but none available
+Sep 12 21:46:05 lucas ntpd[92734]: constraints configured but none available
+Sep 12 21:46:59 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 21:48:39 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 12 22:08:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 22:14:49 lucas ntpd[92734]: constraints configured but none available
+Sep 12 22:24:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 22:32:12 lucas ntpd[92734]: constraints configured but none available
+Sep 12 22:42:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 22:48:15 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 22:48:34 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 22:58:39 lucas last message repeated 3 times
+Sep 12 23:02:56 lucas ntpd[92734]: constraints configured but none available
+Sep 12 23:11:25 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 23:16:53 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 23:18:58 lucas ntpd[92734]: constraints configured but none available
+Sep 12 23:22:36 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 23:33:54 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 23:36:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 12 23:43:24 lucas last message repeated 2 times
+Sep 12 23:49:03 lucas ntpd[92734]: constraints configured but none available
+Sep 12 23:52:31 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 00:07:06 lucas ntpd[92734]: constraints configured but none available
+Sep 13 00:14:42 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 00:17:28 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 00:22:27 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 00:30:23 lucas apmd: system suspending
+Sep 13 00:30:23 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 13 00:30:26 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep 13 00:30:26 lucas /bsd: uhub0 detached
+Sep 13 00:30:26 lucas /bsd: uhub1 detached
+Sep 13 00:30:26 lucas /bsd: uhub2 detached
+Sep 13 00:30:26 lucas /bsd: uhub3 detached
+Sep 13 00:30:26 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep 13 00:30:26 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep 13 16:06:09 lucas /bsd: rum0 detached
+Sep 13 16:06:09 lucas /bsd: uhub4 detached
+Sep 13 16:06:09 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 13 16:06:09 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 13 16:06:09 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 13 16:06:09 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 13 16:06:09 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep 13 16:06:09 lucas ntpd[92734]: constraints configured but none available
+Sep 13 16:06:09 lucas /bsd: inteldrm0: no ifp
+Sep 13 16:06:09 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 16:06:10 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep 13 16:06:10 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep 13 16:06:10 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 16:06:12 lucas apmd: system resumed from sleep
+Sep 13 16:06:12 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 13 16:17:10 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 16:22:44 lucas ntpd[92734]: constraints configured but none available
+Sep 13 16:24:02 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 16:26:42 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 16:29:58 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 16:31:25 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 16:40:02 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 16:45:48 lucas last message repeated 4 times
+Sep 13 16:53:59 lucas ntpd[92734]: constraints configured but none available
+Sep 13 17:09:25 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 17:11:21 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 17:11:29 lucas ntpd[92734]: constraints configured but none available
+Sep 13 17:18:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 17:27:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 17:35:19 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 17:42:45 lucas ntpd[92734]: constraints configured but none available
+Sep 13 17:44:23 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 17:59:39 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 18:00:15 lucas ntpd[92734]: constraints configured but none available
+Sep 13 18:00:19 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 18:08:26 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 18:12:04 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 18:20:24 lucas last message repeated 2 times
+Sep 13 18:31:30 lucas ntpd[92734]: constraints configured but none available
+Sep 13 18:49:00 lucas ntpd[92734]: constraints configured but none available
+Sep 13 19:11:04 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 19:14:24 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 19:20:15 lucas ntpd[92734]: constraints configured but none available
+Sep 13 19:27:52 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 19:37:45 lucas ntpd[92734]: constraints configured but none available
+Sep 13 20:00:01 lucas syslogd[54040]: restart
+Sep 13 20:09:00 lucas ntpd[92734]: constraints configured but none available
+Sep 13 20:09:56 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 20:26:30 lucas ntpd[92734]: constraints configured but none available
+Sep 13 20:46:49 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 20:57:45 lucas ntpd[92734]: constraints configured but none available
+Sep 13 21:15:16 lucas ntpd[92734]: constraints configured but none available
+Sep 13 21:40:43 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 21:46:31 lucas ntpd[92734]: constraints configured but none available
+Sep 13 21:54:28 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 22:00:01 lucas syslogd[54040]: restart
+Sep 13 22:04:01 lucas ntpd[92734]: constraints configured but none available
+Sep 13 22:13:51 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 22:16:08 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 13 22:35:16 lucas ntpd[92734]: constraints configured but none available
+Sep 13 22:52:46 lucas ntpd[92734]: constraints configured but none available
+Sep 13 23:24:01 lucas ntpd[92734]: constraints configured but none available
+Sep 13 23:40:31 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 23:41:31 lucas ntpd[92734]: constraints configured but none available
+Sep 13 23:47:21 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 13 23:55:48 lucas apmd: system suspending
+Sep 13 23:55:48 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 13 23:55:50 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep 13 23:55:50 lucas /bsd: uhub0 detached
+Sep 13 23:55:50 lucas /bsd: uhub1 detached
+Sep 13 23:55:50 lucas /bsd: uhub2 detached
+Sep 13 23:55:50 lucas /bsd: uhub3 detached
+Sep 13 23:55:50 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep 13 23:55:50 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep 14 13:06:28 lucas /bsd: rum0 detached
+Sep 14 13:06:28 lucas /bsd: uhub4 detached
+Sep 14 13:06:28 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 14 13:06:28 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 14 13:06:28 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 14 13:06:28 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 14 13:06:28 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep 14 13:06:28 lucas /bsd: inteldrm0: no ifp
+Sep 14 13:06:28 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 13:06:29 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep 14 13:06:29 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep 14 13:06:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 13:06:30 lucas apmd: system resumed from sleep
+Sep 14 13:06:30 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 14 13:14:35 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:22:43 lucas ntpd[92734]: constraints configured but none available
+Sep 14 13:26:03 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:30:02 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:34:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:39:15 lucas last message repeated 2 times
+Sep 14 13:40:13 lucas ntpd[92734]: constraints configured but none available
+Sep 14 13:45:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:52:00 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:52:17 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 13:57:53 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 14:02:43 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 14:06:20 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 14:11:28 lucas ntpd[92734]: constraints configured but none available
+Sep 14 14:12:15 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 14:28:58 lucas ntpd[92734]: constraints configured but none available
+Sep 14 15:00:14 lucas ntpd[92734]: constraints configured but none available
+Sep 14 15:17:44 lucas ntpd[92734]: constraints configured but none available
+Sep 14 15:48:59 lucas ntpd[92734]: constraints configured but none available
+Sep 14 15:52:06 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 16:06:29 lucas ntpd[92734]: constraints configured but none available
+Sep 14 16:27:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 16:29:33 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 16:37:44 lucas ntpd[92734]: constraints configured but none available
+Sep 14 16:47:37 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 16:49:01 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 16:55:14 lucas ntpd[92734]: constraints configured but none available
+Sep 14 16:57:55 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 17:06:21 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 17:06:22 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 17:13:50 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 17:26:30 lucas ntpd[92734]: constraints configured but none available
+Sep 14 17:44:00 lucas ntpd[92734]: constraints configured but none available
+Sep 14 18:15:15 lucas ntpd[92734]: constraints configured but none available
+Sep 14 18:16:20 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 18:18:11 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 18:22:40 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 18:23:31 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 18:29:43 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 18:32:45 lucas ntpd[92734]: constraints configured but none available
+Sep 14 18:42:56 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 18:48:07 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 18:54:40 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 19:04:01 lucas ntpd[92734]: constraints configured but none available
+Sep 14 19:21:31 lucas ntpd[92734]: constraints configured but none available
+Sep 14 19:52:46 lucas ntpd[92734]: constraints configured but none available
+Sep 14 19:55:48 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 20:00:01 lucas syslogd[54040]: restart
+Sep 14 20:10:16 lucas ntpd[92734]: constraints configured but none available
+Sep 14 20:33:52 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 14 20:41:31 lucas ntpd[92734]: constraints configured but none available
+Sep 14 20:41:37 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 20:48:37 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 14 20:55:05 lucas apmd: system suspending
+Sep 14 20:55:05 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 14 20:55:07 lucas /bsd: drm : i915 raw-wakerefs=1 wakelocks=1 on cleanup
+Sep 14 20:55:07 lucas /bsd: uhub0 detached
+Sep 14 20:55:07 lucas /bsd: uhub1 detached
+Sep 14 20:55:07 lucas /bsd: uhub2 detached
+Sep 14 20:55:07 lucas /bsd: uhub3 detached
+Sep 14 20:55:07 lucas dhcpleased[55267]: bpf_receive: read: Input/output error
+Sep 14 20:55:07 lucas avahi-daemon[92696]: IPV6_DROP_MEMBERSHIP failed: Device not configured
+Sep 15 11:49:04 lucas /bsd: rum0 detached
+Sep 15 11:49:04 lucas /bsd: uhub4 detached
+Sep 15 11:49:04 lucas /bsd: uhub0 at usb1 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 15 11:49:04 lucas /bsd: uhub1 at usb2 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 15 11:49:04 lucas /bsd: uhub2 at usb3 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 15 11:49:04 lucas /bsd: uhub3 at usb4 configuration 1 interface 0 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+Sep 15 11:49:04 lucas /bsd: uhub4 at usb0 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+Sep 15 11:49:04 lucas /bsd: inteldrm0: no ifp
+Sep 15 11:49:04 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 15 11:49:05 lucas /bsd: rum0 at uhub4 port 6 configuration 1 interface 0 "Ralink 802.11 bg WLAN" rev 2.00/0.01 addr 2
+Sep 15 11:49:05 lucas /bsd: rum0: MAC/BBP RT2573 (rev 0x2573a), RF RT2528, address 00:19:db:01:7b:4d
+Sep 15 11:49:05 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 15 11:49:07 lucas apmd: system resumed from sleep
+Sep 15 11:49:07 lucas apmd: battery status: absent. external power status: not connected. estimated battery life 0%
+Sep 15 11:50:19 lucas ntpd[92734]: constraints configured but none available
+Sep 15 12:09:51 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 15 12:21:34 lucas ntpd[92734]: constraints configured but none available
+Sep 15 12:31:29 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 15 12:39:04 lucas ntpd[92734]: constraints configured but none available
+Sep 15 12:50:29 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B
+Sep 15 13:00:01 lucas syslogd[54040]: restart
+Sep 15 13:10:19 lucas ntpd[92734]: constraints configured but none available
+Sep 15 13:16:08 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 15 13:27:49 lucas ntpd[92734]: constraints configured but none available
+Sep 15 13:59:05 lucas ntpd[92734]: constraints configured but none available
+Sep 15 14:16:35 lucas ntpd[92734]: constraints configured but none available
+Sep 15 14:47:50 lucas ntpd[92734]: constraints configured but none available
+Sep 15 15:05:20 lucas ntpd[92734]: constraints configured but none available
+Sep 15 15:08:40 lucas mate-session[17571]: WARNING: Unable to determine session: Unable to lookup session information for process '17571'
+Sep 15 15:16:40 lucas /bsd: drm:pid8593:intel_pipe_update_start *ERROR* [drm] *ERROR* Potential atomic update failure on pipe B

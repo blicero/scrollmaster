@@ -1,0 +1,241 @@
+Sep 15 10:00:00 wintermute newsyslog[99605]: logfile turned over due to size>1000K
+Sep 15 10:00:14 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:00:35 wintermute dhcpd[48251]: uid lease 10.10.42.85 for client 52:54:00:d8:0c:dc is duplicate on 10.10.0.0/16
+Sep 15 10:00:40 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:00:58 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:01:18 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:01:44 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:02:03 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:02:17 wintermute dhcpd[48251]: uid lease 10.10.42.98 for client 58:9c:fc:01:14:e1 is duplicate on 10.10.0.0/16
+Sep 15 10:02:23 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:02:48 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:03:06 wintermute dhcpd[48251]: uid lease 10.10.42.86 for client 52:54:00:f6:1c:20 is duplicate on 10.10.0.0/16
+Sep 15 10:03:07 wintermute dhcpd[48251]: uid lease 10.10.42.59 for client b8:27:eb:17:3e:52 is duplicate on 10.10.0.0/16
+Sep 15 10:03:08 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:03:30 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:03:53 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:04:15 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:04:35 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:04:58 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:05:19 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:05:41 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:06:01 wintermute dhcpd[48251]: uid lease 10.10.42.50 for client 58:9c:fc:0b:56:fd is duplicate on 10.10.0.0/16
+Sep 15 10:06:02 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:06:09 wintermute named[951]: managed-keys-zone: Unable to fetch DNSKEY set '.': failure
+Sep 15 10:06:24 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:06:48 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:07:07 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:07:31 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:07:52 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:08:11 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:08:16 wintermute dhcpd[48251]: uid lease 10.10.42.84 for client 52:54:00:ab:9e:33 is duplicate on 10.10.0.0/16
+Sep 15 10:08:25 wintermute dhcpd[48251]: uid lease 10.10.42.94 for client 52:54:00:84:95:eb is duplicate on 10.10.0.0/16
+Sep 15 10:08:38 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:08:58 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:09:16 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:09:44 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:10:02 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:10:21 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:10:48 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:11:09 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:11:25 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:11:55 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:12:13 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:12:29 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:13:01 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:13:20 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:13:34 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:13:49 wintermute dhcpd[48251]: uid lease 10.10.42.83 for client a6:62:be:70:84:59 is duplicate on 10.10.0.0/16
+Sep 15 10:14:06 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:14:26 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:14:38 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:15:13 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:15:32 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:15:35 wintermute dhcpd[48251]: uid lease 10.10.42.85 for client 52:54:00:d8:0c:dc is duplicate on 10.10.0.0/16
+Sep 15 10:15:42 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:16:19 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:16:36 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:16:46 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:17:17 wintermute dhcpd[48251]: uid lease 10.10.42.98 for client 58:9c:fc:01:14:e1 is duplicate on 10.10.0.0/16
+Sep 15 10:17:26 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:17:42 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:17:50 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:18:06 wintermute dhcpd[48251]: uid lease 10.10.42.86 for client 52:54:00:f6:1c:20 is duplicate on 10.10.0.0/16
+Sep 15 10:18:07 wintermute dhcpd[48251]: uid lease 10.10.42.59 for client b8:27:eb:17:3e:52 is duplicate on 10.10.0.0/16
+Sep 15 10:18:14 wintermute dhcpd[48251]: uid lease 10.10.42.50 for client 58:9c:fc:0b:56:fd is duplicate on 10.10.0.0/16
+Sep 15 10:18:33 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:18:49 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:18:55 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:19:40 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:19:54 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:20:00 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:20:46 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:20:58 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:21:04 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:21:53 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:22:05 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:22:09 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:22:57 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:23:11 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:23:13 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:23:25 wintermute dhcpd[48251]: uid lease 10.10.42.94 for client 52:54:00:84:95:eb is duplicate on 10.10.0.0/16
+Sep 15 10:23:27 wintermute dhcpd[48251]: uid lease 10.10.42.84 for client 52:54:00:ab:9e:33 is duplicate on 10.10.0.0/16
+Sep 15 10:24:02 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:24:18 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:24:18 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:25:09 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:25:22 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:25:24 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:26:15 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:26:27 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:26:31 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:27:21 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:27:31 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:27:36 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:28:26 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:28:35 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:28:40 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:28:49 wintermute dhcpd[48251]: uid lease 10.10.42.83 for client a6:62:be:70:84:59 is duplicate on 10.10.0.0/16
+Sep 15 10:29:30 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:29:39 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:29:45 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:30:35 wintermute dhcpd[48251]: uid lease 10.10.42.85 for client 52:54:00:d8:0c:dc is duplicate on 10.10.0.0/16
+Sep 15 10:30:36 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:30:44 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:30:52 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:31:42 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:31:48 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:31:57 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:32:17 wintermute dhcpd[48251]: uid lease 10.10.42.98 for client 58:9c:fc:01:14:e1 is duplicate on 10.10.0.0/16
+Sep 15 10:32:23 wintermute dhcpd[48251]: uid lease 10.10.42.50 for client 58:9c:fc:0b:56:fd is duplicate on 10.10.0.0/16
+Sep 15 10:32:48 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:32:53 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:33:04 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:33:06 wintermute dhcpd[48251]: uid lease 10.10.42.86 for client 52:54:00:f6:1c:20 is duplicate on 10.10.0.0/16
+Sep 15 10:33:07 wintermute dhcpd[48251]: uid lease 10.10.42.59 for client b8:27:eb:17:3e:52 is duplicate on 10.10.0.0/16
+Sep 15 10:33:52 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:33:58 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:34:11 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:34:57 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:35:03 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:35:15 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:36:01 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:36:07 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:36:21 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:37:05 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:37:11 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:37:25 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:38:10 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:38:16 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:38:25 wintermute dhcpd[48251]: uid lease 10.10.42.94 for client 52:54:00:84:95:eb is duplicate on 10.10.0.0/16
+Sep 15 10:38:29 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:38:55 wintermute dhcpd[48251]: uid lease 10.10.42.84 for client 52:54:00:ab:9e:33 is duplicate on 10.10.0.0/16
+Sep 15 10:39:15 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:39:20 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:39:35 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:40:20 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:40:24 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:40:40 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:41:25 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:41:28 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:41:46 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:42:30 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:42:33 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:42:53 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:43:34 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:43:37 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:43:49 wintermute dhcpd[48251]: uid lease 10.10.42.83 for client a6:62:be:70:84:59 is duplicate on 10.10.0.0/16
+Sep 15 10:43:58 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:44:26 wintermute dhcpd[48251]: uid lease 10.10.42.50 for client 58:9c:fc:0b:56:fd is duplicate on 10.10.0.0/16
+Sep 15 10:44:40 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:44:42 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:45:04 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:45:36 wintermute dhcpd[48251]: uid lease 10.10.42.85 for client 52:54:00:d8:0c:dc is duplicate on 10.10.0.0/16
+Sep 15 10:45:45 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:45:46 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:46:09 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:46:50 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:46:50 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:47:13 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:47:17 wintermute dhcpd[48251]: uid lease 10.10.42.98 for client 58:9c:fc:01:14:e1 is duplicate on 10.10.0.0/16
+Sep 15 10:47:55 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:47:55 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:48:07 wintermute dhcpd[48251]: uid lease 10.10.42.86 for client 52:54:00:f6:1c:20 is duplicate on 10.10.0.0/16
+Sep 15 10:48:07 wintermute dhcpd[48251]: uid lease 10.10.42.59 for client b8:27:eb:17:3e:52 is duplicate on 10.10.0.0/16
+Sep 15 10:48:17 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:49:00 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:49:02 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:49:22 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:50:04 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:50:09 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:50:26 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:51:09 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:51:14 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:51:30 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:52:13 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:52:18 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:52:34 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:53:18 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:53:24 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:53:25 wintermute dhcpd[48251]: uid lease 10.10.42.94 for client 52:54:00:84:95:eb is duplicate on 10.10.0.0/16
+Sep 15 10:53:39 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:54:06 wintermute dhcpd[48251]: uid lease 10.10.42.84 for client 52:54:00:ab:9e:33 is duplicate on 10.10.0.0/16
+Sep 15 10:54:22 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:54:28 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:54:46 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:55:26 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:55:33 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:55:53 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:56:30 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:56:40 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:56:58 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:57:35 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:57:46 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:58:05 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:58:08 wintermute dhcpd[48251]: uid lease 10.10.42.50 for client 58:9c:fc:0b:56:fd is duplicate on 10.10.0.0/16
+Sep 15 10:58:40 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:58:49 wintermute dhcpd[48251]: uid lease 10.10.42.83 for client a6:62:be:70:84:59 is duplicate on 10.10.0.0/16
+Sep 15 10:58:50 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:59:09 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 10:59:44 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 10:59:56 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:00:15 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:00:36 wintermute dhcpd[48251]: uid lease 10.10.42.85 for client 52:54:00:d8:0c:dc is duplicate on 10.10.0.0/16
+Sep 15 11:00:49 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:01:03 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:01:19 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:01:53 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:02:07 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:02:17 wintermute dhcpd[48251]: uid lease 10.10.42.98 for client 58:9c:fc:01:14:e1 is duplicate on 10.10.0.0/16
+Sep 15 11:02:26 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:02:58 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:03:07 wintermute dhcpd[48251]: uid lease 10.10.42.59 for client b8:27:eb:17:3e:52 is duplicate on 10.10.0.0/16
+Sep 15 11:03:07 wintermute dhcpd[48251]: uid lease 10.10.42.86 for client 52:54:00:f6:1c:20 is duplicate on 10.10.0.0/16
+Sep 15 11:03:12 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:03:30 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:04:03 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:04:17 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:04:34 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:05:07 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:05:24 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:05:38 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:06:09 wintermute named[951]: managed-keys-zone: Unable to fetch DNSKEY set '.': failure
+Sep 15 11:06:11 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:06:31 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:06:45 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:07:16 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:07:37 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:07:52 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:08:20 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:08:25 wintermute dhcpd[48251]: uid lease 10.10.42.94 for client 52:54:00:84:95:eb is duplicate on 10.10.0.0/16
+Sep 15 11:08:44 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:08:57 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:09:20 wintermute dhcpd[48251]: uid lease 10.10.42.84 for client 52:54:00:ab:9e:33 is duplicate on 10.10.0.0/16
+Sep 15 11:09:24 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:09:50 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:10:01 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:10:28 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:10:56 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:11:06 wintermute ntpd[1253]: error resolving pool 0.freebsd.pool.ntp.org: Name does not resolve (8)
+Sep 15 11:11:33 wintermute dhcpd[48251]: uid lease 10.10.42.17 for client b8:27:eb:91:2e:b1 is duplicate on 10.10.0.0/16
+Sep 15 11:12:02 wintermute ntpd[1253]: error resolving pool 2.freebsd.pool.ntp.org: Name does not resolve (8)
