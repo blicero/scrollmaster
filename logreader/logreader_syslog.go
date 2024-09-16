@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-16 19:52:51 krylon>
+// Time-stamp: <2024-09-16 21:05:04 krylon>
 
 package logreader
 
@@ -33,7 +33,7 @@ type SyslogReader struct {
 }
 
 var (
-	mpat = regexp.MustCompile(`^(\w+ \d+ \d+:\d+:\d+) (\S+) (.*)$`)
+	mpat = regexp.MustCompile(`^(\w{3}\s+\d+\s+\d+:\d+:\d+)\s+(\S+)\s+(.*)$`)
 	spat = regexp.MustCompile(`^(\w+)\[\d+\]:\s+(.*)$`)
 )
 
@@ -117,6 +117,8 @@ func (r *SyslogReader) ReadFrom(begin time.Time, max int, queue chan<- model.Rec
 			sc  *bufio.Scanner
 		)
 
+		r.log.Printf("[TRACE] Reading from %s\n", lf.path)
+
 		sc = bufio.NewScanner(lf.fh)
 
 		for sc.Scan() {
@@ -128,12 +130,15 @@ func (r *SyslogReader) ReadFrom(begin time.Time, max int, queue chan<- model.Rec
 
 			if m = mpat.FindStringSubmatch(line); m != nil {
 				// parse timestamp
-				if rec.Time, err = time.Parse("Jan 02 15:04:05", m[1]); err != nil {
+				if rec.Time, err = time.Parse("Jan  2 15:04:05", m[1]); err != nil {
 					r.log.Printf("[ERROR] Cannot parse timestamp %q: %s\n",
 						m[1],
 						err.Error())
 					continue
 				} else if rec.Time.Before(begin) {
+					r.log.Printf("[TRACE] Record timestamp is too old: %s < %s\n",
+						rec.Time.Format(common.TimestampFormat),
+						begin.Format(common.TimestampFormat))
 					continue
 				}
 
@@ -150,7 +155,14 @@ func (r *SyslogReader) ReadFrom(begin time.Time, max int, queue chan<- model.Rec
 				if cnt++; cnt >= max {
 					break
 				}
+			} else {
+				r.log.Printf("[TRACE] Failed to parse line: %s\n",
+					line)
 			}
 		}
+
+		r.log.Printf("[TRACE] Read %d records from %s\n",
+			cnt,
+			lf.path)
 	}
 } // func (r *SyslogReader) ReadFrom(begin time.Time, max int, queue chan<- model.Record)

@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 18. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-16 19:15:01 krylon>
+// Time-stamp: <2024-09-16 20:55:24 krylon>
 
 package logreader
 
@@ -39,12 +39,10 @@ func TestReaderRead(t *testing.T) {
 		cnt   int
 		queue chan model.Record
 		begin time.Time
-		// ticker *time.Ticker
 	)
 
 	queue = make(chan model.Record)
 	begin = time.Now().Add(time.Hour * -2)
-	// ticker = time.NewTicker(time.Second * 30)
 
 	go rdr.ReadFrom(begin, 0, queue)
 

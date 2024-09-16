@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 16. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-16 19:51:05 krylon>
+// Time-stamp: <2024-09-16 21:03:49 krylon>
 
 package logreader
 
@@ -10,6 +10,10 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+	"time"
+
+	"github.com/blicero/scrollmaster/common"
+	"github.com/blicero/scrollmaster/model"
 )
 
 func TestSyslogreaderOpen(t *testing.T) {
@@ -44,4 +48,50 @@ func TestSyslogreaderOpen(t *testing.T) {
 		t.Fatalf("Failed to open logfiles: %s",
 			err.Error())
 	}
-}
+} // func TestSyslogreaderOpen(t *testing.T)
+
+func TestSyslogReaderRead(t *testing.T) {
+	if rdr == nil {
+		t.SkipNow()
+	}
+
+	var (
+		cnt   int
+		queue chan model.Record
+		begin time.Time
+	)
+
+	queue = make(chan model.Record)
+	// begin = time.Now().Add(time.Hour * -2)
+
+	go rdr.ReadFrom(begin, 0, queue)
+
+	for record := range queue {
+		cnt++
+		t.Logf("Record #%4d: %s / %s / %s\n",
+			cnt,
+			record.Time.Format(common.TimestampFormatSubSecond),
+			record.Source,
+			record.Message)
+	}
+
+	if cnt == 0 {
+		t.Errorf("SyslogReader returned %d records, we did expect a little more than that.",
+			cnt)
+	}
+} // func TestSyslogReaderRead(t *testing.T)
+
+func TestSyslogReaderClose(t *testing.T) {
+	if rdr == nil {
+		t.SkipNow()
+	}
+
+	var err error
+
+	if err = rdr.Close(); err != nil {
+		t.Errorf("Error closing LogReader: %s",
+			err.Error())
+	}
+
+	rdr = nil
+} // func TestSyslogReaderClose(t *testing.T)
