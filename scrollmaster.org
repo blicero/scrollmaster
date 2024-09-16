@@ -1,5 +1,5 @@
 # -*- mode: org; fill-column: 78; -*-
-# Time-stamp: <2024-09-16 19:55:15 krylon>
+# Time-stamp: <2024-09-16 21:06:26 krylon>
 #
 #+TAGS: internals(i) ui(u) bug(b) feature(f)
 #+TAGS: database(d) design(e), meditation(m)
@@ -12,27 +12,27 @@
   Scrollmaster is a log aggregator and analyzer.
 ** Clock table
    #+BEGIN: clocktable :scope file :maxlevel 202 :emphasize t
-   #+CAPTION: Clock summary at [2024-09-16 Mo 19:55]
+   #+CAPTION: Clock summary at [2024-09-16 Mo 21:06]
    | Headline                           | Time       |            |       |       |      |
    |------------------------------------+------------+------------+-------+-------+------|
-   | *Total time*                       | *3d 12:48* |            |       |       |      |
+   | *Total time*                       | *3d 13:02* |            |       |       |      |
    |------------------------------------+------------+------------+-------+-------+------|
-   | *Scrollmaster*                     | *3d 12:48* |            |       |       |      |
+   | *Scrollmaster*                     | *3d 13:02* |            |       |       |      |
    | \_  /Features [5/5]/               |            | /23:09/    |       |       |      |
    | \_    Search [5/5]                 |            |            | 22:29 |       |      |
    | \_      Feinschliff                |            |            |       |  1:03 |      |
    | \_      Load Search Parameters     |            |            |       |  0:50 |      |
    | \_      Limit results              |            |            |       |  0:34 |      |
    | \_    Analysis [0/0]               |            |            |  0:40 |       |      |
-   | \_  /Components [12/12]/           |            | /2d 13:39/ |       |       |      |
+   | \_  /Components [12/12]/           |            | /2d 13:53/ |       |       |      |
    | \_    Main [0/0]                   |            |            |  0:59 |       |      |
    | \_    Common [1/1]                 |            |            |  3:46 |       |      |
    | \_      Paths                      |            |            |       |  3:46 |      |
    | \_    Build script                 |            |            |  1:15 |       |      |
    | \_    Model [0/0]                  |            |            |  1:04 |       |      |
-   | \_    Logreader [1/2]              |            |            | 13:41 |       |      |
+   | \_    Logreader [1/2]              |            |            | 13:55 |       |      |
    | \_      Journald                   |            |            |       |  1:37 |      |
-   | \_      Syslog                     |            |            |       |  9:40 |      |
+   | \_      Syslog                     |            |            |       |  9:54 |      |
    | \_    Database [0/0]               |            |            |  3:40 |       |      |
    | \_    Server [4/4]                 |            |            | 10:03 |       |      |
    | \_      Handling Agents            |            |            |       |  3:13 |      |
@@ -197,6 +197,7 @@
      :END:
 **** TODO Syslog
      :LOGBOOK:
+     CLOCK: [2024-09-16 Mo 20:52]--[2024-09-16 Mo 21:06] =>  0:14
      CLOCK: [2024-09-16 Mo 18:40]--[2024-09-16 Mo 19:55] =>  1:15
      CLOCK: [2024-09-15 So 16:27]--[2024-09-15 So 20:26] =>  3:59
      CLOCK: [2024-09-15 So 11:07]--[2024-09-15 So 15:33] =>  4:26
