@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 15. 09. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-15 20:23:20 krylon>
+// Time-stamp: <2024-09-16 19:52:51 krylon>
 
 package logreader
 
@@ -11,6 +11,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"runtime"
 	"time"
 
 	"github.com/blicero/scrollmaster/common"
@@ -23,14 +24,27 @@ type logfile struct {
 	fh   *os.File
 }
 
+// SyslogReader is a LogReader that reads files created by the syslog daemon
+// commonly used on *BSD (and some Linux distros, I suppose).
 type SyslogReader struct {
 	log   *log.Logger
 	err   error
 	files []logfile
 }
 
-var mpat = regexp.MustCompile(`(i)^(\w+ \d+ \d+:\d+:\d+) (\S+) (.*)$`)
+var (
+	mpat = regexp.MustCompile(`^(\w+ \d+ \d+:\d+:\d+) (\S+) (.*)$`)
+	spat = regexp.MustCompile(`^(\w+)\[\d+\]:\s+(.*)$`)
+)
 
+func init() {
+	if runtime.GOOS != "linux" {
+		DefaultOpener = CreateSyslogReader
+	}
+}
+
+// CreateSyslogReader creates and returns a SyslogReader that reads the given
+// logfiles.
 func CreateSyslogReader(path ...string) (LogReader, error) {
 	var (
 		err error
@@ -50,6 +64,7 @@ func CreateSyslogReader(path ...string) (LogReader, error) {
 	return rdr, nil
 } // func CreateSyslogReader(path string) (LogReader, error)
 
+// Init opens the logfiles.
 func (r *SyslogReader) Init() error {
 	var (
 		err error
@@ -71,6 +86,7 @@ func (r *SyslogReader) Init() error {
 	return nil
 } // func (r *SyslogReader) Init() error
 
+// Close closes all the opened logfiles.
 func (r *SyslogReader) Close() error {
 	for idx := range r.files {
 		r.files[idx].fh.Close() // nolint: errcheck
@@ -93,27 +109,47 @@ func (r *SyslogReader) ReadFrom(begin time.Time, max int, queue chan<- model.Rec
 
 	var (
 		err error
-		cnt int64
 	)
 
 	for _, lf := range r.files {
 		var (
-			sc *bufio.Scanner
+			cnt int
+			sc  *bufio.Scanner
 		)
 
 		sc = bufio.NewScanner(lf.fh)
 
 		for sc.Scan() {
 			var (
-				line string
+				line = sc.Text()
 				rec  model.Record
 				m    []string
 			)
 
-			line = sc.Text()
-
 			if m = mpat.FindStringSubmatch(line); m != nil {
 				// parse timestamp
+				if rec.Time, err = time.Parse("Jan 02 15:04:05", m[1]); err != nil {
+					r.log.Printf("[ERROR] Cannot parse timestamp %q: %s\n",
+						m[1],
+						err.Error())
+					continue
+				} else if rec.Time.Before(begin) {
+					continue
+				}
+
+				var source = spat.FindStringSubmatch(m[3])
+				if source == nil {
+					rec.Source = m[2]
+					rec.Message = m[3]
+				} else {
+					rec.Source = source[1]
+					rec.Message = source[2]
+				}
+
+				queue <- rec
+				if cnt++; cnt >= max {
+					break
+				}
 			}
 		}
 	}

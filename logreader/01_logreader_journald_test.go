@@ -2,7 +2,7 @@
 // -*- mode: go; coding: utf-8; -*-
 // Created on 18. 08. 2024 by Benjamin Walkenhorst
 // (c) 2024 Benjamin Walkenhorst
-// Time-stamp: <2024-09-03 19:45:00 krylon>
+// Time-stamp: <2024-09-16 19:15:01 krylon>
 
 package logreader
 
@@ -13,8 +13,6 @@ import (
 	"github.com/blicero/scrollmaster/common"
 	"github.com/blicero/scrollmaster/model"
 )
-
-var rdr LogReader
 
 func TestReaderOpen(t *testing.T) {
 	var err error
